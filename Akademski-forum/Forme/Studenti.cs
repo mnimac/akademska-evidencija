@@ -130,23 +130,19 @@ namespace Akademski_forum
             tabControl1.SelectTab(tabPage1);
         }
 
-
         private void toolStripButtonIzmjena_Click(object sender, EventArgs e)
         {
             //izmjena
             tabControl1.SelectTab(tabPage2);
         }
 
-
         private void toolStripButtonIspis_Click(object sender, EventArgs e)
         {
-            this.studentiTableAdapter1.Fill(this.dataSetAkademskiForum1.Studenti);
-            ReportDefinition rd = new ReportDefinition("Akademski-forum.Akademski-forum.Reports.Report1.rdlc", "DataSet1", dataSetAkademskiForum1.Studenti);
-            //ispis
+            //ISPIS 
+            this.studentiTableAdapter1.Fill(this.dataSetAkademskiForum1.Studenti);         
             Ispis rds = new Ispis(@"C:\Users\Korisnik\source\repos\Akademski-forum\Akademski-forum\Reports\Report1.rdlc", "DataSet1", dataSetAkademskiForum1.Studenti);
             rds.Show();
-        }
-        
+        }       
 
         private void oIBTextBox_Validating(object sender, CancelEventArgs e)
         {
