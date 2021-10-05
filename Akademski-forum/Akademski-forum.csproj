@@ -117,6 +117,12 @@
     <Compile Include="Forme\Ocjene.Designer.cs">
       <DependentUpon>Ocjene.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forme\Statistika.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\Statistika.Designer.cs">
+      <DependentUpon>Statistika.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Forme\Studenti.cs">
@@ -142,6 +148,9 @@
     <EmbeddedResource Include="Forme\Ocjene.resx">
       <DependentUpon>Ocjene.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forme\Statistika.resx">
+      <DependentUpon>Statistika.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -151,7 +160,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Reports\Report2.rdlc" />
+    <EmbeddedResource Include="Reports\ReportOcjene.rdlc" />
+    <EmbeddedResource Include="Reports\ReportPredmet.rdlc" />
     <EmbeddedResource Include="Reports\ReportProfesori.rdlc" />
     <EmbeddedResource Include="Reports\Report1.rdlc" />
     <EmbeddedResource Include="Forme\Studenti.resx">

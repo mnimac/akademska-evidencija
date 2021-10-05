@@ -439,7 +439,7 @@
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.PredmetiTableAdapter = null;
-            this.tableAdapterManager.PredmetStudentTableAdapter = null;
+            this.tableAdapterManager.OcjeneTableAdapter = null;
             this.tableAdapterManager.ProfesoriTableAdapter = this.profesoriTableAdapter1;
             this.tableAdapterManager.StudentiTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Akademski_forum.DataSetAkademskiForumTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;

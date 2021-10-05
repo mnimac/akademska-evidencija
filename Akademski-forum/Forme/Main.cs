@@ -56,5 +56,17 @@ namespace Akademski_forum
             ocjene.MdiParent = this;
             ocjene.Show();
         }
+
+        private void izvjestajiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void predmetiToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Predmeti predmeti2 = new Predmeti();
+            predmeti2.MdiParent = this;
+            predmeti2.Show();
+        }
     }
 }

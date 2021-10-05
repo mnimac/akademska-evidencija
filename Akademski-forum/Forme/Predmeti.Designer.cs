@@ -64,7 +64,7 @@
             this.predmetiTableAdapter1 = new Akademski_forum.DataSetAkademskiForumTableAdapters.PredmetiTableAdapter();
             this.profesoriTableAdapter1 = new Akademski_forum.DataSetAkademskiForumTableAdapters.ProfesoriTableAdapter();
             this.studentiTableAdapter1 = new Akademski_forum.DataSetAkademskiForumTableAdapters.StudentiTableAdapter();
-            this.predmetStudentTableAdapter1 = new Akademski_forum.DataSetAkademskiForumTableAdapters.PredmetStudentTableAdapter();
+            this.predmetStudentTableAdapter1 = new Akademski_forum.DataSetAkademskiForumTableAdapters.OcjeneTableAdapter();
             this.tableAdapterManager = new Akademski_forum.DataSetAkademskiForumTableAdapters.TableAdapterManager();
             this.predmetIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.predmetNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -414,7 +414,7 @@
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.PredmetiTableAdapter = this.predmetiTableAdapter1;
-            this.tableAdapterManager.PredmetStudentTableAdapter = this.predmetStudentTableAdapter1;
+            this.tableAdapterManager.OcjeneTableAdapter = this.predmetStudentTableAdapter1;
             this.tableAdapterManager.ProfesoriTableAdapter = this.profesoriTableAdapter1;
             this.tableAdapterManager.StudentiTableAdapter = this.studentiTableAdapter1;
             this.tableAdapterManager.UpdateOrder = Akademski_forum.DataSetAkademskiForumTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
@@ -512,7 +512,7 @@
         private System.Windows.Forms.BindingSource predmetiBindingSource;
         private DataSetAkademskiForumTableAdapters.ProfesoriTableAdapter profesoriTableAdapter1;
         private DataSetAkademskiForumTableAdapters.StudentiTableAdapter studentiTableAdapter1;
-        private DataSetAkademskiForumTableAdapters.PredmetStudentTableAdapter predmetStudentTableAdapter1;
+        private DataSetAkademskiForumTableAdapters.OcjeneTableAdapter predmetStudentTableAdapter1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox predmetIDTextBox;
         private System.Windows.Forms.TextBox predmetNameTextBox;
