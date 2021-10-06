@@ -26,17 +26,17 @@ namespace Akademski_forum {
         
         private PredmetiDataTable tablePredmeti;
         
-        private PredmetStudentDataTable tablePredmetStudent;
+        private OcjeneDataTable tableOcjene;
         
         private ProfesoriDataTable tableProfesori;
         
         private StudentiDataTable tableStudenti;
         
-        private global::System.Data.DataRelation relationFK_Ocjene_Predmeti;
+        private af_ReportOcjenaDataTable tableaf_ReportOcjena;
+        
+        private af_ReportPredmetDataTable tableaf_ReportPredmet;
         
         private global::System.Data.DataRelation relationFK_Predmeti_Profesori;
-        
-        private global::System.Data.DataRelation relationFK_PredmetStudent_Studenti;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -69,14 +69,20 @@ namespace Akademski_forum {
                 if ((ds.Tables["Predmeti"] != null)) {
                     base.Tables.Add(new PredmetiDataTable(ds.Tables["Predmeti"]));
                 }
-                if ((ds.Tables["PredmetStudent"] != null)) {
-                    base.Tables.Add(new PredmetStudentDataTable(ds.Tables["PredmetStudent"]));
+                if ((ds.Tables["Ocjene"] != null)) {
+                    base.Tables.Add(new OcjeneDataTable(ds.Tables["Ocjene"]));
                 }
                 if ((ds.Tables["Profesori"] != null)) {
                     base.Tables.Add(new ProfesoriDataTable(ds.Tables["Profesori"]));
                 }
                 if ((ds.Tables["Studenti"] != null)) {
                     base.Tables.Add(new StudentiDataTable(ds.Tables["Studenti"]));
+                }
+                if ((ds.Tables["af_ReportOcjena"] != null)) {
+                    base.Tables.Add(new af_ReportOcjenaDataTable(ds.Tables["af_ReportOcjena"]));
+                }
+                if ((ds.Tables["af_ReportPredmet"] != null)) {
+                    base.Tables.Add(new af_ReportPredmetDataTable(ds.Tables["af_ReportPredmet"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -110,9 +116,9 @@ namespace Akademski_forum {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public PredmetStudentDataTable PredmetStudent {
+        public OcjeneDataTable Ocjene {
             get {
-                return this.tablePredmetStudent;
+                return this.tableOcjene;
             }
         }
         
@@ -133,6 +139,26 @@ namespace Akademski_forum {
         public StudentiDataTable Studenti {
             get {
                 return this.tableStudenti;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public af_ReportOcjenaDataTable af_ReportOcjena {
+            get {
+                return this.tableaf_ReportOcjena;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public af_ReportPredmetDataTable af_ReportPredmet {
+            get {
+                return this.tableaf_ReportPredmet;
             }
         }
         
@@ -206,14 +232,20 @@ namespace Akademski_forum {
                 if ((ds.Tables["Predmeti"] != null)) {
                     base.Tables.Add(new PredmetiDataTable(ds.Tables["Predmeti"]));
                 }
-                if ((ds.Tables["PredmetStudent"] != null)) {
-                    base.Tables.Add(new PredmetStudentDataTable(ds.Tables["PredmetStudent"]));
+                if ((ds.Tables["Ocjene"] != null)) {
+                    base.Tables.Add(new OcjeneDataTable(ds.Tables["Ocjene"]));
                 }
                 if ((ds.Tables["Profesori"] != null)) {
                     base.Tables.Add(new ProfesoriDataTable(ds.Tables["Profesori"]));
                 }
                 if ((ds.Tables["Studenti"] != null)) {
                     base.Tables.Add(new StudentiDataTable(ds.Tables["Studenti"]));
+                }
+                if ((ds.Tables["af_ReportOcjena"] != null)) {
+                    base.Tables.Add(new af_ReportOcjenaDataTable(ds.Tables["af_ReportOcjena"]));
+                }
+                if ((ds.Tables["af_ReportPredmet"] != null)) {
+                    base.Tables.Add(new af_ReportPredmetDataTable(ds.Tables["af_ReportPredmet"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -254,10 +286,10 @@ namespace Akademski_forum {
                     this.tablePredmeti.InitVars();
                 }
             }
-            this.tablePredmetStudent = ((PredmetStudentDataTable)(base.Tables["PredmetStudent"]));
+            this.tableOcjene = ((OcjeneDataTable)(base.Tables["Ocjene"]));
             if ((initTable == true)) {
-                if ((this.tablePredmetStudent != null)) {
-                    this.tablePredmetStudent.InitVars();
+                if ((this.tableOcjene != null)) {
+                    this.tableOcjene.InitVars();
                 }
             }
             this.tableProfesori = ((ProfesoriDataTable)(base.Tables["Profesori"]));
@@ -272,9 +304,19 @@ namespace Akademski_forum {
                     this.tableStudenti.InitVars();
                 }
             }
-            this.relationFK_Ocjene_Predmeti = this.Relations["FK_Ocjene_Predmeti"];
+            this.tableaf_ReportOcjena = ((af_ReportOcjenaDataTable)(base.Tables["af_ReportOcjena"]));
+            if ((initTable == true)) {
+                if ((this.tableaf_ReportOcjena != null)) {
+                    this.tableaf_ReportOcjena.InitVars();
+                }
+            }
+            this.tableaf_ReportPredmet = ((af_ReportPredmetDataTable)(base.Tables["af_ReportPredmet"]));
+            if ((initTable == true)) {
+                if ((this.tableaf_ReportPredmet != null)) {
+                    this.tableaf_ReportPredmet.InitVars();
+                }
+            }
             this.relationFK_Predmeti_Profesori = this.Relations["FK_Predmeti_Profesori"];
-            this.relationFK_PredmetStudent_Studenti = this.Relations["FK_PredmetStudent_Studenti"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -287,24 +329,20 @@ namespace Akademski_forum {
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tablePredmeti = new PredmetiDataTable();
             base.Tables.Add(this.tablePredmeti);
-            this.tablePredmetStudent = new PredmetStudentDataTable();
-            base.Tables.Add(this.tablePredmetStudent);
+            this.tableOcjene = new OcjeneDataTable();
+            base.Tables.Add(this.tableOcjene);
             this.tableProfesori = new ProfesoriDataTable();
             base.Tables.Add(this.tableProfesori);
             this.tableStudenti = new StudentiDataTable();
             base.Tables.Add(this.tableStudenti);
-            this.relationFK_Ocjene_Predmeti = new global::System.Data.DataRelation("FK_Ocjene_Predmeti", new global::System.Data.DataColumn[] {
-                        this.tablePredmeti.PredmetIDColumn}, new global::System.Data.DataColumn[] {
-                        this.tablePredmetStudent.PredmetIDColumn}, false);
-            this.Relations.Add(this.relationFK_Ocjene_Predmeti);
+            this.tableaf_ReportOcjena = new af_ReportOcjenaDataTable();
+            base.Tables.Add(this.tableaf_ReportOcjena);
+            this.tableaf_ReportPredmet = new af_ReportPredmetDataTable();
+            base.Tables.Add(this.tableaf_ReportPredmet);
             this.relationFK_Predmeti_Profesori = new global::System.Data.DataRelation("FK_Predmeti_Profesori", new global::System.Data.DataColumn[] {
                         this.tableProfesori.ProfesorIDColumn}, new global::System.Data.DataColumn[] {
                         this.tablePredmeti.ProfesorIDColumn}, false);
             this.Relations.Add(this.relationFK_Predmeti_Profesori);
-            this.relationFK_PredmetStudent_Studenti = new global::System.Data.DataRelation("FK_PredmetStudent_Studenti", new global::System.Data.DataColumn[] {
-                        this.tableStudenti.StudentIDColumn}, new global::System.Data.DataColumn[] {
-                        this.tablePredmetStudent.StudentIDColumn}, false);
-            this.Relations.Add(this.relationFK_PredmetStudent_Studenti);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -315,7 +353,7 @@ namespace Akademski_forum {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializePredmetStudent() {
+        private bool ShouldSerializeOcjene() {
             return false;
         }
         
@@ -328,6 +366,18 @@ namespace Akademski_forum {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private bool ShouldSerializeStudenti() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializeaf_ReportOcjena() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializeaf_ReportPredmet() {
             return false;
         }
         
@@ -390,13 +440,19 @@ namespace Akademski_forum {
         public delegate void PredmetiRowChangeEventHandler(object sender, PredmetiRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void PredmetStudentRowChangeEventHandler(object sender, PredmetStudentRowChangeEvent e);
+        public delegate void OcjeneRowChangeEventHandler(object sender, OcjeneRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void ProfesoriRowChangeEventHandler(object sender, ProfesoriRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void StudentiRowChangeEventHandler(object sender, StudentiRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void af_ReportOcjenaRowChangeEventHandler(object sender, af_ReportOcjenaRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void af_ReportPredmetRowChangeEventHandler(object sender, af_ReportPredmetRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -727,17 +783,9 @@ namespace Akademski_forum {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class PredmetStudentDataTable : global::System.Data.TypedTableBase<PredmetStudentRow> {
-            
-            private global::System.Data.DataColumn columnOcjenaID;
-            
-            private global::System.Data.DataColumn columnOcjena;
-            
-            private global::System.Data.DataColumn columnStudentID;
+        public partial class OcjeneDataTable : global::System.Data.TypedTableBase<OcjeneRow> {
             
             private global::System.Data.DataColumn columndatumPolaganja;
-            
-            private global::System.Data.DataColumn columnPredmetID;
             
             private global::System.Data.DataColumn columnFirstName;
             
@@ -749,10 +797,12 @@ namespace Akademski_forum {
             
             private global::System.Data.DataColumn columnPredmetName;
             
+            private global::System.Data.DataColumn columnOcjena;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PredmetStudentDataTable() {
-                this.TableName = "PredmetStudent";
+            public OcjeneDataTable() {
+                this.TableName = "Ocjene";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -760,7 +810,7 @@ namespace Akademski_forum {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal PredmetStudentDataTable(global::System.Data.DataTable table) {
+            internal OcjeneDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -777,33 +827,9 @@ namespace Akademski_forum {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected PredmetStudentDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected OcjeneDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn OcjenaIDColumn {
-                get {
-                    return this.columnOcjenaID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn OcjenaColumn {
-                get {
-                    return this.columnOcjena;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn StudentIDColumn {
-                get {
-                    return this.columnStudentID;
-                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -811,14 +837,6 @@ namespace Akademski_forum {
             public global::System.Data.DataColumn datumPolaganjaColumn {
                 get {
                     return this.columndatumPolaganja;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn PredmetIDColumn {
-                get {
-                    return this.columnPredmetID;
                 }
             }
             
@@ -864,6 +882,14 @@ namespace Akademski_forum {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn OcjenaColumn {
+                get {
+                    return this.columnOcjena;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -873,67 +899,51 @@ namespace Akademski_forum {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PredmetStudentRow this[int index] {
+            public OcjeneRow this[int index] {
                 get {
-                    return ((PredmetStudentRow)(this.Rows[index]));
+                    return ((OcjeneRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event PredmetStudentRowChangeEventHandler PredmetStudentRowChanging;
+            public event OcjeneRowChangeEventHandler OcjeneRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event PredmetStudentRowChangeEventHandler PredmetStudentRowChanged;
+            public event OcjeneRowChangeEventHandler OcjeneRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event PredmetStudentRowChangeEventHandler PredmetStudentRowDeleting;
+            public event OcjeneRowChangeEventHandler OcjeneRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event PredmetStudentRowChangeEventHandler PredmetStudentRowDeleted;
+            public event OcjeneRowChangeEventHandler OcjeneRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddPredmetStudentRow(PredmetStudentRow row) {
+            public void AddOcjeneRow(OcjeneRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PredmetStudentRow AddPredmetStudentRow(string Ocjena, StudentiRow parentStudentiRowByFK_PredmetStudent_Studenti, System.DateTime datumPolaganja, PredmetiRow parentPredmetiRowByFK_Ocjene_Predmeti, string FirstName, string LastName, string OIB, string City, string PredmetName) {
-                PredmetStudentRow rowPredmetStudentRow = ((PredmetStudentRow)(this.NewRow()));
+            public OcjeneRow AddOcjeneRow(System.DateTime datumPolaganja, string FirstName, string LastName, string OIB, string City, string PredmetName, int Ocjena) {
+                OcjeneRow rowOcjeneRow = ((OcjeneRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
-                        Ocjena,
-                        null,
                         datumPolaganja,
-                        null,
                         FirstName,
                         LastName,
                         OIB,
                         City,
-                        PredmetName};
-                if ((parentStudentiRowByFK_PredmetStudent_Studenti != null)) {
-                    columnValuesArray[2] = parentStudentiRowByFK_PredmetStudent_Studenti[0];
-                }
-                if ((parentPredmetiRowByFK_Ocjene_Predmeti != null)) {
-                    columnValuesArray[4] = parentPredmetiRowByFK_Ocjene_Predmeti[0];
-                }
-                rowPredmetStudentRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowPredmetStudentRow);
-                return rowPredmetStudentRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PredmetStudentRow FindByOcjenaID(int OcjenaID) {
-                return ((PredmetStudentRow)(this.Rows.Find(new object[] {
-                            OcjenaID})));
+                        PredmetName,
+                        Ocjena};
+                rowOcjeneRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowOcjeneRow);
+                return rowOcjeneRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                PredmetStudentDataTable cln = ((PredmetStudentDataTable)(base.Clone()));
+                OcjeneDataTable cln = ((OcjeneDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -941,37 +951,26 @@ namespace Akademski_forum {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new PredmetStudentDataTable();
+                return new OcjeneDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columnOcjenaID = base.Columns["OcjenaID"];
-                this.columnOcjena = base.Columns["Ocjena"];
-                this.columnStudentID = base.Columns["StudentID"];
                 this.columndatumPolaganja = base.Columns["datumPolaganja"];
-                this.columnPredmetID = base.Columns["PredmetID"];
                 this.columnFirstName = base.Columns["FirstName"];
                 this.columnLastName = base.Columns["LastName"];
                 this.columnOIB = base.Columns["OIB"];
                 this.columnCity = base.Columns["City"];
                 this.columnPredmetName = base.Columns["PredmetName"];
+                this.columnOcjena = base.Columns["Ocjena"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnOcjenaID = new global::System.Data.DataColumn("OcjenaID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnOcjenaID);
-                this.columnOcjena = new global::System.Data.DataColumn("Ocjena", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnOcjena);
-                this.columnStudentID = new global::System.Data.DataColumn("StudentID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnStudentID);
                 this.columndatumPolaganja = new global::System.Data.DataColumn("datumPolaganja", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndatumPolaganja);
-                this.columnPredmetID = new global::System.Data.DataColumn("PredmetID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPredmetID);
                 this.columnFirstName = new global::System.Data.DataColumn("FirstName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFirstName);
                 this.columnLastName = new global::System.Data.DataColumn("LastName", typeof(string), null, global::System.Data.MappingType.Element);
@@ -982,17 +981,8 @@ namespace Akademski_forum {
                 base.Columns.Add(this.columnCity);
                 this.columnPredmetName = new global::System.Data.DataColumn("PredmetName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPredmetName);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnOcjenaID}, true));
-                this.columnOcjenaID.AutoIncrement = true;
-                this.columnOcjenaID.AutoIncrementSeed = -1;
-                this.columnOcjenaID.AutoIncrementStep = -1;
-                this.columnOcjenaID.AllowDBNull = false;
-                this.columnOcjenaID.ReadOnly = true;
-                this.columnOcjenaID.Unique = true;
-                this.columnOcjena.MaxLength = 10;
-                this.columnStudentID.AllowDBNull = false;
-                this.columnPredmetID.AllowDBNull = false;
+                this.columnOcjena = new global::System.Data.DataColumn("Ocjena", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOcjena);
                 this.columnFirstName.MaxLength = 50;
                 this.columnLastName.MaxLength = 50;
                 this.columnOIB.MaxLength = 50;
@@ -1002,28 +992,28 @@ namespace Akademski_forum {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PredmetStudentRow NewPredmetStudentRow() {
-                return ((PredmetStudentRow)(this.NewRow()));
+            public OcjeneRow NewOcjeneRow() {
+                return ((OcjeneRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new PredmetStudentRow(builder);
+                return new OcjeneRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(PredmetStudentRow);
+                return typeof(OcjeneRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.PredmetStudentRowChanged != null)) {
-                    this.PredmetStudentRowChanged(this, new PredmetStudentRowChangeEvent(((PredmetStudentRow)(e.Row)), e.Action));
+                if ((this.OcjeneRowChanged != null)) {
+                    this.OcjeneRowChanged(this, new OcjeneRowChangeEvent(((OcjeneRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1031,8 +1021,8 @@ namespace Akademski_forum {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.PredmetStudentRowChanging != null)) {
-                    this.PredmetStudentRowChanging(this, new PredmetStudentRowChangeEvent(((PredmetStudentRow)(e.Row)), e.Action));
+                if ((this.OcjeneRowChanging != null)) {
+                    this.OcjeneRowChanging(this, new OcjeneRowChangeEvent(((OcjeneRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1040,8 +1030,8 @@ namespace Akademski_forum {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.PredmetStudentRowDeleted != null)) {
-                    this.PredmetStudentRowDeleted(this, new PredmetStudentRowChangeEvent(((PredmetStudentRow)(e.Row)), e.Action));
+                if ((this.OcjeneRowDeleted != null)) {
+                    this.OcjeneRowDeleted(this, new OcjeneRowChangeEvent(((OcjeneRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1049,14 +1039,14 @@ namespace Akademski_forum {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.PredmetStudentRowDeleting != null)) {
-                    this.PredmetStudentRowDeleting(this, new PredmetStudentRowChangeEvent(((PredmetStudentRow)(e.Row)), e.Action));
+                if ((this.OcjeneRowDeleting != null)) {
+                    this.OcjeneRowDeleting(this, new OcjeneRowChangeEvent(((OcjeneRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemovePredmetStudentRow(PredmetStudentRow row) {
+            public void RemoveOcjeneRow(OcjeneRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -1083,7 +1073,7 @@ namespace Akademski_forum {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "PredmetStudentDataTable";
+                attribute2.FixedValue = "OcjeneDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -1784,6 +1774,577 @@ namespace Akademski_forum {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class af_ReportOcjenaDataTable : global::System.Data.TypedTableBase<af_ReportOcjenaRow> {
+            
+            private global::System.Data.DataColumn columnFirstName;
+            
+            private global::System.Data.DataColumn columnLastName;
+            
+            private global::System.Data.DataColumn columnProsjekStudenta;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public af_ReportOcjenaDataTable() {
+                this.TableName = "af_ReportOcjena";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal af_ReportOcjenaDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected af_ReportOcjenaDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn FirstNameColumn {
+                get {
+                    return this.columnFirstName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn LastNameColumn {
+                get {
+                    return this.columnLastName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ProsjekStudentaColumn {
+                get {
+                    return this.columnProsjekStudenta;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public af_ReportOcjenaRow this[int index] {
+                get {
+                    return ((af_ReportOcjenaRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event af_ReportOcjenaRowChangeEventHandler af_ReportOcjenaRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event af_ReportOcjenaRowChangeEventHandler af_ReportOcjenaRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event af_ReportOcjenaRowChangeEventHandler af_ReportOcjenaRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event af_ReportOcjenaRowChangeEventHandler af_ReportOcjenaRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Addaf_ReportOcjenaRow(af_ReportOcjenaRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public af_ReportOcjenaRow Addaf_ReportOcjenaRow(string FirstName, string LastName, decimal ProsjekStudenta) {
+                af_ReportOcjenaRow rowaf_ReportOcjenaRow = ((af_ReportOcjenaRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        FirstName,
+                        LastName,
+                        ProsjekStudenta};
+                rowaf_ReportOcjenaRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowaf_ReportOcjenaRow);
+                return rowaf_ReportOcjenaRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                af_ReportOcjenaDataTable cln = ((af_ReportOcjenaDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new af_ReportOcjenaDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columnFirstName = base.Columns["FirstName"];
+                this.columnLastName = base.Columns["LastName"];
+                this.columnProsjekStudenta = base.Columns["ProsjekStudenta"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columnFirstName = new global::System.Data.DataColumn("FirstName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFirstName);
+                this.columnLastName = new global::System.Data.DataColumn("LastName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLastName);
+                this.columnProsjekStudenta = new global::System.Data.DataColumn("ProsjekStudenta", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnProsjekStudenta);
+                this.columnFirstName.MaxLength = 50;
+                this.columnLastName.MaxLength = 50;
+                this.columnProsjekStudenta.ReadOnly = true;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public af_ReportOcjenaRow Newaf_ReportOcjenaRow() {
+                return ((af_ReportOcjenaRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new af_ReportOcjenaRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(af_ReportOcjenaRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.af_ReportOcjenaRowChanged != null)) {
+                    this.af_ReportOcjenaRowChanged(this, new af_ReportOcjenaRowChangeEvent(((af_ReportOcjenaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.af_ReportOcjenaRowChanging != null)) {
+                    this.af_ReportOcjenaRowChanging(this, new af_ReportOcjenaRowChangeEvent(((af_ReportOcjenaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.af_ReportOcjenaRowDeleted != null)) {
+                    this.af_ReportOcjenaRowDeleted(this, new af_ReportOcjenaRowChangeEvent(((af_ReportOcjenaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.af_ReportOcjenaRowDeleting != null)) {
+                    this.af_ReportOcjenaRowDeleting(this, new af_ReportOcjenaRowChangeEvent(((af_ReportOcjenaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Removeaf_ReportOcjenaRow(af_ReportOcjenaRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DataSetAkademskiForum ds = new DataSetAkademskiForum();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "af_ReportOcjenaDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class af_ReportPredmetDataTable : global::System.Data.TypedTableBase<af_ReportPredmetRow> {
+            
+            private global::System.Data.DataColumn columnPredmetName;
+            
+            private global::System.Data.DataColumn columnFirstName;
+            
+            private global::System.Data.DataColumn columnLastName;
+            
+            private global::System.Data.DataColumn columnProsjekPredmeta;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public af_ReportPredmetDataTable() {
+                this.TableName = "af_ReportPredmet";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal af_ReportPredmetDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected af_ReportPredmetDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn PredmetNameColumn {
+                get {
+                    return this.columnPredmetName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn FirstNameColumn {
+                get {
+                    return this.columnFirstName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn LastNameColumn {
+                get {
+                    return this.columnLastName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ProsjekPredmetaColumn {
+                get {
+                    return this.columnProsjekPredmeta;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public af_ReportPredmetRow this[int index] {
+                get {
+                    return ((af_ReportPredmetRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event af_ReportPredmetRowChangeEventHandler af_ReportPredmetRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event af_ReportPredmetRowChangeEventHandler af_ReportPredmetRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event af_ReportPredmetRowChangeEventHandler af_ReportPredmetRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event af_ReportPredmetRowChangeEventHandler af_ReportPredmetRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Addaf_ReportPredmetRow(af_ReportPredmetRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public af_ReportPredmetRow Addaf_ReportPredmetRow(string PredmetName, string FirstName, string LastName, decimal ProsjekPredmeta) {
+                af_ReportPredmetRow rowaf_ReportPredmetRow = ((af_ReportPredmetRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        PredmetName,
+                        FirstName,
+                        LastName,
+                        ProsjekPredmeta};
+                rowaf_ReportPredmetRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowaf_ReportPredmetRow);
+                return rowaf_ReportPredmetRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                af_ReportPredmetDataTable cln = ((af_ReportPredmetDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new af_ReportPredmetDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columnPredmetName = base.Columns["PredmetName"];
+                this.columnFirstName = base.Columns["FirstName"];
+                this.columnLastName = base.Columns["LastName"];
+                this.columnProsjekPredmeta = base.Columns["ProsjekPredmeta"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columnPredmetName = new global::System.Data.DataColumn("PredmetName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPredmetName);
+                this.columnFirstName = new global::System.Data.DataColumn("FirstName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFirstName);
+                this.columnLastName = new global::System.Data.DataColumn("LastName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLastName);
+                this.columnProsjekPredmeta = new global::System.Data.DataColumn("ProsjekPredmeta", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnProsjekPredmeta);
+                this.columnPredmetName.MaxLength = 50;
+                this.columnFirstName.MaxLength = 50;
+                this.columnLastName.MaxLength = 50;
+                this.columnProsjekPredmeta.ReadOnly = true;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public af_ReportPredmetRow Newaf_ReportPredmetRow() {
+                return ((af_ReportPredmetRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new af_ReportPredmetRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(af_ReportPredmetRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.af_ReportPredmetRowChanged != null)) {
+                    this.af_ReportPredmetRowChanged(this, new af_ReportPredmetRowChangeEvent(((af_ReportPredmetRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.af_ReportPredmetRowChanging != null)) {
+                    this.af_ReportPredmetRowChanging(this, new af_ReportPredmetRowChangeEvent(((af_ReportPredmetRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.af_ReportPredmetRowDeleted != null)) {
+                    this.af_ReportPredmetRowDeleted(this, new af_ReportPredmetRowChangeEvent(((af_ReportPredmetRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.af_ReportPredmetRowDeleting != null)) {
+                    this.af_ReportPredmetRowDeleting(this, new af_ReportPredmetRowChangeEvent(((af_ReportPredmetRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Removeaf_ReportPredmetRow(af_ReportPredmetRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DataSetAkademskiForum ds = new DataSetAkademskiForum();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "af_ReportPredmetDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class PredmetiRow : global::System.Data.DataRow {
@@ -1930,69 +2491,20 @@ namespace Akademski_forum {
             public void SetprofSurnameNull() {
                 this[this.tablePredmeti.profSurnameColumn] = global::System.Convert.DBNull;
             }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PredmetStudentRow[] GetPredmetStudentRows() {
-                if ((this.Table.ChildRelations["FK_Ocjene_Predmeti"] == null)) {
-                    return new PredmetStudentRow[0];
-                }
-                else {
-                    return ((PredmetStudentRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Ocjene_Predmeti"])));
-                }
-            }
         }
         
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class PredmetStudentRow : global::System.Data.DataRow {
+        public partial class OcjeneRow : global::System.Data.DataRow {
             
-            private PredmetStudentDataTable tablePredmetStudent;
+            private OcjeneDataTable tableOcjene;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal PredmetStudentRow(global::System.Data.DataRowBuilder rb) : 
+            internal OcjeneRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tablePredmetStudent = ((PredmetStudentDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int OcjenaID {
-                get {
-                    return ((int)(this[this.tablePredmetStudent.OcjenaIDColumn]));
-                }
-                set {
-                    this[this.tablePredmetStudent.OcjenaIDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Ocjena {
-                get {
-                    try {
-                        return ((string)(this[this.tablePredmetStudent.OcjenaColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Ocjena\' in table \'PredmetStudent\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablePredmetStudent.OcjenaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int StudentID {
-                get {
-                    return ((int)(this[this.tablePredmetStudent.StudentIDColumn]));
-                }
-                set {
-                    this[this.tablePredmetStudent.StudentIDColumn] = value;
-                }
+                this.tableOcjene = ((OcjeneDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2000,25 +2512,14 @@ namespace Akademski_forum {
             public System.DateTime datumPolaganja {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tablePredmetStudent.datumPolaganjaColumn]));
+                        return ((global::System.DateTime)(this[this.tableOcjene.datumPolaganjaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'datumPolaganja\' in table \'PredmetStudent\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'datumPolaganja\' in table \'Ocjene\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePredmetStudent.datumPolaganjaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int PredmetID {
-                get {
-                    return ((int)(this[this.tablePredmetStudent.PredmetIDColumn]));
-                }
-                set {
-                    this[this.tablePredmetStudent.PredmetIDColumn] = value;
+                    this[this.tableOcjene.datumPolaganjaColumn] = value;
                 }
             }
             
@@ -2027,14 +2528,14 @@ namespace Akademski_forum {
             public string FirstName {
                 get {
                     try {
-                        return ((string)(this[this.tablePredmetStudent.FirstNameColumn]));
+                        return ((string)(this[this.tableOcjene.FirstNameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'FirstName\' in table \'PredmetStudent\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'FirstName\' in table \'Ocjene\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePredmetStudent.FirstNameColumn] = value;
+                    this[this.tableOcjene.FirstNameColumn] = value;
                 }
             }
             
@@ -2043,14 +2544,14 @@ namespace Akademski_forum {
             public string LastName {
                 get {
                     try {
-                        return ((string)(this[this.tablePredmetStudent.LastNameColumn]));
+                        return ((string)(this[this.tableOcjene.LastNameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'LastName\' in table \'PredmetStudent\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'LastName\' in table \'Ocjene\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePredmetStudent.LastNameColumn] = value;
+                    this[this.tableOcjene.LastNameColumn] = value;
                 }
             }
             
@@ -2059,14 +2560,14 @@ namespace Akademski_forum {
             public string OIB {
                 get {
                     try {
-                        return ((string)(this[this.tablePredmetStudent.OIBColumn]));
+                        return ((string)(this[this.tableOcjene.OIBColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'OIB\' in table \'PredmetStudent\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'OIB\' in table \'Ocjene\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePredmetStudent.OIBColumn] = value;
+                    this[this.tableOcjene.OIBColumn] = value;
                 }
             }
             
@@ -2075,14 +2576,14 @@ namespace Akademski_forum {
             public string City {
                 get {
                     try {
-                        return ((string)(this[this.tablePredmetStudent.CityColumn]));
+                        return ((string)(this[this.tableOcjene.CityColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'City\' in table \'PredmetStudent\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'City\' in table \'Ocjene\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePredmetStudent.CityColumn] = value;
+                    this[this.tableOcjene.CityColumn] = value;
                 }
             }
             
@@ -2091,121 +2592,115 @@ namespace Akademski_forum {
             public string PredmetName {
                 get {
                     try {
-                        return ((string)(this[this.tablePredmetStudent.PredmetNameColumn]));
+                        return ((string)(this[this.tableOcjene.PredmetNameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PredmetName\' in table \'PredmetStudent\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'PredmetName\' in table \'Ocjene\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePredmetStudent.PredmetNameColumn] = value;
+                    this[this.tableOcjene.PredmetNameColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PredmetiRow PredmetiRow {
+            public int Ocjena {
                 get {
-                    return ((PredmetiRow)(this.GetParentRow(this.Table.ParentRelations["FK_Ocjene_Predmeti"])));
+                    try {
+                        return ((int)(this[this.tableOcjene.OcjenaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Ocjena\' in table \'Ocjene\' is DBNull.", e);
+                    }
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_Ocjene_Predmeti"]);
+                    this[this.tableOcjene.OcjenaColumn] = value;
                 }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public StudentiRow StudentiRow {
-                get {
-                    return ((StudentiRow)(this.GetParentRow(this.Table.ParentRelations["FK_PredmetStudent_Studenti"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_PredmetStudent_Studenti"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsOcjenaNull() {
-                return this.IsNull(this.tablePredmetStudent.OcjenaColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetOcjenaNull() {
-                this[this.tablePredmetStudent.OcjenaColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsdatumPolaganjaNull() {
-                return this.IsNull(this.tablePredmetStudent.datumPolaganjaColumn);
+                return this.IsNull(this.tableOcjene.datumPolaganjaColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetdatumPolaganjaNull() {
-                this[this.tablePredmetStudent.datumPolaganjaColumn] = global::System.Convert.DBNull;
+                this[this.tableOcjene.datumPolaganjaColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsFirstNameNull() {
-                return this.IsNull(this.tablePredmetStudent.FirstNameColumn);
+                return this.IsNull(this.tableOcjene.FirstNameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetFirstNameNull() {
-                this[this.tablePredmetStudent.FirstNameColumn] = global::System.Convert.DBNull;
+                this[this.tableOcjene.FirstNameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsLastNameNull() {
-                return this.IsNull(this.tablePredmetStudent.LastNameColumn);
+                return this.IsNull(this.tableOcjene.LastNameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetLastNameNull() {
-                this[this.tablePredmetStudent.LastNameColumn] = global::System.Convert.DBNull;
+                this[this.tableOcjene.LastNameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsOIBNull() {
-                return this.IsNull(this.tablePredmetStudent.OIBColumn);
+                return this.IsNull(this.tableOcjene.OIBColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetOIBNull() {
-                this[this.tablePredmetStudent.OIBColumn] = global::System.Convert.DBNull;
+                this[this.tableOcjene.OIBColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsCityNull() {
-                return this.IsNull(this.tablePredmetStudent.CityColumn);
+                return this.IsNull(this.tableOcjene.CityColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetCityNull() {
-                this[this.tablePredmetStudent.CityColumn] = global::System.Convert.DBNull;
+                this[this.tableOcjene.CityColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsPredmetNameNull() {
-                return this.IsNull(this.tablePredmetStudent.PredmetNameColumn);
+                return this.IsNull(this.tableOcjene.PredmetNameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetPredmetNameNull() {
-                this[this.tablePredmetStudent.PredmetNameColumn] = global::System.Convert.DBNull;
+                this[this.tableOcjene.PredmetNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsOcjenaNull() {
+                return this.IsNull(this.tableOcjene.OcjenaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetOcjenaNull() {
+                this[this.tableOcjene.OcjenaColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2522,16 +3017,231 @@ namespace Akademski_forum {
             public void SetCityNull() {
                 this[this.tableStudenti.CityColumn] = global::System.Convert.DBNull;
             }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class af_ReportOcjenaRow : global::System.Data.DataRow {
+            
+            private af_ReportOcjenaDataTable tableaf_ReportOcjena;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PredmetStudentRow[] GetPredmetStudentRows() {
-                if ((this.Table.ChildRelations["FK_PredmetStudent_Studenti"] == null)) {
-                    return new PredmetStudentRow[0];
+            internal af_ReportOcjenaRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableaf_ReportOcjena = ((af_ReportOcjenaDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string FirstName {
+                get {
+                    try {
+                        return ((string)(this[this.tableaf_ReportOcjena.FirstNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'FirstName\' in table \'af_ReportOcjena\' is DBNull.", e);
+                    }
                 }
-                else {
-                    return ((PredmetStudentRow[])(base.GetChildRows(this.Table.ChildRelations["FK_PredmetStudent_Studenti"])));
+                set {
+                    this[this.tableaf_ReportOcjena.FirstNameColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string LastName {
+                get {
+                    try {
+                        return ((string)(this[this.tableaf_ReportOcjena.LastNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'LastName\' in table \'af_ReportOcjena\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableaf_ReportOcjena.LastNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal ProsjekStudenta {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableaf_ReportOcjena.ProsjekStudentaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ProsjekStudenta\' in table \'af_ReportOcjena\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableaf_ReportOcjena.ProsjekStudentaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsFirstNameNull() {
+                return this.IsNull(this.tableaf_ReportOcjena.FirstNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetFirstNameNull() {
+                this[this.tableaf_ReportOcjena.FirstNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsLastNameNull() {
+                return this.IsNull(this.tableaf_ReportOcjena.LastNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetLastNameNull() {
+                this[this.tableaf_ReportOcjena.LastNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsProsjekStudentaNull() {
+                return this.IsNull(this.tableaf_ReportOcjena.ProsjekStudentaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetProsjekStudentaNull() {
+                this[this.tableaf_ReportOcjena.ProsjekStudentaColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class af_ReportPredmetRow : global::System.Data.DataRow {
+            
+            private af_ReportPredmetDataTable tableaf_ReportPredmet;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal af_ReportPredmetRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableaf_ReportPredmet = ((af_ReportPredmetDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string PredmetName {
+                get {
+                    try {
+                        return ((string)(this[this.tableaf_ReportPredmet.PredmetNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PredmetName\' in table \'af_ReportPredmet\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableaf_ReportPredmet.PredmetNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string FirstName {
+                get {
+                    try {
+                        return ((string)(this[this.tableaf_ReportPredmet.FirstNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'FirstName\' in table \'af_ReportPredmet\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableaf_ReportPredmet.FirstNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string LastName {
+                get {
+                    try {
+                        return ((string)(this[this.tableaf_ReportPredmet.LastNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'LastName\' in table \'af_ReportPredmet\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableaf_ReportPredmet.LastNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal ProsjekPredmeta {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableaf_ReportPredmet.ProsjekPredmetaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ProsjekPredmeta\' in table \'af_ReportPredmet\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableaf_ReportPredmet.ProsjekPredmetaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsPredmetNameNull() {
+                return this.IsNull(this.tableaf_ReportPredmet.PredmetNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetPredmetNameNull() {
+                this[this.tableaf_ReportPredmet.PredmetNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsFirstNameNull() {
+                return this.IsNull(this.tableaf_ReportPredmet.FirstNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetFirstNameNull() {
+                this[this.tableaf_ReportPredmet.FirstNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsLastNameNull() {
+                return this.IsNull(this.tableaf_ReportPredmet.LastNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetLastNameNull() {
+                this[this.tableaf_ReportPredmet.LastNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsProsjekPredmetaNull() {
+                return this.IsNull(this.tableaf_ReportPredmet.ProsjekPredmetaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetProsjekPredmetaNull() {
+                this[this.tableaf_ReportPredmet.ProsjekPredmetaColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2573,22 +3283,22 @@ namespace Akademski_forum {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class PredmetStudentRowChangeEvent : global::System.EventArgs {
+        public class OcjeneRowChangeEvent : global::System.EventArgs {
             
-            private PredmetStudentRow eventRow;
+            private OcjeneRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PredmetStudentRowChangeEvent(PredmetStudentRow row, global::System.Data.DataRowAction action) {
+            public OcjeneRowChangeEvent(OcjeneRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PredmetStudentRow Row {
+            public OcjeneRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -2657,6 +3367,74 @@ namespace Akademski_forum {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public StudentiRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class af_ReportOcjenaRowChangeEvent : global::System.EventArgs {
+            
+            private af_ReportOcjenaRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public af_ReportOcjenaRowChangeEvent(af_ReportOcjenaRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public af_ReportOcjenaRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class af_ReportPredmetRowChangeEvent : global::System.EventArgs {
+            
+            private af_ReportPredmetRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public af_ReportPredmetRowChangeEvent(af_ReportPredmetRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public af_ReportPredmetRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -3005,7 +3783,7 @@ namespace Akademski_forum.DataSetAkademskiForumTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class PredmetStudentTableAdapter : global::System.ComponentModel.Component {
+    public partial class OcjeneTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -3019,7 +3797,7 @@ namespace Akademski_forum.DataSetAkademskiForumTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public PredmetStudentTableAdapter() {
+        public OcjeneTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -3116,17 +3894,14 @@ namespace Akademski_forum.DataSetAkademskiForumTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "PredmetStudent";
-            tableMapping.ColumnMappings.Add("OcjenaID", "OcjenaID");
-            tableMapping.ColumnMappings.Add("Ocjena", "Ocjena");
-            tableMapping.ColumnMappings.Add("StudentID", "StudentID");
+            tableMapping.DataSetTable = "Ocjene";
             tableMapping.ColumnMappings.Add("datumPolaganja", "datumPolaganja");
-            tableMapping.ColumnMappings.Add("PredmetID", "PredmetID");
             tableMapping.ColumnMappings.Add("FirstName", "FirstName");
             tableMapping.ColumnMappings.Add("LastName", "LastName");
             tableMapping.ColumnMappings.Add("OIB", "OIB");
             tableMapping.ColumnMappings.Add("City", "City");
             tableMapping.ColumnMappings.Add("PredmetName", "PredmetName");
+            tableMapping.ColumnMappings.Add("Ocjena", "Ocjena");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -3165,27 +3940,25 @@ namespace Akademski_forum.DataSetAkademskiForumTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "af_selectStudentOcjene";
+            this._commandCollection[0].CommandText = "af_SelectOcjene";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@student", global::System.Data.SqlDbType.NVarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "dbo.af_ReportOcjena";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DataSetAkademskiForum.PredmetStudentDataTable dataTable, string student) {
+        public virtual int Fill(DataSetAkademskiForum.OcjeneDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((student == null)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(student));
-            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -3197,15 +3970,9 @@ namespace Akademski_forum.DataSetAkademskiForumTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DataSetAkademskiForum.PredmetStudentDataTable GetData(string student) {
+        public virtual DataSetAkademskiForum.OcjeneDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((student == null)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(student));
-            }
-            DataSetAkademskiForum.PredmetStudentDataTable dataTable = new DataSetAkademskiForum.PredmetStudentDataTable();
+            DataSetAkademskiForum.OcjeneDataTable dataTable = new DataSetAkademskiForum.OcjeneDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -3213,7 +3980,31 @@ namespace Akademski_forum.DataSetAkademskiForumTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DataSetAkademskiForum.PredmetStudentDataTable dataTable) {
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(DataSetAkademskiForum.OcjeneDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DataSetAkademskiForum.OcjeneDataTable af_IspisOcjenaProsjekStudenta() {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            DataSetAkademskiForum.OcjeneDataTable dataTable = new DataSetAkademskiForum.OcjeneDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(DataSetAkademskiForum.OcjeneDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
@@ -3221,7 +4012,7 @@ namespace Akademski_forum.DataSetAkademskiForumTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(DataSetAkademskiForum dataSet) {
-            return this.Adapter.Update(dataSet, "PredmetStudent");
+            return this.Adapter.Update(dataSet, "Ocjene");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4096,6 +4887,347 @@ namespace Akademski_forum.DataSetAkademskiForumTableAdapters {
     }
     
     /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class af_ReportOcjenaTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public af_ReportOcjenaTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "af_ReportOcjena";
+            tableMapping.ColumnMappings.Add("FirstName", "FirstName");
+            tableMapping.ColumnMappings.Add("LastName", "LastName");
+            tableMapping.ColumnMappings.Add("ProsjekStudenta", "ProsjekStudenta");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::Akademski_forum.Properties.Settings.Default.Akademski_forumConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "dbo.af_ReportOcjena";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(DataSetAkademskiForum.af_ReportOcjenaDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual DataSetAkademskiForum.af_ReportOcjenaDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            DataSetAkademskiForum.af_ReportOcjenaDataTable dataTable = new DataSetAkademskiForum.af_ReportOcjenaDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class af_ReportPredmetTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public af_ReportPredmetTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "af_ReportPredmet";
+            tableMapping.ColumnMappings.Add("PredmetName", "PredmetName");
+            tableMapping.ColumnMappings.Add("FirstName", "FirstName");
+            tableMapping.ColumnMappings.Add("LastName", "LastName");
+            tableMapping.ColumnMappings.Add("ProsjekPredmeta", "ProsjekPredmeta");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::Akademski_forum.Properties.Settings.Default.Akademski_forumConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "dbo.af_ReportPredmet";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(DataSetAkademskiForum.af_ReportPredmetDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual DataSetAkademskiForum.af_ReportPredmetDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            DataSetAkademskiForum.af_ReportPredmetDataTable dataTable = new DataSetAkademskiForum.af_ReportPredmetDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
     ///TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
     ///</summary>
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4109,7 +5241,7 @@ namespace Akademski_forum.DataSetAkademskiForumTableAdapters {
         
         private PredmetiTableAdapter _predmetiTableAdapter;
         
-        private PredmetStudentTableAdapter _predmetStudentTableAdapter;
+        private OcjeneTableAdapter _ocjeneTableAdapter;
         
         private ProfesoriTableAdapter _profesoriTableAdapter;
         
@@ -4149,12 +5281,12 @@ namespace Akademski_forum.DataSetAkademskiForumTableAdapters {
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public PredmetStudentTableAdapter PredmetStudentTableAdapter {
+        public OcjeneTableAdapter OcjeneTableAdapter {
             get {
-                return this._predmetStudentTableAdapter;
+                return this._ocjeneTableAdapter;
             }
             set {
-                this._predmetStudentTableAdapter = value;
+                this._ocjeneTableAdapter = value;
             }
         }
         
@@ -4209,9 +5341,9 @@ namespace Akademski_forum.DataSetAkademskiForumTableAdapters {
                             && (this._predmetiTableAdapter.Connection != null))) {
                     return this._predmetiTableAdapter.Connection;
                 }
-                if (((this._predmetStudentTableAdapter != null) 
-                            && (this._predmetStudentTableAdapter.Connection != null))) {
-                    return this._predmetStudentTableAdapter.Connection;
+                if (((this._ocjeneTableAdapter != null) 
+                            && (this._ocjeneTableAdapter.Connection != null))) {
+                    return this._ocjeneTableAdapter.Connection;
                 }
                 if (((this._profesoriTableAdapter != null) 
                             && (this._profesoriTableAdapter.Connection != null))) {
@@ -4237,7 +5369,7 @@ namespace Akademski_forum.DataSetAkademskiForumTableAdapters {
                 if ((this._predmetiTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._predmetStudentTableAdapter != null)) {
+                if ((this._ocjeneTableAdapter != null)) {
                     count = (count + 1);
                 }
                 if ((this._profesoriTableAdapter != null)) {
@@ -4275,21 +5407,21 @@ namespace Akademski_forum.DataSetAkademskiForumTableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._ocjeneTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Ocjene.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._ocjeneTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             if ((this._studentiTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Studenti.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._studentiTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._predmetStudentTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.PredmetStudent.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._predmetStudentTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -4319,19 +5451,19 @@ namespace Akademski_forum.DataSetAkademskiForumTableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._ocjeneTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Ocjene.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._ocjeneTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             if ((this._studentiTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Studenti.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._studentiTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._predmetStudentTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.PredmetStudent.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._predmetStudentTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -4345,19 +5477,19 @@ namespace Akademski_forum.DataSetAkademskiForumTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateDeletedRows(DataSetAkademskiForum dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._predmetStudentTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.PredmetStudent.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._predmetStudentTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._studentiTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Studenti.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._studentiTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._ocjeneTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Ocjene.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._ocjeneTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -4421,8 +5553,8 @@ namespace Akademski_forum.DataSetAkademskiForumTableAdapters {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
-            if (((this._predmetStudentTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._predmetStudentTableAdapter.Connection) == false))) {
+            if (((this._ocjeneTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._ocjeneTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -4477,13 +5609,13 @@ namespace Akademski_forum.DataSetAkademskiForumTableAdapters {
                         adaptersWithAcceptChangesDuringUpdate.Add(this._predmetiTableAdapter.Adapter);
                     }
                 }
-                if ((this._predmetStudentTableAdapter != null)) {
-                    revertConnections.Add(this._predmetStudentTableAdapter, this._predmetStudentTableAdapter.Connection);
-                    this._predmetStudentTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._predmetStudentTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._predmetStudentTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._predmetStudentTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._predmetStudentTableAdapter.Adapter);
+                if ((this._ocjeneTableAdapter != null)) {
+                    revertConnections.Add(this._ocjeneTableAdapter, this._ocjeneTableAdapter.Connection);
+                    this._ocjeneTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._ocjeneTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._ocjeneTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._ocjeneTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._ocjeneTableAdapter.Adapter);
                     }
                 }
                 if ((this._profesoriTableAdapter != null)) {
@@ -4566,9 +5698,9 @@ namespace Akademski_forum.DataSetAkademskiForumTableAdapters {
                     this._predmetiTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._predmetiTableAdapter]));
                     this._predmetiTableAdapter.Transaction = null;
                 }
-                if ((this._predmetStudentTableAdapter != null)) {
-                    this._predmetStudentTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._predmetStudentTableAdapter]));
-                    this._predmetStudentTableAdapter.Transaction = null;
+                if ((this._ocjeneTableAdapter != null)) {
+                    this._ocjeneTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._ocjeneTableAdapter]));
+                    this._ocjeneTableAdapter.Transaction = null;
                 }
                 if ((this._profesoriTableAdapter != null)) {
                     this._profesoriTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._profesoriTableAdapter]));

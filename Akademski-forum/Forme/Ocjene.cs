@@ -19,7 +19,9 @@ namespace Akademski_forum
 
         private void Ocjene_Load(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Maximized;   
+            //this.ocjeneTableAdapter1.Fill(this.dataSetAkademskiForum1.Ocjene);
+            this.WindowState = FormWindowState.Maximized;
+            //dataGridView1.ReadOnly = true;
         }
 
         //     kontrola tipkovnicom
@@ -60,7 +62,7 @@ namespace Akademski_forum
         {
             try
             {
-                this.predmetStudentTableAdapter1.Fill(this.dataSetAkademskiForum1.PredmetStudent, studentToolStripTextBox.Text);
+                this.ocjeneTableAdapter1.Fill(this.dataSetAkademskiForum1.Ocjene);
             }
             catch (System.Exception ex)
             {
@@ -82,13 +84,15 @@ namespace Akademski_forum
 
         private void toolStripButtonIspis_Click(object sender, EventArgs e)
         {
-
+            this.af_ReportOcjenaTableAdapter1.Fill(this.dataSetAkademskiForum1.af_ReportOcjena);
+            Ispis rds = new Ispis(@"C:\Users\Korisnik\source\repos\Akademski-forum\Akademski-forum\Reports\ReportOcjene.rdlc", "RepOcjena", dataSetAkademskiForum1.af_ReportOcjena);
+            rds.Show();
         }
 
         private void toolStripButtonOsvjezi_Click(object sender, EventArgs e)
         {
-            this.predmetStudentTableAdapter1.ClearBeforeFill = true;
-            this.predmetStudentTableAdapter1.Fill(this.dataSetAkademskiForum1.PredmetStudent, studentToolStripTextBox.Text);
+            this.ocjeneTableAdapter1.ClearBeforeFill = true;
+            this.ocjeneTableAdapter1.Fill(this.dataSetAkademskiForum1.Ocjene);
         }
 
         private void toolStripButtonBrisi_Click(object sender, EventArgs e)
@@ -111,6 +115,11 @@ namespace Akademski_forum
         {
             //onClick dodaj novi red u tabeli
             this.predmetStudentBindingSource.AddNew();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
