@@ -84,8 +84,8 @@ namespace Akademski_forum
 
         private void toolStripButtonIspis_Click(object sender, EventArgs e)
         {
-            this.ocjeneTableAdapter1.Fill(this.dataSetAkademskiForum1.Ocjene);
-            Ispis rds = new Ispis(@"C:\Users\Korisnik\source\repos\Akademski-forum\Akademski-forum\Reports\ReportOcjene.rdlc", "Ocjene", dataSetAkademskiForum1.Ocjene);
+            this.af_ReportOcjenaTableAdapter1.Fill(this.dataSetAkademskiForum1.af_ReportOcjena);
+            Ispis rds = new Ispis(@"C:\Users\Korisnik\source\repos\Akademski-forum\Akademski-forum\Reports\ReportOcjene.rdlc", "RepOcjena", dataSetAkademskiForum1.af_ReportOcjena);
             rds.Show();
         }
 

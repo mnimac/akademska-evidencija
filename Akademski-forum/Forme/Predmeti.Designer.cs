@@ -51,6 +51,11 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.predmetIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.predmetNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.profesorIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.profNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.profSurnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.predmetiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSetAkademskiForum = new Akademski_forum.DataSetAkademskiForum();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -66,11 +71,7 @@
             this.studentiTableAdapter1 = new Akademski_forum.DataSetAkademskiForumTableAdapters.StudentiTableAdapter();
             this.predmetStudentTableAdapter1 = new Akademski_forum.DataSetAkademskiForumTableAdapters.OcjeneTableAdapter();
             this.tableAdapterManager = new Akademski_forum.DataSetAkademskiForumTableAdapters.TableAdapterManager();
-            this.predmetIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.predmetNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.profesorIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.profNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.profSurnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.af_ReportPredmetTableAdapter1 = new Akademski_forum.DataSetAkademskiForumTableAdapters.af_ReportPredmetTableAdapter();
             predmetIDLabel = new System.Windows.Forms.Label();
             predmetNameLabel = new System.Windows.Forms.Label();
             profesorIDLabel = new System.Windows.Forms.Label();
@@ -307,6 +308,41 @@
             this.dataGridView1.Size = new System.Drawing.Size(912, 359);
             this.dataGridView1.TabIndex = 0;
             // 
+            // predmetIDDataGridViewTextBoxColumn
+            // 
+            this.predmetIDDataGridViewTextBoxColumn.DataPropertyName = "PredmetID";
+            this.predmetIDDataGridViewTextBoxColumn.HeaderText = "PredmetID";
+            this.predmetIDDataGridViewTextBoxColumn.Name = "predmetIDDataGridViewTextBoxColumn";
+            this.predmetIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // predmetNameDataGridViewTextBoxColumn
+            // 
+            this.predmetNameDataGridViewTextBoxColumn.DataPropertyName = "PredmetName";
+            this.predmetNameDataGridViewTextBoxColumn.HeaderText = "Predmet";
+            this.predmetNameDataGridViewTextBoxColumn.Name = "predmetNameDataGridViewTextBoxColumn";
+            this.predmetNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // profesorIDDataGridViewTextBoxColumn
+            // 
+            this.profesorIDDataGridViewTextBoxColumn.DataPropertyName = "ProfesorID";
+            this.profesorIDDataGridViewTextBoxColumn.HeaderText = "ProfesorID";
+            this.profesorIDDataGridViewTextBoxColumn.Name = "profesorIDDataGridViewTextBoxColumn";
+            this.profesorIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // profNameDataGridViewTextBoxColumn
+            // 
+            this.profNameDataGridViewTextBoxColumn.DataPropertyName = "profName";
+            this.profNameDataGridViewTextBoxColumn.HeaderText = "Ime profesora";
+            this.profNameDataGridViewTextBoxColumn.Name = "profNameDataGridViewTextBoxColumn";
+            this.profNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // profSurnameDataGridViewTextBoxColumn
+            // 
+            this.profSurnameDataGridViewTextBoxColumn.DataPropertyName = "profSurname";
+            this.profSurnameDataGridViewTextBoxColumn.HeaderText = "Prezime profesora";
+            this.profSurnameDataGridViewTextBoxColumn.Name = "profSurnameDataGridViewTextBoxColumn";
+            this.profSurnameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // predmetiBindingSource
             // 
             this.predmetiBindingSource.DataMember = "Predmeti";
@@ -413,46 +449,15 @@
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.PredmetiTableAdapter = this.predmetiTableAdapter1;
             this.tableAdapterManager.OcjeneTableAdapter = this.predmetStudentTableAdapter1;
+            this.tableAdapterManager.PredmetiTableAdapter = this.predmetiTableAdapter1;
             this.tableAdapterManager.ProfesoriTableAdapter = this.profesoriTableAdapter1;
             this.tableAdapterManager.StudentiTableAdapter = this.studentiTableAdapter1;
             this.tableAdapterManager.UpdateOrder = Akademski_forum.DataSetAkademskiForumTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // predmetIDDataGridViewTextBoxColumn
+            // af_ReportPredmetTableAdapter1
             // 
-            this.predmetIDDataGridViewTextBoxColumn.DataPropertyName = "PredmetID";
-            this.predmetIDDataGridViewTextBoxColumn.HeaderText = "PredmetID";
-            this.predmetIDDataGridViewTextBoxColumn.Name = "predmetIDDataGridViewTextBoxColumn";
-            this.predmetIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // predmetNameDataGridViewTextBoxColumn
-            // 
-            this.predmetNameDataGridViewTextBoxColumn.DataPropertyName = "PredmetName";
-            this.predmetNameDataGridViewTextBoxColumn.HeaderText = "Predmet";
-            this.predmetNameDataGridViewTextBoxColumn.Name = "predmetNameDataGridViewTextBoxColumn";
-            this.predmetNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // profesorIDDataGridViewTextBoxColumn
-            // 
-            this.profesorIDDataGridViewTextBoxColumn.DataPropertyName = "ProfesorID";
-            this.profesorIDDataGridViewTextBoxColumn.HeaderText = "ProfesorID";
-            this.profesorIDDataGridViewTextBoxColumn.Name = "profesorIDDataGridViewTextBoxColumn";
-            this.profesorIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // profNameDataGridViewTextBoxColumn
-            // 
-            this.profNameDataGridViewTextBoxColumn.DataPropertyName = "profName";
-            this.profNameDataGridViewTextBoxColumn.HeaderText = "Ime profesora";
-            this.profNameDataGridViewTextBoxColumn.Name = "profNameDataGridViewTextBoxColumn";
-            this.profNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // profSurnameDataGridViewTextBoxColumn
-            // 
-            this.profSurnameDataGridViewTextBoxColumn.DataPropertyName = "profSurname";
-            this.profSurnameDataGridViewTextBoxColumn.HeaderText = "Prezime profesora";
-            this.profSurnameDataGridViewTextBoxColumn.Name = "profSurnameDataGridViewTextBoxColumn";
-            this.profSurnameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.af_ReportPredmetTableAdapter1.ClearBeforeFill = true;
             // 
             // Predmeti
             // 
@@ -525,6 +530,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn profesorIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn profNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn profSurnameDataGridViewTextBoxColumn;
+        private DataSetAkademskiForumTableAdapters.af_ReportPredmetTableAdapter af_ReportPredmetTableAdapter1;
     }
 }
 
