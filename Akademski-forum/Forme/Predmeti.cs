@@ -68,9 +68,9 @@ namespace Akademski_forum
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            this.af_ReportPredmetTableAdapter1.Fill(this.dataSetAkademskiForum.af_ReportPredmet);
-            Ispis rds = new Ispis(@"C:\Users\Korisnik\source\repos\Akademski-forum\Akademski-forum\Reports\ReportPredmet.rdlc", "DataSet1", dataSetAkademskiForum.af_ReportPredmet);
-            rds.Show();
+            //this.af_ReportPredmetTableAdapter1.Fill(this.dataSetAkademskiForum.af_ReportPredmet);
+            //Ispis rds = new Ispis(@"C:\Users\Korisnik\source\repos\Akademski-forum\Akademski-forum\Reports\ReportPredmet.rdlc", "DataSet1", dataSetAkademskiForum.af_ReportPredmet);
+            //rds.Show();
         }
 
         private void toolStripButtonOsvjezi_Click(object sender, EventArgs e)

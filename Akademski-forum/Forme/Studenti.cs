@@ -138,11 +138,14 @@ namespace Akademski_forum
 
         private void toolStripButtonIspis_Click(object sender, EventArgs e)
         {
-            //ISPIS 
-            this.studentiTableAdapter1.Fill(this.dataSetAkademskiForum1.Studenti);         
-            Ispis rds = new Ispis(@"C:\Users\Korisnik\source\repos\Akademski-forum\Akademski-forum\Reports\Report1.rdlc", "DataSet1", dataSetAkademskiForum1.Studenti);
+            //ISPIS
+            this.studentiTableAdapter1.Fill(this.dataSetAkademskiForum1.Studenti);
+
+            List<ReportDefinition> subreportDefinitions = null;
+
+            Ispis rds = new Ispis(@"C:\Users\Korisnik\source\repos\Akademski-forum\Akademski-forum\Reports\Report1.rdlc", "DataSet1", dataSetAkademskiForum1.Studenti, subreportDefinitions);
             rds.Show();
-        }       
+        }
 
         private void oIBTextBox_Validating(object sender, CancelEventArgs e)
         {

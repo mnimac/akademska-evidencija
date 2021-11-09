@@ -15,6 +15,14 @@ namespace Akademski_forum {
 
 namespace Akademski_forum.DataSetAkademskiForumTableAdapters
 {
+    partial class StudentiTableAdapter
+    {
+    }
+
+    partial class af_ReportPredmetStudenti2TableAdapter
+    {
+    }
+
     partial class OcjeneTableAdapter
     {
     }

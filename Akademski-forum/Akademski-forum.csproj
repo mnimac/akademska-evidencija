@@ -79,6 +79,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Code\ReportHandler.cs" />
     <Compile Include="DataSetAkademskiForum.cs">
       <DependentUpon>DataSetAkademskiForum.xsd</DependentUpon>
     </Compile>
@@ -160,6 +161,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Reports\Report22.rdlc" />
+    <EmbeddedResource Include="Reports\ReportPredmetStudent.rdlc" />
     <EmbeddedResource Include="Reports\ReportOcjene.rdlc" />
     <EmbeddedResource Include="Reports\ReportPredmet.rdlc" />
     <EmbeddedResource Include="Reports\ReportProfesori.rdlc" />
@@ -167,6 +170,9 @@
     <EmbeddedResource Include="Forme\Studenti.resx">
       <DependentUpon>Studenti.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Subreport22.rdlc" />
+    <EmbeddedResource Include="Reports\SubreportStudenti.rdlc" />
+    <EmbeddedResource Include="Reports\SubreportStudentTest.rdlc" />
     <None Include="DataSetAkademskiForum.xsc">
       <DependentUpon>DataSetAkademskiForum.xsd</DependentUpon>
     </None>

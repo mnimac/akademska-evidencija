@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlServerCe;
+using Akademski_forum.Forme;
 
 namespace Akademski_forum
 {
@@ -64,7 +65,7 @@ namespace Akademski_forum
 
         private void predmetiToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Predmeti predmeti2 = new Predmeti();
+            Statistika predmeti2 = new Statistika();
             predmeti2.MdiParent = this;
             predmeti2.Show();
         }
