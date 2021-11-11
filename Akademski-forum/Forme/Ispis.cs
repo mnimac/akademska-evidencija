@@ -50,7 +50,7 @@ namespace Akademski_forum
         {
             try
             {                
-                e.DataSources.Add(new ReportDataSource("DataSet1", (DataTable)af_SelectStudentiPredIdTableAdapter1.GetData(Convert.ToInt32(e.Parameters["predID"].Values))));
+                e.DataSources.Add(new ReportDataSource("DataSet1", (DataTable)af_SelectStudentiPredIdTableAdapter1.GetData(Convert.ToInt32(e.Parameters["predID"].Values[0]))));
             }
 
             catch (Exception a)
