@@ -20,15 +20,9 @@ namespace Akademski_forum.Forme
 
         private void toolStripButtonIspis_Click(object sender, EventArgs e)
         {
-            this.af_ReportPredmetStudenti2TableAdapter1.Fill(this.dataSetAkademskiForum1.af_ReportPredmetStudenti2);
-            this.af_SelectStudentiPredIdTableAdapter1.Fill(this.dataSetAkademskiForum1.af_SelectStudentiPredId, 1);
+            this.af_ReportPredmetStudenti2TableAdapter1.Fill(this.dataSetAkademskiForum1.af_ReportPredmetStudenti2);        
 
-            var subreportDefinitions = new List<ReportDefinition>
-            {
-                new ReportDefinition(@"C:\Users\Korisnik\source\repos\Akademski-forum\Akademski-forum\Reports\Subreport22.rdlc", "DataSet1", dataSetAkademskiForum1.af_SelectStudentiPredId)
-            };
-
-            Ispis rds = new Ispis(@"C:\Users\Korisnik\source\repos\Akademski-forum\Akademski-forum\Reports\Report22.rdlc", "DataSet1", dataSetAkademskiForum1.af_ReportPredmetStudenti2, subreportDefinitions);
+            Ispis rds = new Ispis(@"C:\Users\Korisnik\source\repos\Akademski-forum\Akademski-forum\Reports\Report22.rdlc", "DataSet1", dataSetAkademskiForum1.af_ReportPredmetStudenti2);
 
             rds.Show();
         }

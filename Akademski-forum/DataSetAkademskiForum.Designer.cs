@@ -2805,7 +2805,7 @@ namespace Akademski_forum {
             
             private global::System.Data.DataColumn columnPredmetID;
             
-            private global::System.Data.DataColumn columnProsjekPredmeta1;
+            private global::System.Data.DataColumn columnProsjekPredmeta;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -2874,9 +2874,9 @@ namespace Akademski_forum {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn ProsjekPredmeta1Column {
+            public global::System.Data.DataColumn ProsjekPredmetaColumn {
                 get {
-                    return this.columnProsjekPredmeta1;
+                    return this.columnProsjekPredmeta;
                 }
             }
             
@@ -2917,17 +2917,24 @@ namespace Akademski_forum {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public af_ReportPredmetStudenti2Row Addaf_ReportPredmetStudenti2Row(string PredmetName, string FirstName, string LastName, string ProsjekPredmeta1) {
+            public af_ReportPredmetStudenti2Row Addaf_ReportPredmetStudenti2Row(string PredmetName, string FirstName, string LastName, string ProsjekPredmeta) {
                 af_ReportPredmetStudenti2Row rowaf_ReportPredmetStudenti2Row = ((af_ReportPredmetStudenti2Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         PredmetName,
                         FirstName,
                         LastName,
                         null,
-                        ProsjekPredmeta1};
+                        ProsjekPredmeta};
                 rowaf_ReportPredmetStudenti2Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowaf_ReportPredmetStudenti2Row);
                 return rowaf_ReportPredmetStudenti2Row;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public af_ReportPredmetStudenti2Row FindByPredmetID(int PredmetID) {
+                return ((af_ReportPredmetStudenti2Row)(this.Rows.Find(new object[] {
+                            PredmetID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2951,7 +2958,7 @@ namespace Akademski_forum {
                 this.columnFirstName = base.Columns["FirstName"];
                 this.columnLastName = base.Columns["LastName"];
                 this.columnPredmetID = base.Columns["PredmetID"];
-                this.columnProsjekPredmeta1 = base.Columns["ProsjekPredmeta1"];
+                this.columnProsjekPredmeta = base.Columns["ProsjekPredmeta"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2965,8 +2972,10 @@ namespace Akademski_forum {
                 base.Columns.Add(this.columnLastName);
                 this.columnPredmetID = new global::System.Data.DataColumn("PredmetID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPredmetID);
-                this.columnProsjekPredmeta1 = new global::System.Data.DataColumn("ProsjekPredmeta1", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnProsjekPredmeta1);
+                this.columnProsjekPredmeta = new global::System.Data.DataColumn("ProsjekPredmeta", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnProsjekPredmeta);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnPredmetID}, true));
                 this.columnPredmetName.MaxLength = 50;
                 this.columnFirstName.MaxLength = 50;
                 this.columnLastName.MaxLength = 50;
@@ -2975,9 +2984,9 @@ namespace Akademski_forum {
                 this.columnPredmetID.AutoIncrementStep = -1;
                 this.columnPredmetID.AllowDBNull = false;
                 this.columnPredmetID.ReadOnly = true;
-                this.columnProsjekPredmeta1.ReadOnly = true;
-                this.columnProsjekPredmeta1.Caption = "ProsjekPredmeta";
-                this.columnProsjekPredmeta1.MaxLength = 4000;
+                this.columnPredmetID.Unique = true;
+                this.columnProsjekPredmeta.ReadOnly = true;
+                this.columnProsjekPredmeta.MaxLength = 4000;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4615,18 +4624,18 @@ namespace Akademski_forum {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string ProsjekPredmeta1 {
+            public string ProsjekPredmeta {
                 get {
                     try {
-                        return ((string)(this[this.tableaf_ReportPredmetStudenti2.ProsjekPredmeta1Column]));
+                        return ((string)(this[this.tableaf_ReportPredmetStudenti2.ProsjekPredmetaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ProsjekPredmeta1\' in table \'af_ReportPredmetStudenti2\' is D" +
-                                "BNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ProsjekPredmeta\' in table \'af_ReportPredmetStudenti2\' is DB" +
+                                "Null.", e);
                     }
                 }
                 set {
-                    this[this.tableaf_ReportPredmetStudenti2.ProsjekPredmeta1Column] = value;
+                    this[this.tableaf_ReportPredmetStudenti2.ProsjekPredmetaColumn] = value;
                 }
             }
             
@@ -4668,14 +4677,14 @@ namespace Akademski_forum {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsProsjekPredmeta1Null() {
-                return this.IsNull(this.tableaf_ReportPredmetStudenti2.ProsjekPredmeta1Column);
+            public bool IsProsjekPredmetaNull() {
+                return this.IsNull(this.tableaf_ReportPredmetStudenti2.ProsjekPredmetaColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetProsjekPredmeta1Null() {
-                this[this.tableaf_ReportPredmetStudenti2.ProsjekPredmeta1Column] = global::System.Convert.DBNull;
+            public void SetProsjekPredmetaNull() {
+                this[this.tableaf_ReportPredmetStudenti2.ProsjekPredmetaColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -7298,7 +7307,7 @@ namespace Akademski_forum.DataSetAkademskiForumTableAdapters {
             tableMapping.ColumnMappings.Add("FirstName", "FirstName");
             tableMapping.ColumnMappings.Add("LastName", "LastName");
             tableMapping.ColumnMappings.Add("PredmetID", "PredmetID");
-            tableMapping.ColumnMappings.Add("ProsjekPredmeta", "ProsjekPredmeta1");
+            tableMapping.ColumnMappings.Add("ProsjekPredmeta", "ProsjekPredmeta");
             this._adapter.TableMappings.Add(tableMapping);
         }
         

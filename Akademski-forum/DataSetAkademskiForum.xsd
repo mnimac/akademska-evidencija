@@ -346,7 +346,7 @@
               <Mapping SourceColumn="FirstName" DataSetColumn="FirstName" />
               <Mapping SourceColumn="LastName" DataSetColumn="LastName" />
               <Mapping SourceColumn="PredmetID" DataSetColumn="PredmetID" />
-              <Mapping SourceColumn="ProsjekPredmeta" DataSetColumn="ProsjekPredmeta1" />
+              <Mapping SourceColumn="ProsjekPredmeta" DataSetColumn="ProsjekPredmeta" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -383,7 +383,7 @@
   <xs:element name="DataSetAkademskiForum" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetAkademskiForum" msprop:Generator_UserDSName="DataSetAkademskiForum">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Predmeti" msprop:Generator_TableClassName="PredmetiDataTable" msprop:Generator_TableVarName="tablePredmeti" msprop:Generator_RowChangedName="PredmetiRowChanged" msprop:Generator_TablePropName="Predmeti" msprop:Generator_RowDeletingName="PredmetiRowDeleting" msprop:Generator_RowChangingName="PredmetiRowChanging" msprop:Generator_RowEvHandlerName="PredmetiRowChangeEventHandler" msprop:Generator_RowDeletedName="PredmetiRowDeleted" msprop:Generator_RowClassName="PredmetiRow" msprop:Generator_UserTableName="Predmeti" msprop:Generator_RowEvArgName="PredmetiRowChangeEvent">
+        <xs:element name="Predmeti" msprop:Generator_TableClassName="PredmetiDataTable" msprop:Generator_TableVarName="tablePredmeti" msprop:Generator_TablePropName="Predmeti" msprop:Generator_RowDeletingName="PredmetiRowDeleting" msprop:Generator_RowChangingName="PredmetiRowChanging" msprop:Generator_RowEvHandlerName="PredmetiRowChangeEventHandler" msprop:Generator_RowDeletedName="PredmetiRowDeleted" msprop:Generator_UserTableName="Predmeti" msprop:Generator_RowChangedName="PredmetiRowChanged" msprop:Generator_RowEvArgName="PredmetiRowChangeEvent" msprop:Generator_RowClassName="PredmetiRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="PredmetID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnPredmetID" msprop:Generator_ColumnPropNameInRow="PredmetID" msprop:Generator_ColumnPropNameInTable="PredmetIDColumn" msprop:Generator_UserColumnName="PredmetID" type="xs:int" />
@@ -412,7 +412,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Ocjene" msprop:Generator_TableClassName="OcjeneDataTable" msprop:Generator_TableVarName="tableOcjene" msprop:Generator_RowChangedName="OcjeneRowChanged" msprop:Generator_TablePropName="Ocjene" msprop:Generator_RowDeletingName="OcjeneRowDeleting" msprop:Generator_RowChangingName="OcjeneRowChanging" msprop:Generator_RowEvHandlerName="OcjeneRowChangeEventHandler" msprop:Generator_RowDeletedName="OcjeneRowDeleted" msprop:Generator_RowClassName="OcjeneRow" msprop:Generator_UserTableName="Ocjene" msprop:Generator_RowEvArgName="OcjeneRowChangeEvent">
+        <xs:element name="Ocjene" msprop:Generator_TableClassName="OcjeneDataTable" msprop:Generator_TableVarName="tableOcjene" msprop:Generator_TablePropName="Ocjene" msprop:Generator_RowDeletingName="OcjeneRowDeleting" msprop:Generator_RowChangingName="OcjeneRowChanging" msprop:Generator_RowEvHandlerName="OcjeneRowChangeEventHandler" msprop:Generator_RowDeletedName="OcjeneRowDeleted" msprop:Generator_UserTableName="Ocjene" msprop:Generator_RowChangedName="OcjeneRowChanged" msprop:Generator_RowEvArgName="OcjeneRowChangeEvent" msprop:Generator_RowClassName="OcjeneRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="datumPolaganja" msprop:Generator_ColumnVarNameInTable="columndatumPolaganja" msprop:Generator_ColumnPropNameInRow="datumPolaganja" msprop:Generator_ColumnPropNameInTable="datumPolaganjaColumn" msprop:Generator_UserColumnName="datumPolaganja" type="xs:dateTime" minOccurs="0" />
@@ -455,7 +455,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Profesori" msprop:Generator_TableClassName="ProfesoriDataTable" msprop:Generator_TableVarName="tableProfesori" msprop:Generator_RowChangedName="ProfesoriRowChanged" msprop:Generator_TablePropName="Profesori" msprop:Generator_RowDeletingName="ProfesoriRowDeleting" msprop:Generator_RowChangingName="ProfesoriRowChanging" msprop:Generator_RowEvHandlerName="ProfesoriRowChangeEventHandler" msprop:Generator_RowDeletedName="ProfesoriRowDeleted" msprop:Generator_RowClassName="ProfesoriRow" msprop:Generator_UserTableName="Profesori" msprop:Generator_RowEvArgName="ProfesoriRowChangeEvent">
+        <xs:element name="Profesori" msprop:Generator_TableClassName="ProfesoriDataTable" msprop:Generator_TableVarName="tableProfesori" msprop:Generator_TablePropName="Profesori" msprop:Generator_RowDeletingName="ProfesoriRowDeleting" msprop:Generator_RowChangingName="ProfesoriRowChanging" msprop:Generator_RowEvHandlerName="ProfesoriRowChangeEventHandler" msprop:Generator_RowDeletedName="ProfesoriRowDeleted" msprop:Generator_UserTableName="Profesori" msprop:Generator_RowChangedName="ProfesoriRowChanged" msprop:Generator_RowEvArgName="ProfesoriRowChangeEvent" msprop:Generator_RowClassName="ProfesoriRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ProfesorID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnProfesorID" msprop:Generator_ColumnPropNameInRow="ProfesorID" msprop:Generator_ColumnPropNameInTable="ProfesorIDColumn" msprop:Generator_UserColumnName="ProfesorID" type="xs:int" />
@@ -497,7 +497,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Studenti" msprop:Generator_TableClassName="StudentiDataTable" msprop:Generator_TableVarName="tableStudenti" msprop:Generator_RowChangedName="StudentiRowChanged" msprop:Generator_TablePropName="Studenti" msprop:Generator_RowDeletingName="StudentiRowDeleting" msprop:Generator_RowChangingName="StudentiRowChanging" msprop:Generator_RowEvHandlerName="StudentiRowChangeEventHandler" msprop:Generator_RowDeletedName="StudentiRowDeleted" msprop:Generator_RowClassName="StudentiRow" msprop:Generator_UserTableName="Studenti" msprop:Generator_RowEvArgName="StudentiRowChangeEvent">
+        <xs:element name="Studenti" msprop:Generator_TableClassName="StudentiDataTable" msprop:Generator_TableVarName="tableStudenti" msprop:Generator_TablePropName="Studenti" msprop:Generator_RowDeletingName="StudentiRowDeleting" msprop:Generator_RowChangingName="StudentiRowChanging" msprop:Generator_RowEvHandlerName="StudentiRowChangeEventHandler" msprop:Generator_RowDeletedName="StudentiRowDeleted" msprop:Generator_UserTableName="Studenti" msprop:Generator_RowChangedName="StudentiRowChanged" msprop:Generator_RowEvArgName="StudentiRowChangeEvent" msprop:Generator_RowClassName="StudentiRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="StudentID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnStudentID" msprop:Generator_ColumnPropNameInRow="StudentID" msprop:Generator_ColumnPropNameInTable="StudentIDColumn" msprop:Generator_UserColumnName="StudentID" type="xs:int" />
@@ -532,7 +532,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="af_ReportOcjena" msprop:Generator_TableClassName="af_ReportOcjenaDataTable" msprop:Generator_TableVarName="tableaf_ReportOcjena" msprop:Generator_TablePropName="af_ReportOcjena" msprop:Generator_RowDeletingName="af_ReportOcjenaRowDeleting" msprop:Generator_RowChangingName="af_ReportOcjenaRowChanging" msprop:Generator_RowEvHandlerName="af_ReportOcjenaRowChangeEventHandler" msprop:Generator_RowDeletedName="af_ReportOcjenaRowDeleted" msprop:Generator_UserTableName="af_ReportOcjena" msprop:Generator_RowChangedName="af_ReportOcjenaRowChanged" msprop:Generator_RowEvArgName="af_ReportOcjenaRowChangeEvent" msprop:Generator_RowClassName="af_ReportOcjenaRow">
+        <xs:element name="af_ReportOcjena" msprop:Generator_TableClassName="af_ReportOcjenaDataTable" msprop:Generator_TableVarName="tableaf_ReportOcjena" msprop:Generator_RowChangedName="af_ReportOcjenaRowChanged" msprop:Generator_TablePropName="af_ReportOcjena" msprop:Generator_RowDeletingName="af_ReportOcjenaRowDeleting" msprop:Generator_RowChangingName="af_ReportOcjenaRowChanging" msprop:Generator_RowEvHandlerName="af_ReportOcjenaRowChangeEventHandler" msprop:Generator_RowDeletedName="af_ReportOcjenaRowDeleted" msprop:Generator_RowClassName="af_ReportOcjenaRow" msprop:Generator_UserTableName="af_ReportOcjena" msprop:Generator_RowEvArgName="af_ReportOcjenaRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="FirstName" msprop:Generator_ColumnVarNameInTable="columnFirstName" msprop:Generator_ColumnPropNameInRow="FirstName" msprop:Generator_ColumnPropNameInTable="FirstNameColumn" msprop:Generator_UserColumnName="FirstName" minOccurs="0">
@@ -553,7 +553,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="af_ReportPredmet" msprop:Generator_TableClassName="af_ReportPredmetDataTable" msprop:Generator_TableVarName="tableaf_ReportPredmet" msprop:Generator_TablePropName="af_ReportPredmet" msprop:Generator_RowDeletingName="af_ReportPredmetRowDeleting" msprop:Generator_RowChangingName="af_ReportPredmetRowChanging" msprop:Generator_RowEvHandlerName="af_ReportPredmetRowChangeEventHandler" msprop:Generator_RowDeletedName="af_ReportPredmetRowDeleted" msprop:Generator_UserTableName="af_ReportPredmet" msprop:Generator_RowChangedName="af_ReportPredmetRowChanged" msprop:Generator_RowEvArgName="af_ReportPredmetRowChangeEvent" msprop:Generator_RowClassName="af_ReportPredmetRow">
+        <xs:element name="af_ReportPredmet" msprop:Generator_TableClassName="af_ReportPredmetDataTable" msprop:Generator_TableVarName="tableaf_ReportPredmet" msprop:Generator_RowChangedName="af_ReportPredmetRowChanged" msprop:Generator_TablePropName="af_ReportPredmet" msprop:Generator_RowDeletingName="af_ReportPredmetRowDeleting" msprop:Generator_RowChangingName="af_ReportPredmetRowChanging" msprop:Generator_RowEvHandlerName="af_ReportPredmetRowChangeEventHandler" msprop:Generator_RowDeletedName="af_ReportPredmetRowDeleted" msprop:Generator_RowClassName="af_ReportPredmetRow" msprop:Generator_UserTableName="af_ReportPredmet" msprop:Generator_RowEvArgName="af_ReportPredmetRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="PredmetName" msprop:Generator_ColumnVarNameInTable="columnPredmetName" msprop:Generator_ColumnPropNameInRow="PredmetName" msprop:Generator_ColumnPropNameInTable="PredmetNameColumn" msprop:Generator_UserColumnName="PredmetName" minOccurs="0">
@@ -581,7 +581,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="af_ReportPredmetStudent" msprop:Generator_TableClassName="af_ReportPredmetStudentDataTable" msprop:Generator_TableVarName="tableaf_ReportPredmetStudent" msprop:Generator_TablePropName="af_ReportPredmetStudent" msprop:Generator_RowDeletingName="af_ReportPredmetStudentRowDeleting" msprop:Generator_RowChangingName="af_ReportPredmetStudentRowChanging" msprop:Generator_RowEvHandlerName="af_ReportPredmetStudentRowChangeEventHandler" msprop:Generator_RowDeletedName="af_ReportPredmetStudentRowDeleted" msprop:Generator_UserTableName="af_ReportPredmetStudent" msprop:Generator_RowChangedName="af_ReportPredmetStudentRowChanged" msprop:Generator_RowEvArgName="af_ReportPredmetStudentRowChangeEvent" msprop:Generator_RowClassName="af_ReportPredmetStudentRow">
+        <xs:element name="af_ReportPredmetStudent" msprop:Generator_TableClassName="af_ReportPredmetStudentDataTable" msprop:Generator_TableVarName="tableaf_ReportPredmetStudent" msprop:Generator_RowChangedName="af_ReportPredmetStudentRowChanged" msprop:Generator_TablePropName="af_ReportPredmetStudent" msprop:Generator_RowDeletingName="af_ReportPredmetStudentRowDeleting" msprop:Generator_RowChangingName="af_ReportPredmetStudentRowChanging" msprop:Generator_RowEvHandlerName="af_ReportPredmetStudentRowChangeEventHandler" msprop:Generator_RowDeletedName="af_ReportPredmetStudentRowDeleted" msprop:Generator_RowClassName="af_ReportPredmetStudentRow" msprop:Generator_UserTableName="af_ReportPredmetStudent" msprop:Generator_RowEvArgName="af_ReportPredmetStudentRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="PredmetName" msprop:Generator_ColumnVarNameInTable="columnPredmetName" msprop:Generator_ColumnPropNameInRow="PredmetName" msprop:Generator_ColumnPropNameInTable="PredmetNameColumn" msprop:Generator_UserColumnName="PredmetName" minOccurs="0">
@@ -624,7 +624,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="af_ReportPredmetStudenti2" msprop:Generator_TableClassName="af_ReportPredmetStudenti2DataTable" msprop:Generator_TableVarName="tableaf_ReportPredmetStudenti2" msprop:Generator_RowChangedName="af_ReportPredmetStudenti2RowChanged" msprop:Generator_TablePropName="af_ReportPredmetStudenti2" msprop:Generator_RowDeletingName="af_ReportPredmetStudenti2RowDeleting" msprop:Generator_RowChangingName="af_ReportPredmetStudenti2RowChanging" msprop:Generator_RowEvHandlerName="af_ReportPredmetStudenti2RowChangeEventHandler" msprop:Generator_RowDeletedName="af_ReportPredmetStudenti2RowDeleted" msprop:Generator_RowClassName="af_ReportPredmetStudenti2Row" msprop:Generator_UserTableName="af_ReportPredmetStudenti2" msprop:Generator_RowEvArgName="af_ReportPredmetStudenti2RowChangeEvent">
+        <xs:element name="af_ReportPredmetStudenti2" msprop:Generator_TableClassName="af_ReportPredmetStudenti2DataTable" msprop:Generator_TableVarName="tableaf_ReportPredmetStudenti2" msprop:Generator_TablePropName="af_ReportPredmetStudenti2" msprop:Generator_RowDeletingName="af_ReportPredmetStudenti2RowDeleting" msprop:Generator_RowChangingName="af_ReportPredmetStudenti2RowChanging" msprop:Generator_RowEvHandlerName="af_ReportPredmetStudenti2RowChangeEventHandler" msprop:Generator_RowDeletedName="af_ReportPredmetStudenti2RowDeleted" msprop:Generator_UserTableName="af_ReportPredmetStudenti2" msprop:Generator_RowChangedName="af_ReportPredmetStudenti2RowChanged" msprop:Generator_RowEvArgName="af_ReportPredmetStudenti2RowChangeEvent" msprop:Generator_RowClassName="af_ReportPredmetStudenti2Row">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="PredmetName" msprop:Generator_ColumnVarNameInTable="columnPredmetName" msprop:Generator_ColumnPropNameInRow="PredmetName" msprop:Generator_ColumnPropNameInTable="PredmetNameColumn" msprop:Generator_UserColumnName="PredmetName" minOccurs="0">
@@ -649,7 +649,7 @@
                 </xs:simpleType>
               </xs:element>
               <xs:element name="PredmetID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnPredmetID" msprop:Generator_ColumnPropNameInRow="PredmetID" msprop:Generator_ColumnPropNameInTable="PredmetIDColumn" msprop:Generator_UserColumnName="PredmetID" type="xs:int" />
-              <xs:element name="ProsjekPredmeta1" msdata:ReadOnly="true" msdata:Caption="ProsjekPredmeta" msprop:Generator_ColumnVarNameInTable="columnProsjekPredmeta1" msprop:Generator_ColumnPropNameInRow="ProsjekPredmeta1" msprop:Generator_ColumnPropNameInTable="ProsjekPredmeta1Column" msprop:Generator_UserColumnName="ProsjekPredmeta1" minOccurs="0">
+              <xs:element name="ProsjekPredmeta" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnProsjekPredmeta" msprop:Generator_ColumnPropNameInRow="ProsjekPredmeta" msprop:Generator_ColumnPropNameInTable="ProsjekPredmetaColumn" msprop:Generator_UserColumnName="ProsjekPredmeta" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="4000" />
@@ -659,7 +659,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="af_SelectStudentiPredId" msprop:Generator_TableClassName="af_SelectStudentiPredIdDataTable" msprop:Generator_TableVarName="tableaf_SelectStudentiPredId" msprop:Generator_TablePropName="af_SelectStudentiPredId" msprop:Generator_RowDeletingName="af_SelectStudentiPredIdRowDeleting" msprop:Generator_RowChangingName="af_SelectStudentiPredIdRowChanging" msprop:Generator_RowEvHandlerName="af_SelectStudentiPredIdRowChangeEventHandler" msprop:Generator_RowDeletedName="af_SelectStudentiPredIdRowDeleted" msprop:Generator_UserTableName="af_SelectStudentiPredId" msprop:Generator_RowChangedName="af_SelectStudentiPredIdRowChanged" msprop:Generator_RowEvArgName="af_SelectStudentiPredIdRowChangeEvent" msprop:Generator_RowClassName="af_SelectStudentiPredIdRow">
+        <xs:element name="af_SelectStudentiPredId" msprop:Generator_TableClassName="af_SelectStudentiPredIdDataTable" msprop:Generator_TableVarName="tableaf_SelectStudentiPredId" msprop:Generator_RowChangedName="af_SelectStudentiPredIdRowChanged" msprop:Generator_TablePropName="af_SelectStudentiPredId" msprop:Generator_RowDeletingName="af_SelectStudentiPredIdRowDeleting" msprop:Generator_RowChangingName="af_SelectStudentiPredIdRowChanging" msprop:Generator_RowEvHandlerName="af_SelectStudentiPredIdRowChangeEventHandler" msprop:Generator_RowDeletedName="af_SelectStudentiPredIdRowDeleted" msprop:Generator_RowClassName="af_SelectStudentiPredIdRow" msprop:Generator_UserTableName="af_SelectStudentiPredId" msprop:Generator_RowEvArgName="af_SelectStudentiPredIdRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="StudentID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnStudentID" msprop:Generator_ColumnPropNameInRow="StudentID" msprop:Generator_ColumnPropNameInTable="StudentIDColumn" msprop:Generator_UserColumnName="StudentID" type="xs:int" />
@@ -710,10 +710,14 @@
       <xs:selector xpath=".//mstns:Studenti" />
       <xs:field xpath="mstns:StudentID" />
     </xs:unique>
+    <xs:unique name="af_ReportPredmetStudenti2_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:af_ReportPredmetStudenti2" />
+      <xs:field xpath="mstns:PredmetID" />
+    </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK_Predmeti_Profesori" msdata:parent="Profesori" msdata:child="Predmeti" msdata:parentkey="ProfesorID" msdata:childkey="ProfesorID" msprop:Generator_UserChildTable="Predmeti" msprop:Generator_ChildPropName="GetPredmetiRows" msprop:Generator_UserRelationName="FK_Predmeti_Profesori" msprop:Generator_ParentPropName="ProfesoriRow" msprop:Generator_RelationVarName="relationFK_Predmeti_Profesori" msprop:Generator_UserParentTable="Profesori" />
+      <msdata:Relationship name="FK_Predmeti_Profesori" msdata:parent="Profesori" msdata:child="Predmeti" msdata:parentkey="ProfesorID" msdata:childkey="ProfesorID" msprop:Generator_UserChildTable="Predmeti" msprop:Generator_ChildPropName="GetPredmetiRows" msprop:Generator_UserRelationName="FK_Predmeti_Profesori" msprop:Generator_RelationVarName="relationFK_Predmeti_Profesori" msprop:Generator_UserParentTable="Profesori" msprop:Generator_ParentPropName="ProfesoriRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

@@ -9,13 +9,13 @@
               <Width>3.33333cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.33333cm</Width>
+              <Width>2.51312cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.33333cm</Width>
+              <Width>2.51312cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.90229cm</Width>
+              <Width>2.42062cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -257,14 +257,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="ProsjekPredmeta11">
+                    <Textbox Name="ProsjekPredmeta">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!ProsjekPredmeta1.Value</Value>
+                              <Value>=Fields!ProsjekPredmeta.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -273,7 +273,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>ProsjekPredmeta11</rd:DefaultName>
+                      <rd:DefaultName>ProsjekPredmeta</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -290,8 +290,37 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>0.67056cm</Height>
               <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox1">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox1</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
                 <TablixCell>
                   <CellContents>
                     <Subreport Name="Subreport1">
@@ -307,10 +336,9 @@
                         </Border>
                       </Style>
                     </Subreport>
-                    <ColSpan>4</ColSpan>
+                    <ColSpan>3</ColSpan>
                   </CellContents>
                 </TablixCell>
-                <TablixCell />
                 <TablixCell />
                 <TablixCell />
               </TablixCells>
@@ -339,9 +367,9 @@
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
         <Top>0.52392cm</Top>
-        <Left>4.01849cm</Left>
-        <Height>1.8926cm</Height>
-        <Width>13.90228cm</Width>
+        <Left>4.97099cm</Left>
+        <Height>1.96316cm</Height>
+        <Width>10.78019cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -349,7 +377,7 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>1.28125in</Height>
+    <Height>1.25in</Height>
     <Style />
   </Body>
   <Width>8.34684in</Width>
@@ -416,7 +444,7 @@
           <DataField>PredmetID</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="ProsjekPredmeta1">
+        <Field Name="ProsjekPredmeta">
           <DataField>ProsjekPredmeta</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>

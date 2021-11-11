@@ -17,18 +17,18 @@ namespace Akademski_forum
         string _reportEmbededResource;
         string _reportDataSourceName;
         DataTable _reportDataTable;
-        List<ReportDefinition> _subreportDefinitions;
+        //List<ReportDefinition> _subreportDefinitions;
 
         //public List<ReportDefinition> SubreportDefinitions { get; set; }
 
-        public Ispis(string reportEmbededResource, string reportDataSourceName, DataTable reportDataTable, List<ReportDefinition> subreportDefinitions)
+        public Ispis(string reportEmbededResource, string reportDataSourceName, DataTable reportDataTable)
         {
             InitializeComponent();     
 
             _reportEmbededResource = reportEmbededResource;
             _reportDataSourceName = reportDataSourceName;
             _reportDataTable = reportDataTable;
-            _subreportDefinitions = subreportDefinitions;
+            //_subreportDefinitions = subreportDefinitions;
 
             this.WindowState = FormWindowState.Maximized;
         }
@@ -48,12 +48,15 @@ namespace Akademski_forum
 
         private void SubreportEventHandler(object sender, SubreportProcessingEventArgs e)
         {
-            var subreportDefinition = _subreportDefinitions.FirstOrDefault(sd => e.ReportPath == "Subreport22");
+            try
+            {                
+                e.DataSources.Add(new ReportDataSource("DataSet1", (DataTable)af_SelectStudentiPredIdTableAdapter1.GetData(Convert.ToInt32(e.Parameters["predID"].Values))));
+            }
 
-            var x = e.Parameters["predID"];
-
-
-            e.DataSources.Add(new ReportDataSource(subreportDefinition.ReportDataSourceName, subreportDefinition.ReportDataTable));
+            catch (Exception a)
+            {
+                Console.WriteLine("{0} Exception caught.", a);
+            }
         }
     }   
 }

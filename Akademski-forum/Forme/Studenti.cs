@@ -141,9 +141,7 @@ namespace Akademski_forum
             //ISPIS
             this.studentiTableAdapter1.Fill(this.dataSetAkademskiForum1.Studenti);
 
-            List<ReportDefinition> subreportDefinitions = null;
-
-            Ispis rds = new Ispis(@"C:\Users\Korisnik\source\repos\Akademski-forum\Akademski-forum\Reports\Report1.rdlc", "DataSet1", dataSetAkademskiForum1.Studenti, subreportDefinitions);
+            Ispis rds = new Ispis(@"C:\Users\Korisnik\source\repos\Akademski-forum\Akademski-forum\Reports\Report1.rdlc", "DataSet1", dataSetAkademskiForum1.Studenti);
             rds.Show();
         }
 

@@ -33,6 +33,7 @@
             this.DataSetAkademskiForum = new Akademski_forum.DataSetAkademskiForum();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.StudentiTableAdapter = new Akademski_forum.DataSetAkademskiForumTableAdapters.StudentiTableAdapter();
+            this.af_SelectStudentiPredIdTableAdapter1 = new Akademski_forum.DataSetAkademskiForumTableAdapters.af_SelectStudentiPredIdTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.StudentiBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataSetAkademskiForum)).BeginInit();
             this.SuspendLayout();
@@ -55,13 +56,17 @@
             this.reportViewer1.AutoScroll = true;
             this.reportViewer1.AutoSize = true;
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
-            this.reportViewer1.Name = "ReportViewer";
+            this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.Size = new System.Drawing.Size(669, 500);
             this.reportViewer1.TabIndex = 0;
             // 
             // StudentiTableAdapter
             // 
             this.StudentiTableAdapter.ClearBeforeFill = true;
+            // 
+            // af_SelectStudentiPredIdTableAdapter1
+            // 
+            this.af_SelectStudentiPredIdTableAdapter1.ClearBeforeFill = true;
             // 
             // Ispis
             // 
@@ -85,5 +90,6 @@
         private DataSetAkademskiForum DataSetAkademskiForum;
         private DataSetAkademskiForumTableAdapters.StudentiTableAdapter StudentiTableAdapter;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private DataSetAkademskiForumTableAdapters.af_SelectStudentiPredIdTableAdapter af_SelectStudentiPredIdTableAdapter1;
     }
 }
