@@ -1,3 +1,5 @@
 # Akademski-forum
 
-Desktop
+Desktop app 
+
+![](pics/pic1.png)
