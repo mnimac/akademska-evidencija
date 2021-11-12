@@ -84,9 +84,9 @@ namespace Akademski_forum
 
         private void toolStripButtonIspis_Click(object sender, EventArgs e)
         {
-            //this.af_ReportOcjenaTableAdapter1.Fill(this.dataSetAkademskiForum1.af_ReportOcjena);
-            //Ispis rds = new Ispis(@"C:\Users\Korisnik\source\repos\Akademski-forum\Akademski-forum\Reports\ReportOcjene.rdlc", "RepOcjena", dataSetAkademskiForum1.af_ReportOcjena);
-            //rds.Show();
+            this.af_ReportOcjenaTableAdapter1.Fill(this.dataSetAkademskiForum1.af_ReportOcjena);
+            Ispis rds = new Ispis(@"C:\Users\Korisnik\source\repos\Akademski-forum\Akademski-forum\Reports\ReportOcjene.rdlc", "RepOcjena", dataSetAkademskiForum1.af_ReportOcjena);
+            rds.Show();
         }
 
         private void toolStripButtonOsvjezi_Click(object sender, EventArgs e)

@@ -74,9 +74,10 @@ namespace Akademski_forum
 
         }
 
+        //REFRESH 
         private void toolStripButtonOsvjezi_Click(object sender, EventArgs e)
         {
-            //osvježi
+            
             this.studentiTableAdapter1.ClearBeforeFill = true;
             this.studentiTableAdapter1.Fill(this.dataSetAkademskiForum1.Studenti);
 
@@ -164,6 +165,7 @@ namespace Akademski_forum
             else
             {
                 errorProvider1.SetError(oIBTextBox, null);
+                allowSaving = true;
             }
         }
     }

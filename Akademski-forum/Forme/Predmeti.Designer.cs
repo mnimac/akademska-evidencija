@@ -177,6 +177,7 @@
             this.toolStripButtonSpremi.Size = new System.Drawing.Size(65, 51);
             this.toolStripButtonSpremi.Text = "Zapiši (F5)";
             this.toolStripButtonSpremi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButtonSpremi.Click += new System.EventHandler(this.toolStripButtonSpremi_Click);
             // 
             // toolStripButtonIzmjena
             // 
