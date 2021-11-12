@@ -10,4 +10,4 @@ Desktop app
 - `Microsoft SQL Server Managment Studio 18`
 ------------------------------------------------------
 
-![](pic1.png)
+<img src="pic1.png" height="506 " width="839">
