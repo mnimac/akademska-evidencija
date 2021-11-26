@@ -445,10 +445,14 @@
           <DataField>PredmetName</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="PredmetID">
+          <DataField>PredmetID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>DataSetAkademskiForum</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\Korisnik\documents\visual studio 2013\Projects\Akademski-forum\Akademski-forum\DataSetAkademskiForum.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\Korisnik\source\repos\Akademski-forum\Akademski-forum\DataSetAkademskiForum.xsd</rd:SchemaPath>
         <rd:TableName>Profesori</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>

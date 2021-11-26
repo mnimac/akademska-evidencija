@@ -15,7 +15,6 @@ namespace Akademski_forum
     {
         public bool allowSaving = true;
 
-
         public Profesori()
         {
             InitializeComponent();
@@ -28,7 +27,8 @@ namespace Akademski_forum
             dataGridView1.ReadOnly = true;
         }
 
-        //KEY BINDINGS
+        #region key bindings
+
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             switch (keyData)
@@ -60,6 +60,8 @@ namespace Akademski_forum
             }
             return base.ProcessCmdKey(ref msg, keyData);
         }
+
+        #endregion
 
         //EXIT
         private void toolStripButtonZatvori_Click(object sender, EventArgs e)
@@ -104,7 +106,7 @@ namespace Akademski_forum
                 return;
             }
 
-            profesoriBindingSource.EndEdit();
+            this.profesoriBindingSource1.EndEdit();
             this.profesoriTableAdapter1.Update(this.dataSetAkademskiForum1.Profesori);
 
             this.profesoriTableAdapter1.ClearBeforeFill = true;
@@ -118,7 +120,7 @@ namespace Akademski_forum
         private void toolStripButtonUnos_Click(object sender, EventArgs e)
         {
             //onClick dodaj novi red u tabeli
-            this.profesoriBindingSource.AddNew();
+            this.profesoriBindingSource1.AddNew();
 
             //prebaci se na edit tab
             tabControl1.SelectTab(tabPage2);
@@ -126,7 +128,7 @@ namespace Akademski_forum
 
         private void oIBTextBox_Validating(object sender, CancelEventArgs e)
         {
-            //  --ne prihvaca se--  / null / empty /
+            //  --ne prihvaca se--  / null / empty  /
             if (string.IsNullOrEmpty(oIBTextBox.Text))
             {
                 errorProvider1.SetError(oIBTextBox, "Molimo unesite vrijednost!");
@@ -148,74 +150,13 @@ namespace Akademski_forum
             rpt.Show();
         }
 
-        private void profesorIDTextBox_TextChanged(object sender, EventArgs e)
+        private void detailsButton_Click(object sender, EventArgs e)
         {
+            Predmeti pred = new Predmeti();
+
+            pred.ShowDialog();
+            pred.WindowState = FormWindowState.Normal;
 
         }
-
-        private void profesorIDLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void firstNameLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void firstNameTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cityLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cityTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void oIBLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void oIBTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lastNameLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lastNameTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void predmetNameLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void predmetNameTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }     
     }
 }

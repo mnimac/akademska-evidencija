@@ -29,9 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label predmetIDLabel;
             System.Windows.Forms.Label predmetNameLabel;
-            System.Windows.Forms.Label profesorIDLabel;
             System.Windows.Forms.Label profNameLabel;
             System.Windows.Forms.Label profSurnameLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Predmeti));
@@ -60,21 +58,12 @@
             this.dataSetAkademskiForum = new Akademski_forum.DataSetAkademskiForum();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.predmetIDTextBox = new System.Windows.Forms.TextBox();
-            this.predmetNameTextBox = new System.Windows.Forms.TextBox();
-            this.profesorIDTextBox = new System.Windows.Forms.TextBox();
-            this.profNameTextBox = new System.Windows.Forms.TextBox();
             this.profSurnameTextBox = new System.Windows.Forms.TextBox();
-            this.dataSetAkademskiForumBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.profNameTextBox = new System.Windows.Forms.TextBox();
+            this.predmetNameTextBox = new System.Windows.Forms.TextBox();
             this.predmetiTableAdapter1 = new Akademski_forum.DataSetAkademskiForumTableAdapters.PredmetiTableAdapter();
-            this.profesoriTableAdapter1 = new Akademski_forum.DataSetAkademskiForumTableAdapters.ProfesoriTableAdapter();
-            this.studentiTableAdapter1 = new Akademski_forum.DataSetAkademskiForumTableAdapters.StudentiTableAdapter();
-            this.predmetStudentTableAdapter1 = new Akademski_forum.DataSetAkademskiForumTableAdapters.OcjeneTableAdapter();
             this.tableAdapterManager = new Akademski_forum.DataSetAkademskiForumTableAdapters.TableAdapterManager();
-            this.af_ReportPredmetTableAdapter1 = new Akademski_forum.DataSetAkademskiForumTableAdapters.af_ReportPredmetTableAdapter();
-            predmetIDLabel = new System.Windows.Forms.Label();
             predmetNameLabel = new System.Windows.Forms.Label();
-            profesorIDLabel = new System.Windows.Forms.Label();
             profNameLabel = new System.Windows.Forms.Label();
             profSurnameLabel = new System.Windows.Forms.Label();
             this.toolStripMenu.SuspendLayout();
@@ -85,18 +74,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataSetAkademskiForum)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetAkademskiForumBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // predmetIDLabel
-            // 
-            predmetIDLabel.AutoSize = true;
-            predmetIDLabel.Location = new System.Drawing.Point(48, 52);
-            predmetIDLabel.Name = "predmetIDLabel";
-            predmetIDLabel.Size = new System.Drawing.Size(93, 16);
-            predmetIDLabel.TabIndex = 0;
-            predmetIDLabel.Text = "Broj predmeta:";
-            predmetIDLabel.Click += new System.EventHandler(this.predmetIDLabel_Click);
             // 
             // predmetNameLabel
             // 
@@ -107,32 +85,23 @@
             predmetNameLabel.TabIndex = 2;
             predmetNameLabel.Text = "Ime predmeta:";
             // 
-            // profesorIDLabel
-            // 
-            profesorIDLabel.AutoSize = true;
-            profesorIDLabel.Location = new System.Drawing.Point(48, 108);
-            profesorIDLabel.Name = "profesorIDLabel";
-            profesorIDLabel.Size = new System.Drawing.Size(85, 16);
-            profesorIDLabel.TabIndex = 4;
-            profesorIDLabel.Text = "Profesor broj:";
-            // 
             // profNameLabel
             // 
             profNameLabel.AutoSize = true;
-            profNameLabel.Location = new System.Drawing.Point(48, 136);
+            profNameLabel.Location = new System.Drawing.Point(48, 126);
             profNameLabel.Name = "profNameLabel";
-            profNameLabel.Size = new System.Drawing.Size(90, 16);
-            profNameLabel.TabIndex = 6;
-            profNameLabel.Text = "Ime profesora:";
+            profNameLabel.Size = new System.Drawing.Size(71, 16);
+            profNameLabel.TabIndex = 3;
+            profNameLabel.Text = "prof Name:";
             // 
             // profSurnameLabel
             // 
             profSurnameLabel.AutoSize = true;
-            profSurnameLabel.Location = new System.Drawing.Point(48, 164);
+            profSurnameLabel.Location = new System.Drawing.Point(48, 174);
             profSurnameLabel.Name = "profSurnameLabel";
-            profSurnameLabel.Size = new System.Drawing.Size(117, 16);
-            profSurnameLabel.TabIndex = 8;
-            profSurnameLabel.Text = "Prezime profesora:";
+            profSurnameLabel.Size = new System.Drawing.Size(89, 16);
+            profSurnameLabel.TabIndex = 4;
+            profSurnameLabel.Text = "prof Surname:";
             // 
             // toolStripMenu
             // 
@@ -308,6 +277,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(912, 359);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // predmetIDDataGridViewTextBoxColumn
             // 
@@ -368,16 +338,12 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(predmetIDLabel);
-            this.groupBox1.Controls.Add(this.predmetIDTextBox);
-            this.groupBox1.Controls.Add(predmetNameLabel);
-            this.groupBox1.Controls.Add(this.predmetNameTextBox);
-            this.groupBox1.Controls.Add(profesorIDLabel);
-            this.groupBox1.Controls.Add(this.profesorIDTextBox);
-            this.groupBox1.Controls.Add(profNameLabel);
-            this.groupBox1.Controls.Add(this.profNameTextBox);
             this.groupBox1.Controls.Add(profSurnameLabel);
             this.groupBox1.Controls.Add(this.profSurnameTextBox);
+            this.groupBox1.Controls.Add(profNameLabel);
+            this.groupBox1.Controls.Add(this.profNameTextBox);
+            this.groupBox1.Controls.Add(predmetNameLabel);
+            this.groupBox1.Controls.Add(this.predmetNameTextBox);
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(918, 365);
@@ -386,13 +352,21 @@
             this.groupBox1.Text = "Podaci";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // predmetIDTextBox
+            // profSurnameTextBox
             // 
-            this.predmetIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.predmetiBindingSource, "PredmetID", true));
-            this.predmetIDTextBox.Location = new System.Drawing.Point(177, 49);
-            this.predmetIDTextBox.Name = "predmetIDTextBox";
-            this.predmetIDTextBox.Size = new System.Drawing.Size(178, 22);
-            this.predmetIDTextBox.TabIndex = 1;
+            this.profSurnameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.predmetiBindingSource, "profSurname", true));
+            this.profSurnameTextBox.Location = new System.Drawing.Point(177, 171);
+            this.profSurnameTextBox.Name = "profSurnameTextBox";
+            this.profSurnameTextBox.Size = new System.Drawing.Size(100, 22);
+            this.profSurnameTextBox.TabIndex = 5;
+            // 
+            // profNameTextBox
+            // 
+            this.profNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.predmetiBindingSource, "profName", true));
+            this.profNameTextBox.Location = new System.Drawing.Point(177, 123);
+            this.profNameTextBox.Name = "profNameTextBox";
+            this.profNameTextBox.Size = new System.Drawing.Size(100, 22);
+            this.profNameTextBox.TabIndex = 4;
             // 
             // predmetNameTextBox
             // 
@@ -402,63 +376,18 @@
             this.predmetNameTextBox.Size = new System.Drawing.Size(178, 22);
             this.predmetNameTextBox.TabIndex = 3;
             // 
-            // profesorIDTextBox
-            // 
-            this.profesorIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.predmetiBindingSource, "ProfesorID", true));
-            this.profesorIDTextBox.Location = new System.Drawing.Point(177, 105);
-            this.profesorIDTextBox.Name = "profesorIDTextBox";
-            this.profesorIDTextBox.Size = new System.Drawing.Size(178, 22);
-            this.profesorIDTextBox.TabIndex = 5;
-            // 
-            // profNameTextBox
-            // 
-            this.profNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.predmetiBindingSource, "profName", true));
-            this.profNameTextBox.Location = new System.Drawing.Point(177, 133);
-            this.profNameTextBox.Name = "profNameTextBox";
-            this.profNameTextBox.Size = new System.Drawing.Size(178, 22);
-            this.profNameTextBox.TabIndex = 7;
-            // 
-            // profSurnameTextBox
-            // 
-            this.profSurnameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.predmetiBindingSource, "profSurname", true));
-            this.profSurnameTextBox.Location = new System.Drawing.Point(177, 161);
-            this.profSurnameTextBox.Name = "profSurnameTextBox";
-            this.profSurnameTextBox.Size = new System.Drawing.Size(178, 22);
-            this.profSurnameTextBox.TabIndex = 9;
-            // 
-            // dataSetAkademskiForumBindingSource
-            // 
-            this.dataSetAkademskiForumBindingSource.DataSource = this.dataSetAkademskiForum;
-            this.dataSetAkademskiForumBindingSource.Position = 0;
-            // 
             // predmetiTableAdapter1
             // 
             this.predmetiTableAdapter1.ClearBeforeFill = true;
             // 
-            // profesoriTableAdapter1
-            // 
-            this.profesoriTableAdapter1.ClearBeforeFill = true;
-            // 
-            // studentiTableAdapter1
-            // 
-            this.studentiTableAdapter1.ClearBeforeFill = true;
-            // 
-            // predmetStudentTableAdapter1
-            // 
-            this.predmetStudentTableAdapter1.ClearBeforeFill = true;
-            // 
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.OcjeneTableAdapter = this.predmetStudentTableAdapter1;
+            this.tableAdapterManager.OcjeneTableAdapter = null;
             this.tableAdapterManager.PredmetiTableAdapter = this.predmetiTableAdapter1;
-            this.tableAdapterManager.ProfesoriTableAdapter = this.profesoriTableAdapter1;
-            this.tableAdapterManager.StudentiTableAdapter = this.studentiTableAdapter1;
+            this.tableAdapterManager.ProfesoriTableAdapter = null;
+            this.tableAdapterManager.StudentiTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Akademski_forum.DataSetAkademskiForumTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // af_ReportPredmetTableAdapter1
-            // 
-            this.af_ReportPredmetTableAdapter1.ClearBeforeFill = true;
             // 
             // Predmeti
             // 
@@ -487,7 +416,6 @@
             this.tabPage2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetAkademskiForumBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -510,28 +438,21 @@
         private System.Windows.Forms.ToolStripButton toolStripButtonZatvori;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.BindingSource dataSetAkademskiForumBindingSource;
         private DataSetAkademskiForum dataSetAkademskiForum;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private DataSetAkademskiForumTableAdapters.PredmetiTableAdapter predmetiTableAdapter1;
         private System.Windows.Forms.BindingSource predmetiBindingSource;
-        private DataSetAkademskiForumTableAdapters.ProfesoriTableAdapter profesoriTableAdapter1;
-        private DataSetAkademskiForumTableAdapters.StudentiTableAdapter studentiTableAdapter1;
-        private DataSetAkademskiForumTableAdapters.OcjeneTableAdapter predmetStudentTableAdapter1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox predmetIDTextBox;
         private System.Windows.Forms.TextBox predmetNameTextBox;
-        private System.Windows.Forms.TextBox profesorIDTextBox;
-        private System.Windows.Forms.TextBox profNameTextBox;
-        private System.Windows.Forms.TextBox profSurnameTextBox;
         private DataSetAkademskiForumTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.DataGridViewTextBoxColumn predmetIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn predmetNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn profesorIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn profNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn profSurnameDataGridViewTextBoxColumn;
-        private DataSetAkademskiForumTableAdapters.af_ReportPredmetTableAdapter af_ReportPredmetTableAdapter1;
+        private System.Windows.Forms.TextBox profSurnameTextBox;
+        private System.Windows.Forms.TextBox profNameTextBox;
     }
 }
 

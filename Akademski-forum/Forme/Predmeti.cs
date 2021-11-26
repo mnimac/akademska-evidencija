@@ -13,7 +13,10 @@ using System.Data.SqlServerCe;
 namespace Akademski_forum
 {
     public partial class Predmeti : Form
-    {     
+    {
+        public DataSetAkademskiForum.PredmetiRow selectedRow { get; set; }
+
+
         public Predmeti()
         {        
             InitializeComponent();
@@ -26,7 +29,8 @@ namespace Akademski_forum
             dataGridView1.ReadOnly = true;
         }
 
-        //KEY BINDINGS
+        #region  Key bindings
+
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             switch (keyData)
@@ -59,10 +63,7 @@ namespace Akademski_forum
             return base.ProcessCmdKey(ref msg, keyData);
         }
 
-        private void toolStripMenu_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
+        #endregion
 
         //EXIT
         private void toolStripButtonZatvori_Click(object sender, EventArgs e)
@@ -79,31 +80,12 @@ namespace Akademski_forum
         {
             Help.ShowHelp(this, @"file://C:\Users\Korisnik\Documents\HelpNDoc\Output\chm\Info.chm");
         }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void predmetIDLabel_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            this.af_ReportPredmetTableAdapter1.Fill(this.dataSetAkademskiForum.af_ReportPredmet);
-            Ispis rds = new Ispis(@"C:\Users\Korisnik\source\repos\Akademski-forum\Akademski-forum\Reports\ReportPredmet.rdlc", "DataSet1", dataSetAkademskiForum.af_ReportPredmet);
+            this.predmetiTableAdapter1.Fill(this.dataSetAkademskiForum.Predmeti);
+            Ispis rds = new Ispis(@"C:\Users\Korisnik\source\repos\Akademski-forum\Akademski-forum\Reports\ReportPredmet.rdlc", "DataSet1", dataSetAkademskiForum.Predmeti);
             rds.Show();
         }
 
@@ -133,20 +115,58 @@ namespace Akademski_forum
 
         private void toolStripButtonSpremi_Click(object sender, EventArgs e)
         {
-            //if (allowSaving == false)
-            //{
-            //    MessageBox.Show("Ponovno provjerite unesene podatke.", "Error");
-            //    return;
-            //}
+            ////if (allowSaving == false)
+            ////{
+            ////    MessageBox.Show("Ponovno provjerite unesene podatke.", "Error");
+            ////    return;
+            ////}
 
             predmetiBindingSource.EndEdit();
-            this.profesoriTableAdapter1.Update(this.dataSetAkademskiForum.Profesori);
+            this.predmetiTableAdapter1.Update(this.dataSetAkademskiForum.Predmeti);
 
-            this.profesoriTableAdapter1.ClearBeforeFill = true;
-            this.profesoriTableAdapter1.Fill(this.dataSetAkademskiForum.Profesori);
+            this.predmetiTableAdapter1.ClearBeforeFill = true;
+            this.predmetiTableAdapter1.Fill(this.dataSetAkademskiForum.Predmeti);
             MessageBox.Show("Spremanje uspješno!", "Bravo");
 
             tabControl1.SelectTab(tabPage1);
         }
+       
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > 0 && e.ColumnIndex > 0)
+            {
+                DataRowView dataRowView = (DataRowView)predmetiBindingSource.Current;
+                selectedRow = (DataSetAkademskiForum.PredmetiRow)dataRowView.Row;
+                DialogResult = DialogResult.OK;
+            }   
+        }
+
+        #region Misclicks
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripMenu_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void predmetIDLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+        #endregion
     }
 }

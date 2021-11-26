@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label firstNameLabel;
-            System.Windows.Forms.Label cityLabel;
-            System.Windows.Forms.Label oIBLabel;
             System.Windows.Forms.Label lastNameLabel;
-            System.Windows.Forms.Label predmetNameLabel;
+            System.Windows.Forms.Label oIBLabel;
+            System.Windows.Forms.Label cityLabel;
+            System.Windows.Forms.Label predmetIDLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Profesori));
             this.toolStripMenu = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonUnos = new System.Windows.Forms.ToolStripButton();
@@ -60,20 +60,22 @@
             this.profesoriBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dataSetAkademskiForum1 = new Akademski_forum.DataSetAkademskiForum();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.firstNameTextBox = new System.Windows.Forms.TextBox();
+            this.detailsButton = new System.Windows.Forms.Button();
+            this.predmetNameTextBox1 = new System.Windows.Forms.TextBox();
+            this.predmetIDTextBox = new System.Windows.Forms.TextBox();
             this.cityTextBox = new System.Windows.Forms.TextBox();
             this.oIBTextBox = new System.Windows.Forms.TextBox();
             this.lastNameTextBox = new System.Windows.Forms.TextBox();
-            this.predmetNameTextBox = new System.Windows.Forms.TextBox();
+            this.firstNameTextBox = new System.Windows.Forms.TextBox();
             this.profesoriBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.profesoriTableAdapter1 = new Akademski_forum.DataSetAkademskiForumTableAdapters.ProfesoriTableAdapter();
             this.tableAdapterManager = new Akademski_forum.DataSetAkademskiForumTableAdapters.TableAdapterManager();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             firstNameLabel = new System.Windows.Forms.Label();
-            cityLabel = new System.Windows.Forms.Label();
-            oIBLabel = new System.Windows.Forms.Label();
             lastNameLabel = new System.Windows.Forms.Label();
-            predmetNameLabel = new System.Windows.Forms.Label();
+            oIBLabel = new System.Windows.Forms.Label();
+            cityLabel = new System.Windows.Forms.Label();
+            predmetIDLabel = new System.Windows.Forms.Label();
             this.toolStripMenu.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -88,52 +90,47 @@
             // firstNameLabel
             // 
             firstNameLabel.AutoSize = true;
-            firstNameLabel.Location = new System.Drawing.Point(41, 76);
+            firstNameLabel.Location = new System.Drawing.Point(79, 71);
             firstNameLabel.Name = "firstNameLabel";
-            firstNameLabel.Size = new System.Drawing.Size(33, 16);
-            firstNameLabel.TabIndex = 2;
-            firstNameLabel.Text = "Ime:";
-            firstNameLabel.Click += new System.EventHandler(this.firstNameLabel_Click);
-            // 
-            // cityLabel
-            // 
-            cityLabel.AutoSize = true;
-            cityLabel.Location = new System.Drawing.Point(41, 160);
-            cityLabel.Name = "cityLabel";
-            cityLabel.Size = new System.Drawing.Size(40, 16);
-            cityLabel.TabIndex = 4;
-            cityLabel.Text = "Grad:";
-            cityLabel.Click += new System.EventHandler(this.cityLabel_Click);
-            // 
-            // oIBLabel
-            // 
-            oIBLabel.AutoSize = true;
-            oIBLabel.Location = new System.Drawing.Point(41, 132);
-            oIBLabel.Name = "oIBLabel";
-            oIBLabel.Size = new System.Drawing.Size(34, 16);
-            oIBLabel.TabIndex = 6;
-            oIBLabel.Text = "OIB:";
-            oIBLabel.Click += new System.EventHandler(this.oIBLabel_Click);
+            firstNameLabel.Size = new System.Drawing.Size(77, 16);
+            firstNameLabel.TabIndex = 0;
+            firstNameLabel.Text = "Prof. Name:";
             // 
             // lastNameLabel
             // 
             lastNameLabel.AutoSize = true;
-            lastNameLabel.Location = new System.Drawing.Point(41, 104);
+            lastNameLabel.Location = new System.Drawing.Point(80, 112);
             lastNameLabel.Name = "lastNameLabel";
-            lastNameLabel.Size = new System.Drawing.Size(60, 16);
-            lastNameLabel.TabIndex = 8;
-            lastNameLabel.Text = "Prezime:";
-            lastNameLabel.Click += new System.EventHandler(this.lastNameLabel_Click);
+            lastNameLabel.Size = new System.Drawing.Size(95, 16);
+            lastNameLabel.TabIndex = 2;
+            lastNameLabel.Text = "Prof. Surname:";
             // 
-            // predmetNameLabel
+            // oIBLabel
             // 
-            predmetNameLabel.AutoSize = true;
-            predmetNameLabel.Location = new System.Drawing.Point(41, 188);
-            predmetNameLabel.Name = "predmetNameLabel";
-            predmetNameLabel.Size = new System.Drawing.Size(95, 16);
-            predmetNameLabel.TabIndex = 10;
-            predmetNameLabel.Text = "Ime predmeta: ";
-            predmetNameLabel.Click += new System.EventHandler(this.predmetNameLabel_Click);
+            oIBLabel.AutoSize = true;
+            oIBLabel.Location = new System.Drawing.Point(79, 153);
+            oIBLabel.Name = "oIBLabel";
+            oIBLabel.Size = new System.Drawing.Size(34, 16);
+            oIBLabel.TabIndex = 6;
+            oIBLabel.Text = "OIB:";
+            // 
+            // cityLabel
+            // 
+            cityLabel.AutoSize = true;
+            cityLabel.Location = new System.Drawing.Point(78, 196);
+            cityLabel.Name = "cityLabel";
+            cityLabel.Size = new System.Drawing.Size(35, 16);
+            cityLabel.TabIndex = 8;
+            cityLabel.Text = "City:";
+            // 
+            // predmetIDLabel
+            // 
+            predmetIDLabel.AutoSize = true;
+            predmetIDLabel.Location = new System.Drawing.Point(78, 240);
+            predmetIDLabel.Name = "predmetIDLabel";
+            predmetIDLabel.Size = new System.Drawing.Size(65, 16);
+            predmetIDLabel.TabIndex = 10;
+            predmetIDLabel.Text = "Predmet :";
             // 
             // toolStripMenu
             // 
@@ -277,7 +274,6 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(983, 417);
             this.tabControl1.TabIndex = 4;
-            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tabPage1
             // 
@@ -366,16 +362,18 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.tabPage2.Controls.Add(firstNameLabel);
-            this.tabPage2.Controls.Add(this.firstNameTextBox);
+            this.tabPage2.Controls.Add(this.detailsButton);
+            this.tabPage2.Controls.Add(this.predmetNameTextBox1);
+            this.tabPage2.Controls.Add(predmetIDLabel);
+            this.tabPage2.Controls.Add(this.predmetIDTextBox);
             this.tabPage2.Controls.Add(cityLabel);
             this.tabPage2.Controls.Add(this.cityTextBox);
             this.tabPage2.Controls.Add(oIBLabel);
             this.tabPage2.Controls.Add(this.oIBTextBox);
             this.tabPage2.Controls.Add(lastNameLabel);
             this.tabPage2.Controls.Add(this.lastNameTextBox);
-            this.tabPage2.Controls.Add(predmetNameLabel);
-            this.tabPage2.Controls.Add(this.predmetNameTextBox);
+            this.tabPage2.Controls.Add(firstNameLabel);
+            this.tabPage2.Controls.Add(this.firstNameTextBox);
             this.tabPage2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
@@ -383,53 +381,64 @@
             this.tabPage2.Size = new System.Drawing.Size(975, 391);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Pojedinačni prikaz";
-            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
-            // firstNameTextBox
+            // detailsButton
             // 
-            this.firstNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.profesoriBindingSource1, "FirstName", true));
-            this.firstNameTextBox.Location = new System.Drawing.Point(158, 73);
-            this.firstNameTextBox.Name = "firstNameTextBox";
-            this.firstNameTextBox.Size = new System.Drawing.Size(123, 22);
-            this.firstNameTextBox.TabIndex = 3;
-            this.firstNameTextBox.TextChanged += new System.EventHandler(this.firstNameTextBox_TextChanged);
+            this.detailsButton.Location = new System.Drawing.Point(353, 236);
+            this.detailsButton.Name = "detailsButton";
+            this.detailsButton.Size = new System.Drawing.Size(34, 23);
+            this.detailsButton.TabIndex = 14;
+            this.detailsButton.Text = "...";
+            this.detailsButton.UseVisualStyleBackColor = true;
+            this.detailsButton.Click += new System.EventHandler(this.detailsButton_Click);
+            // 
+            // predmetNameTextBox1
+            // 
+            this.predmetNameTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.profesoriBindingSource1, "PredmetName", true));
+            this.predmetNameTextBox1.Location = new System.Drawing.Point(247, 237);
+            this.predmetNameTextBox1.Name = "predmetNameTextBox1";
+            this.predmetNameTextBox1.Size = new System.Drawing.Size(100, 22);
+            this.predmetNameTextBox1.TabIndex = 13;
+            // 
+            // predmetIDTextBox
+            // 
+            this.predmetIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.profesoriBindingSource1, "PredmetID", true));
+            this.predmetIDTextBox.Location = new System.Drawing.Point(198, 237);
+            this.predmetIDTextBox.Name = "predmetIDTextBox";
+            this.predmetIDTextBox.Size = new System.Drawing.Size(43, 22);
+            this.predmetIDTextBox.TabIndex = 11;
             // 
             // cityTextBox
             // 
             this.cityTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.profesoriBindingSource1, "City", true));
-            this.cityTextBox.Location = new System.Drawing.Point(158, 157);
+            this.cityTextBox.Location = new System.Drawing.Point(198, 193);
             this.cityTextBox.Name = "cityTextBox";
-            this.cityTextBox.Size = new System.Drawing.Size(123, 22);
-            this.cityTextBox.TabIndex = 5;
-            this.cityTextBox.TextChanged += new System.EventHandler(this.cityTextBox_TextChanged);
+            this.cityTextBox.Size = new System.Drawing.Size(100, 22);
+            this.cityTextBox.TabIndex = 9;
             // 
             // oIBTextBox
             // 
             this.oIBTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.profesoriBindingSource1, "OIB", true));
-            this.oIBTextBox.Location = new System.Drawing.Point(158, 129);
+            this.oIBTextBox.Location = new System.Drawing.Point(198, 150);
             this.oIBTextBox.Name = "oIBTextBox";
-            this.oIBTextBox.Size = new System.Drawing.Size(182, 22);
+            this.oIBTextBox.Size = new System.Drawing.Size(100, 22);
             this.oIBTextBox.TabIndex = 7;
-            this.oIBTextBox.TextChanged += new System.EventHandler(this.oIBTextBox_TextChanged);
-            this.oIBTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.oIBTextBox_Validating);
             // 
             // lastNameTextBox
             // 
             this.lastNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.profesoriBindingSource1, "LastName", true));
-            this.lastNameTextBox.Location = new System.Drawing.Point(158, 101);
+            this.lastNameTextBox.Location = new System.Drawing.Point(198, 109);
             this.lastNameTextBox.Name = "lastNameTextBox";
-            this.lastNameTextBox.Size = new System.Drawing.Size(182, 22);
-            this.lastNameTextBox.TabIndex = 9;
-            this.lastNameTextBox.TextChanged += new System.EventHandler(this.lastNameTextBox_TextChanged);
+            this.lastNameTextBox.Size = new System.Drawing.Size(100, 22);
+            this.lastNameTextBox.TabIndex = 3;
             // 
-            // predmetNameTextBox
+            // firstNameTextBox
             // 
-            this.predmetNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.profesoriBindingSource1, "PredmetName", true));
-            this.predmetNameTextBox.Location = new System.Drawing.Point(158, 185);
-            this.predmetNameTextBox.Name = "predmetNameTextBox";
-            this.predmetNameTextBox.Size = new System.Drawing.Size(182, 22);
-            this.predmetNameTextBox.TabIndex = 11;
-            this.predmetNameTextBox.TextChanged += new System.EventHandler(this.predmetNameTextBox_TextChanged);
+            this.firstNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.profesoriBindingSource1, "FirstName", true));
+            this.firstNameTextBox.Location = new System.Drawing.Point(198, 68);
+            this.firstNameTextBox.Name = "firstNameTextBox";
+            this.firstNameTextBox.Size = new System.Drawing.Size(100, 22);
+            this.firstNameTextBox.TabIndex = 1;
             // 
             // profesoriTableAdapter1
             // 
@@ -438,8 +447,8 @@
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.PredmetiTableAdapter = null;
             this.tableAdapterManager.OcjeneTableAdapter = null;
+            this.tableAdapterManager.PredmetiTableAdapter = null;
             this.tableAdapterManager.ProfesoriTableAdapter = this.profesoriTableAdapter1;
             this.tableAdapterManager.StudentiTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Akademski_forum.DataSetAkademskiForumTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
@@ -495,16 +504,10 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TabPage tabPage2;
         private DataSetAkademskiForumTableAdapters.ProfesoriTableAdapter profesoriTableAdapter1;
         private System.Windows.Forms.BindingSource profesoriBindingSource;
         private DataSetAkademskiForum dataSetAkademskiForum1;
         private System.Windows.Forms.BindingSource profesoriBindingSource1;
-        private System.Windows.Forms.TextBox firstNameTextBox;
-        private System.Windows.Forms.TextBox cityTextBox;
-        private System.Windows.Forms.TextBox oIBTextBox;
-        private System.Windows.Forms.TextBox lastNameTextBox;
-        private System.Windows.Forms.TextBox predmetNameTextBox;
         private DataSetAkademskiForumTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.DataGridViewTextBoxColumn profesorIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
@@ -513,5 +516,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn oIBDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cityDataGridViewTextBoxColumn;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.Button detailsButton;
+        private System.Windows.Forms.TextBox predmetNameTextBox1;
+        private System.Windows.Forms.TextBox predmetIDTextBox;
+        private System.Windows.Forms.TextBox cityTextBox;
+        private System.Windows.Forms.TextBox oIBTextBox;
+        private System.Windows.Forms.TextBox lastNameTextBox;
+        private System.Windows.Forms.TextBox firstNameTextBox;
     }
 }
