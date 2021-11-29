@@ -96,8 +96,8 @@ namespace Akademski_forum
 
         // BRISANJE 
         private void toolStripButtonBrisi_Click(object sender, EventArgs e)
-        {   
-            if(dataGridView1.Rows.Count > 0)
+        {
+            if (MessageBox.Show(@"Jeste li sigurni da želite obrisati zapis?", @"Brisanje trenutnog zapisa", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes) return;
                 dataGridView1.Rows.RemoveAt(dataGridView1.CurrentCell.RowIndex);
         }
 

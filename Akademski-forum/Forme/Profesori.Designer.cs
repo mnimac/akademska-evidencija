@@ -51,6 +51,15 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.detailsButton = new System.Windows.Forms.Button();
+            this.predmetNameTextBox1 = new System.Windows.Forms.TextBox();
+            this.cityTextBox = new System.Windows.Forms.TextBox();
+            this.oIBTextBox = new System.Windows.Forms.TextBox();
+            this.lastNameTextBox = new System.Windows.Forms.TextBox();
+            this.firstNameTextBox = new System.Windows.Forms.TextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.predmetIDTextBox = new System.Windows.Forms.TextBox();
             this.profesorIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,18 +68,8 @@
             this.cityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.profesoriBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dataSetAkademskiForum1 = new Akademski_forum.DataSetAkademskiForum();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.detailsButton = new System.Windows.Forms.Button();
-            this.predmetNameTextBox1 = new System.Windows.Forms.TextBox();
-            this.predmetIDTextBox = new System.Windows.Forms.TextBox();
-            this.cityTextBox = new System.Windows.Forms.TextBox();
-            this.oIBTextBox = new System.Windows.Forms.TextBox();
-            this.lastNameTextBox = new System.Windows.Forms.TextBox();
-            this.firstNameTextBox = new System.Windows.Forms.TextBox();
-            this.profesoriBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.profesoriTableAdapter1 = new Akademski_forum.DataSetAkademskiForumTableAdapters.ProfesoriTableAdapter();
             this.tableAdapterManager = new Akademski_forum.DataSetAkademskiForumTableAdapters.TableAdapterManager();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             firstNameLabel = new System.Windows.Forms.Label();
             lastNameLabel = new System.Windows.Forms.Label();
             oIBLabel = new System.Windows.Forms.Label();
@@ -80,11 +79,10 @@
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.profesoriBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetAkademskiForum1)).BeginInit();
-            this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.profesoriBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // firstNameLabel
@@ -307,6 +305,91 @@
             this.dataGridView1.Size = new System.Drawing.Size(969, 385);
             this.dataGridView1.TabIndex = 0;
             // 
+            // tabPage2
+            // 
+            this.tabPage2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tabPage2.Controls.Add(this.predmetIDTextBox);
+            this.tabPage2.Controls.Add(this.detailsButton);
+            this.tabPage2.Controls.Add(this.predmetNameTextBox1);
+            this.tabPage2.Controls.Add(predmetIDLabel);
+            this.tabPage2.Controls.Add(cityLabel);
+            this.tabPage2.Controls.Add(this.cityTextBox);
+            this.tabPage2.Controls.Add(oIBLabel);
+            this.tabPage2.Controls.Add(this.oIBTextBox);
+            this.tabPage2.Controls.Add(lastNameLabel);
+            this.tabPage2.Controls.Add(this.lastNameTextBox);
+            this.tabPage2.Controls.Add(firstNameLabel);
+            this.tabPage2.Controls.Add(this.firstNameTextBox);
+            this.tabPage2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(975, 391);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Pojedinačni prikaz";
+            // 
+            // detailsButton
+            // 
+            this.detailsButton.Location = new System.Drawing.Point(247, 236);
+            this.detailsButton.Name = "detailsButton";
+            this.detailsButton.Size = new System.Drawing.Size(34, 23);
+            this.detailsButton.TabIndex = 14;
+            this.detailsButton.Text = "...";
+            this.detailsButton.UseVisualStyleBackColor = true;
+            this.detailsButton.Click += new System.EventHandler(this.detailsButton_Click);
+            // 
+            // predmetNameTextBox1
+            // 
+            this.predmetNameTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.profesoriBindingSource1, "PredmetName", true));
+            this.predmetNameTextBox1.Location = new System.Drawing.Point(287, 237);
+            this.predmetNameTextBox1.Name = "predmetNameTextBox1";
+            this.predmetNameTextBox1.Size = new System.Drawing.Size(100, 22);
+            this.predmetNameTextBox1.TabIndex = 13;
+            // 
+            // cityTextBox
+            // 
+            this.cityTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.profesoriBindingSource1, "City", true));
+            this.cityTextBox.Location = new System.Drawing.Point(198, 193);
+            this.cityTextBox.Name = "cityTextBox";
+            this.cityTextBox.Size = new System.Drawing.Size(100, 22);
+            this.cityTextBox.TabIndex = 9;
+            // 
+            // oIBTextBox
+            // 
+            this.oIBTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.profesoriBindingSource1, "OIB", true));
+            this.oIBTextBox.Location = new System.Drawing.Point(198, 150);
+            this.oIBTextBox.Name = "oIBTextBox";
+            this.oIBTextBox.Size = new System.Drawing.Size(100, 22);
+            this.oIBTextBox.TabIndex = 7;
+            // 
+            // lastNameTextBox
+            // 
+            this.lastNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.profesoriBindingSource1, "LastName", true));
+            this.lastNameTextBox.Location = new System.Drawing.Point(198, 109);
+            this.lastNameTextBox.Name = "lastNameTextBox";
+            this.lastNameTextBox.Size = new System.Drawing.Size(100, 22);
+            this.lastNameTextBox.TabIndex = 3;
+            // 
+            // firstNameTextBox
+            // 
+            this.firstNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.profesoriBindingSource1, "FirstName", true));
+            this.firstNameTextBox.Location = new System.Drawing.Point(198, 68);
+            this.firstNameTextBox.Name = "firstNameTextBox";
+            this.firstNameTextBox.Size = new System.Drawing.Size(100, 22);
+            this.firstNameTextBox.TabIndex = 1;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // predmetIDTextBox
+            // 
+            this.predmetIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.profesoriBindingSource1, "PredmetID", true));
+            this.predmetIDTextBox.Location = new System.Drawing.Point(198, 237);
+            this.predmetIDTextBox.Name = "predmetIDTextBox";
+            this.predmetIDTextBox.Size = new System.Drawing.Size(43, 22);
+            this.predmetIDTextBox.TabIndex = 15;
+            // 
             // profesorIDDataGridViewTextBoxColumn
             // 
             this.profesorIDDataGridViewTextBoxColumn.DataPropertyName = "ProfesorID";
@@ -359,87 +442,6 @@
             this.dataSetAkademskiForum1.DataSetName = "DataSetAkademskiForum";
             this.dataSetAkademskiForum1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // tabPage2
-            // 
-            this.tabPage2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.tabPage2.Controls.Add(this.detailsButton);
-            this.tabPage2.Controls.Add(this.predmetNameTextBox1);
-            this.tabPage2.Controls.Add(predmetIDLabel);
-            this.tabPage2.Controls.Add(this.predmetIDTextBox);
-            this.tabPage2.Controls.Add(cityLabel);
-            this.tabPage2.Controls.Add(this.cityTextBox);
-            this.tabPage2.Controls.Add(oIBLabel);
-            this.tabPage2.Controls.Add(this.oIBTextBox);
-            this.tabPage2.Controls.Add(lastNameLabel);
-            this.tabPage2.Controls.Add(this.lastNameTextBox);
-            this.tabPage2.Controls.Add(firstNameLabel);
-            this.tabPage2.Controls.Add(this.firstNameTextBox);
-            this.tabPage2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(975, 391);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Pojedinačni prikaz";
-            // 
-            // detailsButton
-            // 
-            this.detailsButton.Location = new System.Drawing.Point(353, 236);
-            this.detailsButton.Name = "detailsButton";
-            this.detailsButton.Size = new System.Drawing.Size(34, 23);
-            this.detailsButton.TabIndex = 14;
-            this.detailsButton.Text = "...";
-            this.detailsButton.UseVisualStyleBackColor = true;
-            this.detailsButton.Click += new System.EventHandler(this.detailsButton_Click);
-            // 
-            // predmetNameTextBox1
-            // 
-            this.predmetNameTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.profesoriBindingSource1, "PredmetName", true));
-            this.predmetNameTextBox1.Location = new System.Drawing.Point(247, 237);
-            this.predmetNameTextBox1.Name = "predmetNameTextBox1";
-            this.predmetNameTextBox1.Size = new System.Drawing.Size(100, 22);
-            this.predmetNameTextBox1.TabIndex = 13;
-            // 
-            // predmetIDTextBox
-            // 
-            this.predmetIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.profesoriBindingSource1, "PredmetID", true));
-            this.predmetIDTextBox.Location = new System.Drawing.Point(198, 237);
-            this.predmetIDTextBox.Name = "predmetIDTextBox";
-            this.predmetIDTextBox.Size = new System.Drawing.Size(43, 22);
-            this.predmetIDTextBox.TabIndex = 11;
-            // 
-            // cityTextBox
-            // 
-            this.cityTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.profesoriBindingSource1, "City", true));
-            this.cityTextBox.Location = new System.Drawing.Point(198, 193);
-            this.cityTextBox.Name = "cityTextBox";
-            this.cityTextBox.Size = new System.Drawing.Size(100, 22);
-            this.cityTextBox.TabIndex = 9;
-            // 
-            // oIBTextBox
-            // 
-            this.oIBTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.profesoriBindingSource1, "OIB", true));
-            this.oIBTextBox.Location = new System.Drawing.Point(198, 150);
-            this.oIBTextBox.Name = "oIBTextBox";
-            this.oIBTextBox.Size = new System.Drawing.Size(100, 22);
-            this.oIBTextBox.TabIndex = 7;
-            // 
-            // lastNameTextBox
-            // 
-            this.lastNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.profesoriBindingSource1, "LastName", true));
-            this.lastNameTextBox.Location = new System.Drawing.Point(198, 109);
-            this.lastNameTextBox.Name = "lastNameTextBox";
-            this.lastNameTextBox.Size = new System.Drawing.Size(100, 22);
-            this.lastNameTextBox.TabIndex = 3;
-            // 
-            // firstNameTextBox
-            // 
-            this.firstNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.profesoriBindingSource1, "FirstName", true));
-            this.firstNameTextBox.Location = new System.Drawing.Point(198, 68);
-            this.firstNameTextBox.Name = "firstNameTextBox";
-            this.firstNameTextBox.Size = new System.Drawing.Size(100, 22);
-            this.firstNameTextBox.TabIndex = 1;
-            // 
             // profesoriTableAdapter1
             // 
             this.profesoriTableAdapter1.ClearBeforeFill = true;
@@ -452,10 +454,6 @@
             this.tableAdapterManager.ProfesoriTableAdapter = this.profesoriTableAdapter1;
             this.tableAdapterManager.StudentiTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Akademski_forum.DataSetAkademskiForumTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
             // 
             // Profesori
             // 
@@ -475,12 +473,11 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.profesoriBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetAkademskiForum1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.profesoriBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.profesoriBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetAkademskiForum1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -505,7 +502,6 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private DataSetAkademskiForumTableAdapters.ProfesoriTableAdapter profesoriTableAdapter1;
-        private System.Windows.Forms.BindingSource profesoriBindingSource;
         private DataSetAkademskiForum dataSetAkademskiForum1;
         private System.Windows.Forms.BindingSource profesoriBindingSource1;
         private DataSetAkademskiForumTableAdapters.TableAdapterManager tableAdapterManager;
@@ -519,10 +515,10 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button detailsButton;
         private System.Windows.Forms.TextBox predmetNameTextBox1;
-        private System.Windows.Forms.TextBox predmetIDTextBox;
         private System.Windows.Forms.TextBox cityTextBox;
         private System.Windows.Forms.TextBox oIBTextBox;
         private System.Windows.Forms.TextBox lastNameTextBox;
         private System.Windows.Forms.TextBox firstNameTextBox;
+        private System.Windows.Forms.TextBox predmetIDTextBox;
     }
 }

@@ -30,8 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label predmetNameLabel;
-            System.Windows.Forms.Label profNameLabel;
-            System.Windows.Forms.Label profSurnameLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Predmeti));
             this.toolStripMenu = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonUnos = new System.Windows.Forms.ToolStripButton();
@@ -49,23 +47,16 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.predmetIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.predmetNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.profesorIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.profNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.profSurnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.predmetiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSetAkademskiForum = new Akademski_forum.DataSetAkademskiForum();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.profSurnameTextBox = new System.Windows.Forms.TextBox();
-            this.profNameTextBox = new System.Windows.Forms.TextBox();
             this.predmetNameTextBox = new System.Windows.Forms.TextBox();
             this.predmetiTableAdapter1 = new Akademski_forum.DataSetAkademskiForumTableAdapters.PredmetiTableAdapter();
             this.tableAdapterManager = new Akademski_forum.DataSetAkademskiForumTableAdapters.TableAdapterManager();
+            this.PredmetID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.predmetNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             predmetNameLabel = new System.Windows.Forms.Label();
-            profNameLabel = new System.Windows.Forms.Label();
-            profSurnameLabel = new System.Windows.Forms.Label();
             this.toolStripMenu.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -84,24 +75,6 @@
             predmetNameLabel.Size = new System.Drawing.Size(91, 16);
             predmetNameLabel.TabIndex = 2;
             predmetNameLabel.Text = "Ime predmeta:";
-            // 
-            // profNameLabel
-            // 
-            profNameLabel.AutoSize = true;
-            profNameLabel.Location = new System.Drawing.Point(48, 126);
-            profNameLabel.Name = "profNameLabel";
-            profNameLabel.Size = new System.Drawing.Size(71, 16);
-            profNameLabel.TabIndex = 3;
-            profNameLabel.Text = "prof Name:";
-            // 
-            // profSurnameLabel
-            // 
-            profSurnameLabel.AutoSize = true;
-            profSurnameLabel.Location = new System.Drawing.Point(48, 174);
-            profSurnameLabel.Name = "profSurnameLabel";
-            profSurnameLabel.Size = new System.Drawing.Size(89, 16);
-            profSurnameLabel.TabIndex = 4;
-            profSurnameLabel.Text = "prof Surname:";
             // 
             // toolStripMenu
             // 
@@ -265,11 +238,8 @@
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.predmetIDDataGridViewTextBoxColumn,
-            this.predmetNameDataGridViewTextBoxColumn,
-            this.profesorIDDataGridViewTextBoxColumn,
-            this.profNameDataGridViewTextBoxColumn,
-            this.profSurnameDataGridViewTextBoxColumn});
+            this.PredmetID,
+            this.predmetNameDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.predmetiBindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 3);
@@ -278,41 +248,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(912, 359);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
-            // 
-            // predmetIDDataGridViewTextBoxColumn
-            // 
-            this.predmetIDDataGridViewTextBoxColumn.DataPropertyName = "PredmetID";
-            this.predmetIDDataGridViewTextBoxColumn.HeaderText = "PredmetID";
-            this.predmetIDDataGridViewTextBoxColumn.Name = "predmetIDDataGridViewTextBoxColumn";
-            this.predmetIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // predmetNameDataGridViewTextBoxColumn
-            // 
-            this.predmetNameDataGridViewTextBoxColumn.DataPropertyName = "PredmetName";
-            this.predmetNameDataGridViewTextBoxColumn.HeaderText = "Predmet";
-            this.predmetNameDataGridViewTextBoxColumn.Name = "predmetNameDataGridViewTextBoxColumn";
-            this.predmetNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // profesorIDDataGridViewTextBoxColumn
-            // 
-            this.profesorIDDataGridViewTextBoxColumn.DataPropertyName = "ProfesorID";
-            this.profesorIDDataGridViewTextBoxColumn.HeaderText = "ProfesorID";
-            this.profesorIDDataGridViewTextBoxColumn.Name = "profesorIDDataGridViewTextBoxColumn";
-            this.profesorIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // profNameDataGridViewTextBoxColumn
-            // 
-            this.profNameDataGridViewTextBoxColumn.DataPropertyName = "profName";
-            this.profNameDataGridViewTextBoxColumn.HeaderText = "Ime profesora";
-            this.profNameDataGridViewTextBoxColumn.Name = "profNameDataGridViewTextBoxColumn";
-            this.profNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // profSurnameDataGridViewTextBoxColumn
-            // 
-            this.profSurnameDataGridViewTextBoxColumn.DataPropertyName = "profSurname";
-            this.profSurnameDataGridViewTextBoxColumn.HeaderText = "Prezime profesora";
-            this.profSurnameDataGridViewTextBoxColumn.Name = "profSurnameDataGridViewTextBoxColumn";
-            this.profSurnameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // predmetiBindingSource
             // 
@@ -338,10 +273,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(profSurnameLabel);
-            this.groupBox1.Controls.Add(this.profSurnameTextBox);
-            this.groupBox1.Controls.Add(profNameLabel);
-            this.groupBox1.Controls.Add(this.profNameTextBox);
             this.groupBox1.Controls.Add(predmetNameLabel);
             this.groupBox1.Controls.Add(this.predmetNameTextBox);
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
@@ -351,22 +282,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Podaci";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
-            // 
-            // profSurnameTextBox
-            // 
-            this.profSurnameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.predmetiBindingSource, "profSurname", true));
-            this.profSurnameTextBox.Location = new System.Drawing.Point(177, 171);
-            this.profSurnameTextBox.Name = "profSurnameTextBox";
-            this.profSurnameTextBox.Size = new System.Drawing.Size(100, 22);
-            this.profSurnameTextBox.TabIndex = 5;
-            // 
-            // profNameTextBox
-            // 
-            this.profNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.predmetiBindingSource, "profName", true));
-            this.profNameTextBox.Location = new System.Drawing.Point(177, 123);
-            this.profNameTextBox.Name = "profNameTextBox";
-            this.profNameTextBox.Size = new System.Drawing.Size(100, 22);
-            this.profNameTextBox.TabIndex = 4;
             // 
             // predmetNameTextBox
             // 
@@ -388,6 +303,20 @@
             this.tableAdapterManager.ProfesoriTableAdapter = null;
             this.tableAdapterManager.StudentiTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Akademski_forum.DataSetAkademskiForumTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // PredmetID
+            // 
+            this.PredmetID.DataPropertyName = "PredmetID";
+            this.PredmetID.HeaderText = "PredmetID";
+            this.PredmetID.Name = "PredmetID";
+            this.PredmetID.ReadOnly = true;
+            // 
+            // predmetNameDataGridViewTextBoxColumn
+            // 
+            this.predmetNameDataGridViewTextBoxColumn.DataPropertyName = "PredmetName";
+            this.predmetNameDataGridViewTextBoxColumn.HeaderText = "Predmet";
+            this.predmetNameDataGridViewTextBoxColumn.Name = "predmetNameDataGridViewTextBoxColumn";
+            this.predmetNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // Predmeti
             // 
@@ -446,13 +375,8 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox predmetNameTextBox;
         private DataSetAkademskiForumTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.DataGridViewTextBoxColumn predmetIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PredmetID;
         private System.Windows.Forms.DataGridViewTextBoxColumn predmetNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn profesorIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn profNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn profSurnameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.TextBox profSurnameTextBox;
-        private System.Windows.Forms.TextBox profNameTextBox;
     }
 }
 

@@ -87,7 +87,7 @@ namespace Akademski_forum
         //DELETE
         private void toolStripButtonBrisi_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.Rows.Count > 0)
+            if (MessageBox.Show(@"Jeste li sigurni da želite obrisati zapis?", @"Brisanje trenutnog zapisa", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes) return;
                 dataGridView1.Rows.RemoveAt(dataGridView1.CurrentCell.RowIndex);
         }
 
@@ -109,11 +109,11 @@ namespace Akademski_forum
             this.profesoriBindingSource1.EndEdit();
             this.profesoriTableAdapter1.Update(this.dataSetAkademskiForum1.Profesori);
 
+            tabControl1.SelectTab(tabPage1);
+
             this.profesoriTableAdapter1.ClearBeforeFill = true;
             this.profesoriTableAdapter1.Fill(this.dataSetAkademskiForum1.Profesori);
             MessageBox.Show("Spremanje uspješno!", "Bravo");
-
-            tabControl1.SelectTab(tabPage1);
         }
 
         //INPUT--------------------------------------------------------------------------------------------------
@@ -157,6 +157,11 @@ namespace Akademski_forum
             pred.ShowDialog();
             pred.WindowState = FormWindowState.Normal;
 
+            if (pred.DialogResult == DialogResult.OK)
+            {
+                predmetIDTextBox.Text = pred.selectedRow.PredmetID.ToString();
+                predmetNameTextBox1.Text = pred.selectedRow.PredmetName.ToString();
+            }
         }
     }
 }

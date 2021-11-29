@@ -570,12 +570,6 @@ namespace Akademski_forum {
             
             private global::System.Data.DataColumn columnPredmetName;
             
-            private global::System.Data.DataColumn columnProfesorID;
-            
-            private global::System.Data.DataColumn columnprofName;
-            
-            private global::System.Data.DataColumn columnprofSurname;
-            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public PredmetiDataTable() {
@@ -627,30 +621,6 @@ namespace Akademski_forum {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn ProfesorIDColumn {
-                get {
-                    return this.columnProfesorID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn profNameColumn {
-                get {
-                    return this.columnprofName;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn profSurnameColumn {
-                get {
-                    return this.columnprofSurname;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -686,14 +656,11 @@ namespace Akademski_forum {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PredmetiRow AddPredmetiRow(string PredmetName, int ProfesorID, string profName, string profSurname) {
+            public PredmetiRow AddPredmetiRow(string PredmetName) {
                 PredmetiRow rowPredmetiRow = ((PredmetiRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        PredmetName,
-                        ProfesorID,
-                        profName,
-                        profSurname};
+                        PredmetName};
                 rowPredmetiRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPredmetiRow);
                 return rowPredmetiRow;
@@ -725,9 +692,6 @@ namespace Akademski_forum {
             internal void InitVars() {
                 this.columnPredmetID = base.Columns["PredmetID"];
                 this.columnPredmetName = base.Columns["PredmetName"];
-                this.columnProfesorID = base.Columns["ProfesorID"];
-                this.columnprofName = base.Columns["profName"];
-                this.columnprofSurname = base.Columns["profSurname"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -737,12 +701,6 @@ namespace Akademski_forum {
                 base.Columns.Add(this.columnPredmetID);
                 this.columnPredmetName = new global::System.Data.DataColumn("PredmetName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPredmetName);
-                this.columnProfesorID = new global::System.Data.DataColumn("ProfesorID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnProfesorID);
-                this.columnprofName = new global::System.Data.DataColumn("profName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnprofName);
-                this.columnprofSurname = new global::System.Data.DataColumn("profSurname", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnprofSurname);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnPredmetID}, true));
                 this.columnPredmetID.AutoIncrement = true;
@@ -752,8 +710,6 @@ namespace Akademski_forum {
                 this.columnPredmetID.ReadOnly = true;
                 this.columnPredmetID.Unique = true;
                 this.columnPredmetName.MaxLength = 50;
-                this.columnprofName.MaxLength = 50;
-                this.columnprofSurname.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1363,7 +1319,7 @@ namespace Akademski_forum {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ProfesoriRow AddProfesoriRow(string FirstName, string City, string OIB, string LastName, string PredmetName) {
+            public ProfesoriRow AddProfesoriRow(string FirstName, string City, string OIB, string LastName, string PredmetName, int PredmetID) {
                 ProfesoriRow rowProfesoriRow = ((ProfesoriRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -1372,7 +1328,7 @@ namespace Akademski_forum {
                         OIB,
                         LastName,
                         PredmetName,
-                        null};
+                        PredmetID};
                 rowProfesoriRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowProfesoriRow);
                 return rowProfesoriRow;
@@ -1441,10 +1397,8 @@ namespace Akademski_forum {
                 this.columnOIB.MaxLength = 50;
                 this.columnLastName.MaxLength = 50;
                 this.columnPredmetName.MaxLength = 50;
-                this.columnPredmetID.AutoIncrement = true;
                 this.columnPredmetID.AutoIncrementSeed = -1;
                 this.columnPredmetID.AutoIncrementStep = -1;
-                this.columnPredmetID.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3512,54 +3466,6 @@ namespace Akademski_forum {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int ProfesorID {
-                get {
-                    try {
-                        return ((int)(this[this.tablePredmeti.ProfesorIDColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ProfesorID\' in table \'Predmeti\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablePredmeti.ProfesorIDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string profName {
-                get {
-                    try {
-                        return ((string)(this[this.tablePredmeti.profNameColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'profName\' in table \'Predmeti\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablePredmeti.profNameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string profSurname {
-                get {
-                    try {
-                        return ((string)(this[this.tablePredmeti.profSurnameColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'profSurname\' in table \'Predmeti\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablePredmeti.profSurnameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsPredmetNameNull() {
                 return this.IsNull(this.tablePredmeti.PredmetNameColumn);
             }
@@ -3568,42 +3474,6 @@ namespace Akademski_forum {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetPredmetNameNull() {
                 this[this.tablePredmeti.PredmetNameColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsProfesorIDNull() {
-                return this.IsNull(this.tablePredmeti.ProfesorIDColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetProfesorIDNull() {
-                this[this.tablePredmeti.ProfesorIDColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsprofNameNull() {
-                return this.IsNull(this.tablePredmeti.profNameColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetprofNameNull() {
-                this[this.tablePredmeti.profNameColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsprofSurnameNull() {
-                return this.IsNull(this.tablePredmeti.profSurnameColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetprofSurnameNull() {
-                this[this.tablePredmeti.profSurnameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5359,9 +5229,6 @@ namespace Akademski_forum.DataSetAkademskiForumTableAdapters {
             tableMapping.DataSetTable = "Predmeti";
             tableMapping.ColumnMappings.Add("PredmetID", "PredmetID");
             tableMapping.ColumnMappings.Add("PredmetName", "PredmetName");
-            tableMapping.ColumnMappings.Add("ProfesorID", "ProfesorID");
-            tableMapping.ColumnMappings.Add("profName", "profName");
-            tableMapping.ColumnMappings.Add("profSurname", "profSurname");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -5382,7 +5249,6 @@ namespace Akademski_forum.DataSetAkademskiForumTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@predId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, "PredmetID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@imePred", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "PredmetName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@profId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, "ProfesorID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5514,7 +5380,7 @@ namespace Akademski_forum.DataSetAkademskiForumTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> predId, string imePred, global::System.Nullable<int> profId) {
+        public virtual int Update(global::System.Nullable<int> predId, string imePred) {
             if ((predId.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(predId.Value));
             }
@@ -5526,12 +5392,6 @@ namespace Akademski_forum.DataSetAkademskiForumTableAdapters {
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(imePred));
-            }
-            if ((profId.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(profId.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -6080,6 +5940,7 @@ namespace Akademski_forum.DataSetAkademskiForumTableAdapters {
             this._adapter.UpdateCommand.CommandText = "dbo.af_UpdateProfesori";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.StoredProcedure;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@profId", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "ProfesorID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@imeProf", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "FirstName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@prezimeProf", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "LastName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@grad", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "City", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -6240,36 +6101,42 @@ namespace Akademski_forum.DataSetAkademskiForumTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string imeProf, string prezimeProf, string grad, string oib, string predId) {
-            if ((imeProf == null)) {
+        public virtual int Update(string profId, string imeProf, string prezimeProf, string grad, string oib, string predId) {
+            if ((profId == null)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(imeProf));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(profId));
             }
-            if ((prezimeProf == null)) {
+            if ((imeProf == null)) {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(prezimeProf));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(imeProf));
             }
-            if ((grad == null)) {
+            if ((prezimeProf == null)) {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(grad));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(prezimeProf));
             }
-            if ((oib == null)) {
+            if ((grad == null)) {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(oib));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(grad));
             }
-            if ((predId == null)) {
+            if ((oib == null)) {
                 this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(predId));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(oib));
+            }
+            if ((predId == null)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(predId));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
