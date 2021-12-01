@@ -26,10 +26,9 @@ namespace Akademski_forum
             this.studentiTableAdapter1.Fill(this.dataSetAkademskiForum1.Studenti);
             this.WindowState = FormWindowState.Maximized;
             dataGridView1.ReadOnly = true;
-        }            
+        }
 
-
-        //     kontrola tipkovnicom
+        #region kontrola tipkovnicom
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             switch (keyData)
@@ -61,8 +60,7 @@ namespace Akademski_forum
             }
             return base.ProcessCmdKey(ref msg, keyData);
         }
-
-
+        #endregion
 
         private void toolStripMenu_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {

@@ -47,6 +47,8 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.PredmetID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.predmetNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.predmetiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSetAkademskiForum = new Akademski_forum.DataSetAkademskiForum();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -54,8 +56,6 @@
             this.predmetNameTextBox = new System.Windows.Forms.TextBox();
             this.predmetiTableAdapter1 = new Akademski_forum.DataSetAkademskiForumTableAdapters.PredmetiTableAdapter();
             this.tableAdapterManager = new Akademski_forum.DataSetAkademskiForumTableAdapters.TableAdapterManager();
-            this.PredmetID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.predmetNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             predmetNameLabel = new System.Windows.Forms.Label();
             this.toolStripMenu.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -249,6 +249,20 @@
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
+            // PredmetID
+            // 
+            this.PredmetID.DataPropertyName = "PredmetID";
+            this.PredmetID.HeaderText = "PredmetID";
+            this.PredmetID.Name = "PredmetID";
+            this.PredmetID.ReadOnly = true;
+            // 
+            // predmetNameDataGridViewTextBoxColumn
+            // 
+            this.predmetNameDataGridViewTextBoxColumn.DataPropertyName = "PredmetName";
+            this.predmetNameDataGridViewTextBoxColumn.HeaderText = "Predmet";
+            this.predmetNameDataGridViewTextBoxColumn.Name = "predmetNameDataGridViewTextBoxColumn";
+            this.predmetNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // predmetiBindingSource
             // 
             this.predmetiBindingSource.DataMember = "Predmeti";
@@ -303,20 +317,6 @@
             this.tableAdapterManager.ProfesoriTableAdapter = null;
             this.tableAdapterManager.StudentiTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Akademski_forum.DataSetAkademskiForumTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // PredmetID
-            // 
-            this.PredmetID.DataPropertyName = "PredmetID";
-            this.PredmetID.HeaderText = "PredmetID";
-            this.PredmetID.Name = "PredmetID";
-            this.PredmetID.ReadOnly = true;
-            // 
-            // predmetNameDataGridViewTextBoxColumn
-            // 
-            this.predmetNameDataGridViewTextBoxColumn.DataPropertyName = "PredmetName";
-            this.predmetNameDataGridViewTextBoxColumn.HeaderText = "Predmet";
-            this.predmetNameDataGridViewTextBoxColumn.Name = "predmetNameDataGridViewTextBoxColumn";
-            this.predmetNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // Predmeti
             // 

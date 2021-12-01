@@ -138,7 +138,7 @@ namespace Akademski_forum
                 DataRowView dataRowView = (DataRowView)predmetiBindingSource.Current;
                 selectedRow = (DataSetAkademskiForum.PredmetiRow)dataRowView.Row;
                 DialogResult = DialogResult.OK;
-            }   
+            }
         }
 
         #region Misclicks

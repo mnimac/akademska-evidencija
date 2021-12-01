@@ -51,15 +51,6 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.detailsButton = new System.Windows.Forms.Button();
-            this.predmetNameTextBox1 = new System.Windows.Forms.TextBox();
-            this.cityTextBox = new System.Windows.Forms.TextBox();
-            this.oIBTextBox = new System.Windows.Forms.TextBox();
-            this.lastNameTextBox = new System.Windows.Forms.TextBox();
-            this.firstNameTextBox = new System.Windows.Forms.TextBox();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.predmetIDTextBox = new System.Windows.Forms.TextBox();
             this.profesorIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,6 +59,15 @@
             this.cityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.profesoriBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dataSetAkademskiForum1 = new Akademski_forum.DataSetAkademskiForum();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.predmetIDTextBox = new System.Windows.Forms.TextBox();
+            this.detailsButton = new System.Windows.Forms.Button();
+            this.predmetNameTextBox1 = new System.Windows.Forms.TextBox();
+            this.cityTextBox = new System.Windows.Forms.TextBox();
+            this.oIBTextBox = new System.Windows.Forms.TextBox();
+            this.lastNameTextBox = new System.Windows.Forms.TextBox();
+            this.firstNameTextBox = new System.Windows.Forms.TextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.profesoriTableAdapter1 = new Akademski_forum.DataSetAkademskiForumTableAdapters.ProfesoriTableAdapter();
             this.tableAdapterManager = new Akademski_forum.DataSetAkademskiForumTableAdapters.TableAdapterManager();
             firstNameLabel = new System.Windows.Forms.Label();
@@ -79,10 +79,10 @@
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.profesoriBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetAkademskiForum1)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // firstNameLabel
@@ -305,6 +305,58 @@
             this.dataGridView1.Size = new System.Drawing.Size(969, 385);
             this.dataGridView1.TabIndex = 0;
             // 
+            // profesorIDDataGridViewTextBoxColumn
+            // 
+            this.profesorIDDataGridViewTextBoxColumn.DataPropertyName = "ProfesorID";
+            this.profesorIDDataGridViewTextBoxColumn.HeaderText = "ProfesorID";
+            this.profesorIDDataGridViewTextBoxColumn.Name = "profesorIDDataGridViewTextBoxColumn";
+            this.profesorIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // firstNameDataGridViewTextBoxColumn
+            // 
+            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
+            this.firstNameDataGridViewTextBoxColumn.HeaderText = "Ime";
+            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
+            this.firstNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // lastNameDataGridViewTextBoxColumn
+            // 
+            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
+            this.lastNameDataGridViewTextBoxColumn.HeaderText = "Prezime";
+            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
+            this.lastNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // predmetNameDataGridViewTextBoxColumn
+            // 
+            this.predmetNameDataGridViewTextBoxColumn.DataPropertyName = "PredmetName";
+            this.predmetNameDataGridViewTextBoxColumn.HeaderText = "Ime predmeta";
+            this.predmetNameDataGridViewTextBoxColumn.Name = "predmetNameDataGridViewTextBoxColumn";
+            this.predmetNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // oIBDataGridViewTextBoxColumn
+            // 
+            this.oIBDataGridViewTextBoxColumn.DataPropertyName = "OIB";
+            this.oIBDataGridViewTextBoxColumn.HeaderText = "OIB";
+            this.oIBDataGridViewTextBoxColumn.Name = "oIBDataGridViewTextBoxColumn";
+            this.oIBDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cityDataGridViewTextBoxColumn
+            // 
+            this.cityDataGridViewTextBoxColumn.DataPropertyName = "City";
+            this.cityDataGridViewTextBoxColumn.HeaderText = "Grad";
+            this.cityDataGridViewTextBoxColumn.Name = "cityDataGridViewTextBoxColumn";
+            this.cityDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // profesoriBindingSource1
+            // 
+            this.profesoriBindingSource1.DataMember = "Profesori";
+            this.profesoriBindingSource1.DataSource = this.dataSetAkademskiForum1;
+            // 
+            // dataSetAkademskiForum1
+            // 
+            this.dataSetAkademskiForum1.DataSetName = "DataSetAkademskiForum";
+            this.dataSetAkademskiForum1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -327,6 +379,15 @@
             this.tabPage2.Size = new System.Drawing.Size(975, 391);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Pojedinačni prikaz";
+            // 
+            // predmetIDTextBox
+            // 
+            this.predmetIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.profesoriBindingSource1, "PredmetID", true));
+            this.predmetIDTextBox.Location = new System.Drawing.Point(198, 237);
+            this.predmetIDTextBox.Name = "predmetIDTextBox";
+            this.predmetIDTextBox.Size = new System.Drawing.Size(43, 22);
+            this.predmetIDTextBox.TabIndex = 15;
+            this.predmetIDTextBox.TextChanged += new System.EventHandler(this.predmetIDTextBox_TextChanged);
             // 
             // detailsButton
             // 
@@ -382,66 +443,6 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // predmetIDTextBox
-            // 
-            this.predmetIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.profesoriBindingSource1, "PredmetID", true));
-            this.predmetIDTextBox.Location = new System.Drawing.Point(198, 237);
-            this.predmetIDTextBox.Name = "predmetIDTextBox";
-            this.predmetIDTextBox.Size = new System.Drawing.Size(43, 22);
-            this.predmetIDTextBox.TabIndex = 15;
-            // 
-            // profesorIDDataGridViewTextBoxColumn
-            // 
-            this.profesorIDDataGridViewTextBoxColumn.DataPropertyName = "ProfesorID";
-            this.profesorIDDataGridViewTextBoxColumn.HeaderText = "ProfesorID";
-            this.profesorIDDataGridViewTextBoxColumn.Name = "profesorIDDataGridViewTextBoxColumn";
-            this.profesorIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // firstNameDataGridViewTextBoxColumn
-            // 
-            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
-            this.firstNameDataGridViewTextBoxColumn.HeaderText = "Ime";
-            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
-            this.firstNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // lastNameDataGridViewTextBoxColumn
-            // 
-            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
-            this.lastNameDataGridViewTextBoxColumn.HeaderText = "Prezime";
-            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
-            this.lastNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // predmetNameDataGridViewTextBoxColumn
-            // 
-            this.predmetNameDataGridViewTextBoxColumn.DataPropertyName = "PredmetName";
-            this.predmetNameDataGridViewTextBoxColumn.HeaderText = "Ime predmeta";
-            this.predmetNameDataGridViewTextBoxColumn.Name = "predmetNameDataGridViewTextBoxColumn";
-            this.predmetNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // oIBDataGridViewTextBoxColumn
-            // 
-            this.oIBDataGridViewTextBoxColumn.DataPropertyName = "OIB";
-            this.oIBDataGridViewTextBoxColumn.HeaderText = "OIB";
-            this.oIBDataGridViewTextBoxColumn.Name = "oIBDataGridViewTextBoxColumn";
-            this.oIBDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cityDataGridViewTextBoxColumn
-            // 
-            this.cityDataGridViewTextBoxColumn.DataPropertyName = "City";
-            this.cityDataGridViewTextBoxColumn.HeaderText = "Grad";
-            this.cityDataGridViewTextBoxColumn.Name = "cityDataGridViewTextBoxColumn";
-            this.cityDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // profesoriBindingSource1
-            // 
-            this.profesoriBindingSource1.DataMember = "Profesori";
-            this.profesoriBindingSource1.DataSource = this.dataSetAkademskiForum1;
-            // 
-            // dataSetAkademskiForum1
-            // 
-            this.dataSetAkademskiForum1.DataSetName = "DataSetAkademskiForum";
-            this.dataSetAkademskiForum1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // profesoriTableAdapter1
             // 
             this.profesoriTableAdapter1.ClearBeforeFill = true;
@@ -473,11 +474,11 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.profesoriBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetAkademskiForum1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.profesoriBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetAkademskiForum1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

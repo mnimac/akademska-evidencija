@@ -12,7 +12,7 @@ using System.Windows.Forms;
 namespace Akademski_forum
 {
     public partial class Profesori : Form
-    {
+    {      
         public bool allowSaving = true;
 
         public Profesori()
@@ -56,6 +56,9 @@ namespace Akademski_forum
                     break;
                 case Keys.Delete:
                     toolStripButtonBrisi.PerformClick();
+                    break;
+                case Keys.Enter:
+                    //predmetIDTextBox_Leave(predmetIDTextBox, );
                     break;
             }
             return base.ProcessCmdKey(ref msg, keyData);
@@ -150,6 +153,7 @@ namespace Akademski_forum
             rpt.Show();
         }
 
+        //double click event pogledaj applications 
         private void detailsButton_Click(object sender, EventArgs e)
         {
             Predmeti pred = new Predmeti();
@@ -163,5 +167,30 @@ namespace Akademski_forum
                 predmetNameTextBox1.Text = pred.selectedRow.PredmetName.ToString();
             }
         }
-    }
+      
+        private void predmetIDTextBox_TextChanged(object sender, EventArgs e)
+        {
+            DataSetAkademskiForumTableAdapters.PredmetiTableAdapter _predmetiTableAdapter = new DataSetAkademskiForumTableAdapters.PredmetiTableAdapter();    
+
+            bool success = Int32.TryParse(predmetIDTextBox.Text, out int x);
+
+            if (success) 
+            {
+                x = Convert.ToInt32(predmetIDTextBox.Text);
+
+                if(_predmetiTableAdapter.af_SelectPredmetById(x).FirstOrDefault() != null)
+                {
+                    string zed = _predmetiTableAdapter.af_SelectPredmetById(x).First().PredmetName;
+                    predmetNameTextBox1.Text = zed;
+                }
+                else{
+                    predmetNameTextBox1.Text = "";
+                }
+            }
+            else
+            {
+                predmetNameTextBox1.Text = "";
+            }
+        }
+    } 
 }
