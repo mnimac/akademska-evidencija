@@ -15,6 +15,8 @@ namespace Akademski_forum
     {      
         public bool allowSaving = true;
 
+        private DataSetAkademskiForum.ProfesoriRow _selectedRow { get; set; }
+
         public Profesori()
         {
             InitializeComponent();
@@ -57,9 +59,7 @@ namespace Akademski_forum
                 case Keys.Delete:
                     toolStripButtonBrisi.PerformClick();
                     break;
-                case Keys.Enter:
-                    //predmetIDTextBox_Leave(predmetIDTextBox, );
-                    break;
+
             }
             return base.ProcessCmdKey(ref msg, keyData);
         }
@@ -157,10 +157,14 @@ namespace Akademski_forum
         private void detailsButton_Click(object sender, EventArgs e)
         {
             Predmeti pred = new Predmeti();
+         
+
+                //pred.Size = new Size(500, 300);
+                //pred.StartPosition = FormStartPosition.CenterScreen;
+                //pred.WindowState = FormWindowState.Normal;
 
             pred.ShowDialog();
-            pred.WindowState = FormWindowState.Normal;
-
+          
             if (pred.DialogResult == DialogResult.OK)
             {
                 predmetIDTextBox.Text = pred.selectedRow.PredmetID.ToString();
@@ -191,6 +195,24 @@ namespace Akademski_forum
             {
                 predmetNameTextBox1.Text = "";
             }
+        }
+
+        public DataSetAkademskiForum.ProfesoriRow selectedRow { get; set; }
+        private void predmetIDTextBox_Validating(object sender, CancelEventArgs e)
+        {
+            if (String.IsNullOrWhiteSpace(predmetIDTextBox.Text))
+            {
+                DataRowView dataRowView = (DataRowView)profesoriBindingSource1.Current;
+                selectedRow = (DataSetAkademskiForum.ProfesoriRow)dataRowView.Row;
+
+                selectedRow.SetPredmetIDNull();
+                selectedRow.SetPredmetNameNull();
+            }          
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     } 
 }

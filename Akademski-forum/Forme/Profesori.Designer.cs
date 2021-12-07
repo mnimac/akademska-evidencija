@@ -60,6 +60,7 @@
             this.profesoriBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dataSetAkademskiForum1 = new Akademski_forum.DataSetAkademskiForum();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.predmetIDTextBox = new System.Windows.Forms.TextBox();
             this.detailsButton = new System.Windows.Forms.Button();
             this.predmetNameTextBox1 = new System.Windows.Forms.TextBox();
@@ -360,6 +361,7 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tabPage2.Controls.Add(this.comboBox1);
             this.tabPage2.Controls.Add(this.predmetIDTextBox);
             this.tabPage2.Controls.Add(this.detailsButton);
             this.tabPage2.Controls.Add(this.predmetNameTextBox1);
@@ -380,6 +382,15 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Pojedinačni prikaz";
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(505, 236);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.TabIndex = 16;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // predmetIDTextBox
             // 
             this.predmetIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.profesoriBindingSource1, "PredmetID", true));
@@ -388,6 +399,7 @@
             this.predmetIDTextBox.Size = new System.Drawing.Size(43, 22);
             this.predmetIDTextBox.TabIndex = 15;
             this.predmetIDTextBox.TextChanged += new System.EventHandler(this.predmetIDTextBox_TextChanged);
+            this.predmetIDTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.predmetIDTextBox_Validating);
             // 
             // detailsButton
             // 
@@ -521,5 +533,6 @@
         private System.Windows.Forms.TextBox lastNameTextBox;
         private System.Windows.Forms.TextBox firstNameTextBox;
         private System.Windows.Forms.TextBox predmetIDTextBox;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

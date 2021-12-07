@@ -81,7 +81,6 @@ namespace Akademski_forum
             Help.ShowHelp(this, @"file://C:\Users\Korisnik\Documents\HelpNDoc\Output\chm\Info.chm");
         }
         
-
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             this.predmetiTableAdapter1.Fill(this.dataSetAkademskiForum.Predmeti);
@@ -133,7 +132,7 @@ namespace Akademski_forum
        
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex > 0 && e.ColumnIndex > 0)
+            if (e.ColumnIndex > 0)
             {
                 DataRowView dataRowView = (DataRowView)predmetiBindingSource.Current;
                 selectedRow = (DataSetAkademskiForum.PredmetiRow)dataRowView.Row;
