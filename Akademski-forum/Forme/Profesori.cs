@@ -15,8 +15,6 @@ namespace Akademski_forum
     {      
         public bool allowSaving = true;
 
-        private DataSetAkademskiForum.ProfesoriRow _selectedRow { get; set; }
-
         public Profesori()
         {
             InitializeComponent();
@@ -24,9 +22,14 @@ namespace Akademski_forum
 
         private void Profesori_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dataSetAkademskiForum1.af_SelectStatus' table. You can move, or remove it, as needed.
+            this.af_SelectStatusTableAdapter.Fill(this.dataSetAkademskiForum1.af_SelectStatus);
             this.profesoriTableAdapter1.Fill(this.dataSetAkademskiForum1.Profesori);
             this.WindowState = FormWindowState.Maximized;
             dataGridView1.ReadOnly = true;
+
+            SetValidatingEventHandler(tabPage2);
+            //predmetIDTextBox.Validating += ValidatingNumericTextBox;   
         }
 
         #region key bindings
@@ -197,22 +200,45 @@ namespace Akademski_forum
             }
         }
 
-        public DataSetAkademskiForum.ProfesoriRow selectedRow { get; set; }
-        private void predmetIDTextBox_Validating(object sender, CancelEventArgs e)
-        {
-            if (String.IsNullOrWhiteSpace(predmetIDTextBox.Text))
-            {
-                DataRowView dataRowView = (DataRowView)profesoriBindingSource1.Current;
-                selectedRow = (DataSetAkademskiForum.ProfesoriRow)dataRowView.Row;
+        //Validating za samo predmetIDTextBox
 
-                selectedRow.SetPredmetIDNull();
-                selectedRow.SetPredmetNameNull();
-            }          
+        //public DataSetAkademskiForum.ProfesoriRow selectedRow { get; set; }
+        //private void predmetIDTextBox_Validating(object sender, CancelEventArgs e)
+        //{
+        //if (String.IsNullOrWhiteSpace(predmetIDTextBox.Text))
+        //{
+        //    DataRowView dataRowView = (DataRowView)profesoriBindingSource1.Current;
+        //    selectedRow = (DataSetAkademskiForum.ProfesoriRow)dataRowView.Row;
+
+        //    selectedRow.SetPredmetIDNull();
+        //    selectedRow.SetPredmetNameNull();
+        //}          
+        //}
+
+
+        //Validating za sve textboxeve
+        protected virtual void SetValidatingEventHandler(TabPage tabPage)
+        {
+            tabPage.Controls.OfType<TextBox>().ToList().ForEach(x => x.Validating += ValidatingNumericTextBox);
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void ValidatingNumericTextBox(object sender, CancelEventArgs e)
         {
+            if (sender.GetType() != typeof(TextBox)) return;
+            TextBox textBox = (TextBox)sender;
+            
+            if (textBox.DataBindings.Count > 0)
+            {
+                Binding binding = textBox.DataBindings[0];
+                BindingSource bindingSource = (BindingSource)binding.DataSource;
+                DataColumn column = dataSetAkademskiForum1.Tables[bindingSource.DataMember].Columns[binding.BindingMemberInfo.BindingField];
 
+                if (String.IsNullOrEmpty(textBox.Text) && column.DataType == typeof(int))
+                {
+                    DataRow current = ((DataRowView)bindingSource.Current).Row;
+                    current.SetField(column, DBNull.Value);
+                }
+            }
         }
     } 
 }

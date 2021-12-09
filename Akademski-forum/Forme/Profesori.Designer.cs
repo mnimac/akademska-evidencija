@@ -34,6 +34,7 @@
             System.Windows.Forms.Label oIBLabel;
             System.Windows.Forms.Label cityLabel;
             System.Windows.Forms.Label predmetIDLabel;
+            System.Windows.Forms.Label statusIDLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Profesori));
             this.toolStripMenu = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonUnos = new System.Windows.Forms.ToolStripButton();
@@ -57,10 +58,12 @@
             this.predmetNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.oIBDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NazivStatusa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.profesoriBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dataSetAkademskiForum1 = new Akademski_forum.DataSetAkademskiForum();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.af_SelectStatusBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.predmetIDTextBox = new System.Windows.Forms.TextBox();
             this.detailsButton = new System.Windows.Forms.Button();
             this.predmetNameTextBox1 = new System.Windows.Forms.TextBox();
@@ -71,11 +74,13 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.profesoriTableAdapter1 = new Akademski_forum.DataSetAkademskiForumTableAdapters.ProfesoriTableAdapter();
             this.tableAdapterManager = new Akademski_forum.DataSetAkademskiForumTableAdapters.TableAdapterManager();
+            this.af_SelectStatusTableAdapter = new Akademski_forum.DataSetAkademskiForumTableAdapters.af_SelectStatusTableAdapter();
             firstNameLabel = new System.Windows.Forms.Label();
             lastNameLabel = new System.Windows.Forms.Label();
             oIBLabel = new System.Windows.Forms.Label();
             cityLabel = new System.Windows.Forms.Label();
             predmetIDLabel = new System.Windows.Forms.Label();
+            statusIDLabel = new System.Windows.Forms.Label();
             this.toolStripMenu.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -83,6 +88,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.profesoriBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetAkademskiForum1)).BeginInit();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.af_SelectStatusBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -130,6 +136,15 @@
             predmetIDLabel.Size = new System.Drawing.Size(65, 16);
             predmetIDLabel.TabIndex = 10;
             predmetIDLabel.Text = "Predmet :";
+            // 
+            // statusIDLabel
+            // 
+            statusIDLabel.AutoSize = true;
+            statusIDLabel.Location = new System.Drawing.Point(80, 278);
+            statusIDLabel.Name = "statusIDLabel";
+            statusIDLabel.Size = new System.Drawing.Size(50, 16);
+            statusIDLabel.TabIndex = 18;
+            statusIDLabel.Text = "Status:";
             // 
             // toolStripMenu
             // 
@@ -297,7 +312,8 @@
             this.lastNameDataGridViewTextBoxColumn,
             this.predmetNameDataGridViewTextBoxColumn,
             this.oIBDataGridViewTextBoxColumn,
-            this.cityDataGridViewTextBoxColumn});
+            this.cityDataGridViewTextBoxColumn,
+            this.NazivStatusa});
             this.dataGridView1.DataSource = this.profesoriBindingSource1;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 3);
@@ -348,6 +364,13 @@
             this.cityDataGridViewTextBoxColumn.Name = "cityDataGridViewTextBoxColumn";
             this.cityDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // NazivStatusa
+            // 
+            this.NazivStatusa.DataPropertyName = "NazivStatusa";
+            this.NazivStatusa.HeaderText = "NazivStatusa";
+            this.NazivStatusa.Name = "NazivStatusa";
+            this.NazivStatusa.ReadOnly = true;
+            // 
             // profesoriBindingSource1
             // 
             this.profesoriBindingSource1.DataMember = "Profesori";
@@ -360,7 +383,9 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.AutoScroll = true;
             this.tabPage2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tabPage2.Controls.Add(statusIDLabel);
             this.tabPage2.Controls.Add(this.comboBox1);
             this.tabPage2.Controls.Add(this.predmetIDTextBox);
             this.tabPage2.Controls.Add(this.detailsButton);
@@ -384,12 +409,20 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.profesoriBindingSource1, "StatusID", true));
+            this.comboBox1.DataSource = this.af_SelectStatusBindingSource;
+            this.comboBox1.DisplayMember = "NazivStatusa";
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(505, 236);
+            this.comboBox1.Location = new System.Drawing.Point(198, 275);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 16;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.comboBox1.Size = new System.Drawing.Size(125, 24);
+            this.comboBox1.TabIndex = 18;
+            this.comboBox1.ValueMember = "StatusID";
+            // 
+            // af_SelectStatusBindingSource
+            // 
+            this.af_SelectStatusBindingSource.DataMember = "af_SelectStatus";
+            this.af_SelectStatusBindingSource.DataSource = this.dataSetAkademskiForum1;
             // 
             // predmetIDTextBox
             // 
@@ -399,7 +432,6 @@
             this.predmetIDTextBox.Size = new System.Drawing.Size(43, 22);
             this.predmetIDTextBox.TabIndex = 15;
             this.predmetIDTextBox.TextChanged += new System.EventHandler(this.predmetIDTextBox_TextChanged);
-            this.predmetIDTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.predmetIDTextBox_Validating);
             // 
             // detailsButton
             // 
@@ -468,6 +500,10 @@
             this.tableAdapterManager.StudentiTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Akademski_forum.DataSetAkademskiForumTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
+            // af_SelectStatusTableAdapter
+            // 
+            this.af_SelectStatusTableAdapter.ClearBeforeFill = true;
+            // 
             // Profesori
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -490,6 +526,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataSetAkademskiForum1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.af_SelectStatusBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -518,12 +555,6 @@
         private DataSetAkademskiForum dataSetAkademskiForum1;
         private System.Windows.Forms.BindingSource profesoriBindingSource1;
         private DataSetAkademskiForumTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.DataGridViewTextBoxColumn profesorIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn predmetNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn oIBDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cityDataGridViewTextBoxColumn;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button detailsButton;
@@ -533,6 +564,15 @@
         private System.Windows.Forms.TextBox lastNameTextBox;
         private System.Windows.Forms.TextBox firstNameTextBox;
         private System.Windows.Forms.TextBox predmetIDTextBox;
+        private DataSetAkademskiForumTableAdapters.af_SelectStatusTableAdapter af_SelectStatusTableAdapter;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.BindingSource af_SelectStatusBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn profesorIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn predmetNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn oIBDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cityDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NazivStatusa;
     }
 }
