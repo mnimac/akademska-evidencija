@@ -87,7 +87,7 @@ namespace Akademski_forum
         //INFO 
         private void toolStripButtonUpute_Click(object sender, EventArgs e)
         {
-            Help.ShowHelp(this, @"file://C:\Users\Korisnik\Documents\HelpNDoc\Output\chm\Info.chm");
+            Help.ShowHelp(this, @"file://C:\Users\Nimac\Documents\HelpNDoc\Output\chm\Info.chm");
         }
 
         //DELETE
@@ -152,7 +152,7 @@ namespace Akademski_forum
         {
             this.profesoriTableAdapter1.Fill(dataSetAkademskiForum1.Profesori);
 
-            Ispis rpt = new Ispis(@"C:\Users\Korisnik\source\repos\Akademski-forum\Akademski-forum\Reports\ReportProfesori.rdlc", "DataSetProfesori", dataSetAkademskiForum1.Profesori);
+            Ispis rpt = new Ispis(@"C:\Users\Nimac\source\repos\akademska-evidencija\Akademski-forum\Reports\ReportProfesori.rdlc", "DataSetProfesori", dataSetAkademskiForum1.Profesori);
             rpt.Show();
         }
 

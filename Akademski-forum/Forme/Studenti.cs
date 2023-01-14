@@ -84,7 +84,7 @@ namespace Akademski_forum
             
         private void toolStripButtonUpute_Click(object sender, EventArgs e)
         {
-            Help.ShowHelp(this, @"file://C:\Users\Korisnik\Documents\HelpNDoc\Output\chm\Info.chm");
+            Help.ShowHelp(this, @"file://C:\Users\Nimac\Documents\HelpNDoc\Output\chm\Info.chm");
         }
 
         private void toolStripButtonZatvori_Click(object sender, EventArgs e)
@@ -140,7 +140,7 @@ namespace Akademski_forum
             //ISPIS
             this.studentiTableAdapter1.Fill(this.dataSetAkademskiForum1.Studenti);
 
-            Ispis rds = new Ispis(@"C:\Users\Korisnik\source\repos\Akademski-forum\Akademski-forum\Reports\Report1.rdlc", "DataSet1", dataSetAkademskiForum1.Studenti);
+            Ispis rds = new Ispis(@"C:\Users\Nimac\source\repos\akademska-evidencija\Akademski-forum\Reports\Report1.rdlc", "DataSet1", dataSetAkademskiForum1.Studenti);
             rds.Show();
         }
 
