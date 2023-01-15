@@ -98,7 +98,7 @@
             firstNameLabel.AutoSize = true;
             firstNameLabel.Location = new System.Drawing.Point(48, 85);
             firstNameLabel.Name = "firstNameLabel";
-            firstNameLabel.Size = new System.Drawing.Size(29, 16);
+            firstNameLabel.Size = new System.Drawing.Size(28, 16);
             firstNameLabel.TabIndex = 2;
             firstNameLabel.Text = "Ime";
             // 
@@ -107,7 +107,7 @@
             lastNameLabel.AutoSize = true;
             lastNameLabel.Location = new System.Drawing.Point(48, 113);
             lastNameLabel.Name = "lastNameLabel";
-            lastNameLabel.Size = new System.Drawing.Size(56, 16);
+            lastNameLabel.Size = new System.Drawing.Size(55, 16);
             lastNameLabel.TabIndex = 4;
             lastNameLabel.Text = "Prezime";
             // 
@@ -116,7 +116,7 @@
             oIBLabel.AutoSize = true;
             oIBLabel.Location = new System.Drawing.Point(48, 141);
             oIBLabel.Name = "oIBLabel";
-            oIBLabel.Size = new System.Drawing.Size(34, 16);
+            oIBLabel.Size = new System.Drawing.Size(33, 16);
             oIBLabel.TabIndex = 6;
             oIBLabel.Text = "OIB:";
             // 
@@ -125,9 +125,9 @@
             cityLabel.AutoSize = true;
             cityLabel.Location = new System.Drawing.Point(48, 169);
             cityLabel.Name = "cityLabel";
-            cityLabel.Size = new System.Drawing.Size(35, 16);
+            cityLabel.Size = new System.Drawing.Size(39, 16);
             cityLabel.TabIndex = 8;
-            cityLabel.Text = "City:";
+            cityLabel.Text = "Grad:";
             // 
             // toolStripMenu
             // 
@@ -479,6 +479,7 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -538,8 +539,10 @@
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.toolStripMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.Name = "Studenti";
+            this.ShowIcon = false;
             this.Text = "Studenti";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Studenti_Load);

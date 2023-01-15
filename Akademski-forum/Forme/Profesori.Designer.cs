@@ -97,25 +97,25 @@
             firstNameLabel.AutoSize = true;
             firstNameLabel.Location = new System.Drawing.Point(79, 71);
             firstNameLabel.Name = "firstNameLabel";
-            firstNameLabel.Size = new System.Drawing.Size(77, 16);
+            firstNameLabel.Size = new System.Drawing.Size(32, 16);
             firstNameLabel.TabIndex = 0;
-            firstNameLabel.Text = "Prof. Name:";
+            firstNameLabel.Text = "Ime:";
             // 
             // lastNameLabel
             // 
             lastNameLabel.AutoSize = true;
             lastNameLabel.Location = new System.Drawing.Point(80, 112);
             lastNameLabel.Name = "lastNameLabel";
-            lastNameLabel.Size = new System.Drawing.Size(95, 16);
+            lastNameLabel.Size = new System.Drawing.Size(59, 16);
             lastNameLabel.TabIndex = 2;
-            lastNameLabel.Text = "Prof. Surname:";
+            lastNameLabel.Text = "Prezime:";
             // 
             // oIBLabel
             // 
             oIBLabel.AutoSize = true;
             oIBLabel.Location = new System.Drawing.Point(79, 153);
             oIBLabel.Name = "oIBLabel";
-            oIBLabel.Size = new System.Drawing.Size(34, 16);
+            oIBLabel.Size = new System.Drawing.Size(33, 16);
             oIBLabel.TabIndex = 6;
             oIBLabel.Text = "OIB:";
             // 
@@ -124,16 +124,16 @@
             cityLabel.AutoSize = true;
             cityLabel.Location = new System.Drawing.Point(78, 196);
             cityLabel.Name = "cityLabel";
-            cityLabel.Size = new System.Drawing.Size(35, 16);
+            cityLabel.Size = new System.Drawing.Size(39, 16);
             cityLabel.TabIndex = 8;
-            cityLabel.Text = "City:";
+            cityLabel.Text = "Grad:";
             // 
             // predmetIDLabel
             // 
             predmetIDLabel.AutoSize = true;
             predmetIDLabel.Location = new System.Drawing.Point(78, 240);
             predmetIDLabel.Name = "predmetIDLabel";
-            predmetIDLabel.Size = new System.Drawing.Size(65, 16);
+            predmetIDLabel.Size = new System.Drawing.Size(64, 16);
             predmetIDLabel.TabIndex = 10;
             predmetIDLabel.Text = "Predmet :";
             // 
@@ -142,7 +142,7 @@
             statusIDLabel.AutoSize = true;
             statusIDLabel.Location = new System.Drawing.Point(80, 278);
             statusIDLabel.Name = "statusIDLabel";
-            statusIDLabel.Size = new System.Drawing.Size(50, 16);
+            statusIDLabel.Size = new System.Drawing.Size(49, 16);
             statusIDLabel.TabIndex = 18;
             statusIDLabel.Text = "Status:";
             // 
@@ -514,6 +514,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.KeyPreview = true;
             this.Name = "Profesori";
+            this.ShowIcon = false;
             this.Text = "Profesori";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Profesori_Load);

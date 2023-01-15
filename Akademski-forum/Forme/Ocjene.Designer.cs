@@ -478,6 +478,7 @@
             this.Controls.Add(this.toolStripMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "Ocjene";
+            this.ShowIcon = false;
             this.Text = "Ocjene";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Ocjene_Load);

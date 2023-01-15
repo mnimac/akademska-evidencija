@@ -72,7 +72,7 @@
             predmetNameLabel.AutoSize = true;
             predmetNameLabel.Location = new System.Drawing.Point(48, 80);
             predmetNameLabel.Name = "predmetNameLabel";
-            predmetNameLabel.Size = new System.Drawing.Size(91, 16);
+            predmetNameLabel.Size = new System.Drawing.Size(90, 16);
             predmetNameLabel.TabIndex = 2;
             predmetNameLabel.Text = "Ime predmeta:";
             // 
@@ -331,8 +331,9 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.KeyPreview = true;
             this.Name = "Predmeti";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Text = "Podaci";
+            this.Text = "Predmeti";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.toolStripMenu.ResumeLayout(false);
