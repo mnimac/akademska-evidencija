@@ -79,13 +79,13 @@ namespace Akademski_forum
 
         private void toolStripButtonUpute_Click(object sender, EventArgs e)
         {
-            Help.ShowHelp(this, @"file://C:\Users\Korisnik\Documents\HelpNDoc\Output\chm\Info.chm");
+            Help.ShowHelp(this, @"file://C:\Users\Nimac\Documents\HelpNDoc\Output\chm\Info.chm");
         }
 
         private void toolStripButtonIspis_Click(object sender, EventArgs e)
         {
             this.af_ReportOcjenaTableAdapter1.Fill(this.dataSetAkademskiForum1.af_ReportOcjena);
-            Ispis rds = new Ispis(@"C:\Users\Korisnik\source\repos\Akademski-forum\Akademski-forum\Reports\ReportOcjene.rdlc", "RepOcjena", dataSetAkademskiForum1.af_ReportOcjena);
+            Ispis rds = new Ispis(@"C:\Users\Nimac\source\repos\akademska-evidencija\Akademski-forum\Reports\ReportOcjene.rdlc", "RepOcjena", dataSetAkademskiForum1.af_ReportOcjena);
             rds.Show();
         }
 

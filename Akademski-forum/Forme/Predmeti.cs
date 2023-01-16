@@ -78,13 +78,13 @@ namespace Akademski_forum
 
         private void toolStripButtonUpute_Click(object sender, EventArgs e)
         {
-            Help.ShowHelp(this, @"file://C:\Users\Korisnik\Documents\HelpNDoc\Output\chm\Info.chm");
+            Help.ShowHelp(this, @"file://C:\Users\Nimac\Documents\HelpNDoc\Output\chm\Info.chm");
         }
         
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             this.predmetiTableAdapter1.Fill(this.dataSetAkademskiForum.Predmeti);
-            Ispis rds = new Ispis(@"C:\Users\Korisnik\source\repos\Akademski-forum\Akademski-forum\Reports\ReportPredmet.rdlc", "DataSet1", dataSetAkademskiForum.Predmeti);
+            Ispis rds = new Ispis(@"C:\Users\Nimac\source\repos\akademska-evidencija\Akademski-forum\Reports\ReportPredmet.rdlc", "DataSet1", dataSetAkademskiForum.af_ReportPredmetStudenti2);
             rds.Show();
         }
 

@@ -22,7 +22,7 @@ namespace Akademski_forum.Forme
         {
             this.af_ReportPredmetStudenti2TableAdapter1.Fill(this.dataSetAkademskiForum1.af_ReportPredmetStudenti2);        
 
-            Ispis rds = new Ispis(@"C:\Users\Korisnik\source\repos\Akademski-forum\Akademski-forum\Reports\Report22.rdlc", "DataSet1", dataSetAkademskiForum1.af_ReportPredmetStudenti2);
+            Ispis rds = new Ispis(@"C:\Users\Nimac\source\repos\akademska-evidencija\Akademski-forum\Reports\Report22.rdlc", "DataSet1", dataSetAkademskiForum1.af_ReportPredmetStudenti2);
 
             rds.Show();
         }

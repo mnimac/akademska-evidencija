@@ -9,7 +9,7 @@
               <Width>2.5cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>3.10854cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>3.84938cm</Width>
@@ -28,7 +28,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>First Name</Value>
+                              <Value>Ime studenta</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -63,7 +63,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Last Name</Value>
+                              <Value>Prezime studenta</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -98,7 +98,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Prosjek Studenta</Value>
+                              <Value>Prosjek studenta</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -250,7 +250,7 @@
         <Top>2.13995cm</Top>
         <Left>5.72475cm</Left>
         <Height>1.2cm</Height>
-        <Width>8.84938cm</Width>
+        <Width>9.45792cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -322,7 +322,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>INFOBIT D.O.O.</Value>
+                  <Value>Marko Nimac d.o.o.</Value>
                   <Style>
                     <FontStyle>Italic</FontStyle>
                     <FontSize>14pt</FontSize>
@@ -356,7 +356,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Copyright 2021. All rights reserverd by Infobit d.o.o.</Value>
+                  <Value>Copyright 2023. All rights reserverd by Marko Nimac d.o.o.</Value>
                   <Style />
                 </TextRun>
               </TextRuns>
