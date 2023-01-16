@@ -84,7 +84,7 @@ namespace Akademski_forum
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             this.predmetiTableAdapter1.Fill(this.dataSetAkademskiForum.Predmeti);
-            Ispis rds = new Ispis(@"C:\Users\Nimac\source\repos\akademska-evidencija\Akademski-forum\Reports\ReportPredmet.rdlc", "DataSet1", dataSetAkademskiForum.Predmeti);
+            Ispis rds = new Ispis(@"C:\Users\Nimac\source\repos\akademska-evidencija\Akademski-forum\Reports\ReportPredmet.rdlc", "DataSet1", dataSetAkademskiForum.af_ReportPredmetStudenti2);
             rds.Show();
         }
 

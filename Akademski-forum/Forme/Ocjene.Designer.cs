@@ -69,7 +69,6 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.fillToolStrip = new System.Windows.Forms.ToolStrip();
             this.studentToolStripLabel = new System.Windows.Forms.ToolStripLabel();
-            this.studentToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.fillToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.ocjeneTableAdapter1 = new Akademski_forum.DataSetAkademskiForumTableAdapters.OcjeneTableAdapter();
             this.af_ReportOcjenaTableAdapter1 = new Akademski_forum.DataSetAkademskiForumTableAdapters.af_ReportOcjenaTableAdapter();
@@ -317,6 +316,7 @@
             // bindingNavigator1
             // 
             this.bindingNavigator1.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.bindingNavigator1.BindingSource = this.predmetStudentBindingSource;
             this.bindingNavigator1.CountItem = this.bindingNavigatorCountItem;
             this.bindingNavigator1.DeleteItem = this.bindingNavigatorDeleteItem;
             this.bindingNavigator1.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -432,7 +432,6 @@
             // 
             this.fillToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.studentToolStripLabel,
-            this.studentToolStripTextBox,
             this.fillToolStripButton});
             this.fillToolStrip.Location = new System.Drawing.Point(0, 54);
             this.fillToolStrip.Name = "fillToolStrip";
@@ -445,11 +444,6 @@
             this.studentToolStripLabel.Name = "studentToolStripLabel";
             this.studentToolStripLabel.Size = new System.Drawing.Size(51, 22);
             this.studentToolStripLabel.Text = "Student:";
-            // 
-            // studentToolStripTextBox
-            // 
-            this.studentToolStripTextBox.Name = "studentToolStripTextBox";
-            this.studentToolStripTextBox.Size = new System.Drawing.Size(100, 25);
             // 
             // fillToolStripButton
             // 
@@ -477,8 +471,8 @@
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.toolStripMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Ocjene";
-            this.ShowIcon = false;
             this.Text = "Ocjene";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Ocjene_Load);
@@ -532,7 +526,6 @@
         private System.Windows.Forms.BindingSource predmetStudentBindingSource;
         private System.Windows.Forms.ToolStrip fillToolStrip;
         private System.Windows.Forms.ToolStripLabel studentToolStripLabel;
-        private System.Windows.Forms.ToolStripTextBox studentToolStripTextBox;
         private System.Windows.Forms.ToolStripButton fillToolStripButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn studentIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;

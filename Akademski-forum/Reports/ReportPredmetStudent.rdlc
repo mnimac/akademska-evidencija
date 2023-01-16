@@ -197,7 +197,7 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox66">
+                    <Textbox Name="PredmetName">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -213,7 +213,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox66</rd:DefaultName>
+                      <rd:DefaultName>PredmetName</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -263,7 +263,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox75">
+                    <Textbox Name="FirstName2">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -279,7 +279,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox75</rd:DefaultName>
+                      <rd:DefaultName>FirstName2</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -296,7 +296,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox69">
+                    <Textbox Name="LastName">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -312,7 +312,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox69</rd:DefaultName>
+                      <rd:DefaultName>LastName</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -814,7 +814,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>INFOBIT D.O.O.</Value>
+                  <Value>Marko Nimac d.o.o.</Value>
                   <Style>
                     <FontStyle>Italic</FontStyle>
                     <FontSize>14pt</FontSize>
@@ -848,7 +848,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Copyright 2021. All rights reserverd by Infobit d.o.o.</Value>
+                  <Value>Copyright 2023. All rights reserverd by Marko NImac d.o.o.</Value>
                   <Style />
                 </TextRun>
               </TextRuns>
@@ -930,10 +930,14 @@
           <DataField>Ocjena</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
+        <Field Name="PredmetID">
+          <DataField>PredmetID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>DataSetAkademskiForum</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\Korisnik\source\repos\Akademski-forum\Akademski-forum\DataSetAkademskiForum.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\Nimac\Source\Repos\akademska-evidencija\Akademski-forum\DataSetAkademskiForum.xsd</rd:SchemaPath>
         <rd:TableName>af_ReportPredmetStudent</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>

@@ -9,10 +9,10 @@
               <Width>2.5cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>3.24083cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>2.68521cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>2.5cm</Width>
@@ -34,11 +34,13 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>First Name</Value>
+                              <Value>Ime profesora</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox1</rd:DefaultName>
@@ -65,11 +67,13 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Last Name</Value>
+                              <Value>Prezime profesora</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox3</rd:DefaultName>
@@ -96,11 +100,13 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Predmet Name</Value>
+                              <Value>Naziv predmeta</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox5</rd:DefaultName>
@@ -131,7 +137,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox7</rd:DefaultName>
@@ -158,11 +166,13 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>City</Value>
+                              <Value>Grad</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox9</rd:DefaultName>
@@ -359,10 +369,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSetProfesori</DataSetName>
-        <Top>1.26682cm</Top>
-        <Left>2.35162cm</Left>
+        <Top>1.69015cm</Top>
+        <Left>1.84891cm</Left>
         <Height>1.2cm</Height>
-        <Width>12.5cm</Width>
+        <Width>13.42604cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -370,7 +380,7 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>2.27083in</Height>
+    <Height>1.82291in</Height>
     <Style />
   </Body>
   <Width>6.76401in</Width>

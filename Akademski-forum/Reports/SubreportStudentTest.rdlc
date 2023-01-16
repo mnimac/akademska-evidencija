@@ -86,7 +86,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>First Name</Value>
+                                  <Value>Ime</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -119,7 +119,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Last Name</Value>
+                                  <Value>Prezime</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>

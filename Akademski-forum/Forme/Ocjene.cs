@@ -79,7 +79,7 @@ namespace Akademski_forum
 
         private void toolStripButtonUpute_Click(object sender, EventArgs e)
         {
-            Help.ShowHelp(this, @"file://C:\Nimac\Korisnik\Documents\HelpNDoc\Output\chm\Info.chm");
+            Help.ShowHelp(this, @"file://C:\Users\Nimac\Documents\HelpNDoc\Output\chm\Info.chm");
         }
 
         private void toolStripButtonIspis_Click(object sender, EventArgs e)
